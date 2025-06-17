@@ -10,7 +10,7 @@ const Imprint = () => {
       <div className="pt-32 pb-20 px-6">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold mb-8">Imprint</h1>
-          <p className="text-gray-600 mb-8">Legal information about BD Global Technology</p>
+          <p className="text-gray-600 mb-8">Legal information about BD Global Technology LLC</p>
           
           <div className="prose prose-lg max-w-none">
             <h2 className="text-2xl font-semibold mt-8 mb-4">Company Information</h2>

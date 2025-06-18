@@ -21,18 +21,18 @@ const TalentCarousel = () => {
 
      {
       name: "Sanjida Subha",
-      role: "Founder & Chairman",
+      role: "Founder",
       rating: 5,
-      image: "",
+      image: "public/lovable-uploads/founder-photo.png",
       skills: ["", "", ""],
       experience: ""
     },
 
     {
-      name: "Maksus Bin Islam",
-      role: "Founder & CEO / Software Engineer",
+      name: "Maksus Bin Islam Riad",
+      role: "Co-Founder & CEO",
       rating: 5,
-      image: "",
+      image: "public/lovable-uploads/co-founder-photo.png",
       skills: ["", "", ""],
       experience: ""
     },
@@ -119,7 +119,7 @@ const TalentCarousel = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 text-black">
            
-            <span className="text-growmodo-blue">Team Members</span>
+            <span className="text-growmodo-blue text-4xl">Talents</span>
           </h2>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto font-medium">
             Our rigorously vetted talents are ready to join your team and deliver exceptional results from day one.

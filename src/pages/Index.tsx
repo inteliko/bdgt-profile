@@ -19,9 +19,12 @@ const Index = () => {
   }, []);
 
   const companies = [
-    "systeme", "MAXONE", "TEEMYCO", "LYFEfuel", "staffgeek", 
-    "sendcloud", "assima", "podigy"
+    "AMAZON", "ODOO", "YAMAHA", "BLUECHEM", "AZURE", 
+    "SPOTIFY", "YOUTUBE", "ORACLE"
   ];
+  
+
+  
 
   const features = [
     {
@@ -115,15 +118,36 @@ const Index = () => {
             </div>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold text-black mb-8 leading-tight transform transition-all duration-700 hover:text-transparent hover:bg-gradient-to-r hover:from-growmodo-blue hover:to-growmodo-green hover:bg-clip-text cursor-default">
-            Hire Your Whole Design &<br />
-            Dev Team With a Few Clicks
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed transform transition-all duration-500 hover:text-gray-800 hover:scale-105 cursor-default">
-            Get on-demand access to your own team of designers, developers & project 
-            managers without the hassle of managing full-time employees.
-          </p>
+              <h1 className="text-5xl md:text-7xl font-bold text-black mb-8 leading-tight transform transition-all duration-700 hover:text-transparent hover:bg-gradient-to-r hover:from-growmodo-blue hover:to-growmodo-green hover:bg-clip-text cursor-default">
+                Hire Your Whole Product<br />
+                Team With a Few Clicks
+              </h1>
+
+              {/* 🔥 Product Hunt Featured Upvote Badge */}
+              <div className="flex justify-center mb-8">
+                <a
+                  href="https://www.producthunt.com/products/bd-global-technology-2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-bd&#0045;global&#0045;technology&#0045;2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:scale-105 transition-transform duration-300"
+                >
+                  <img
+                    src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=980254&theme=light&t=1750233762507"
+                    alt="BD Global Technology - Design & development team | Product Hunt"
+                    style={{ width: '250px', height: '54px' }}
+                  />
+                </a>
+              </div>
+
+              <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed transform transition-all duration-500 hover:text-gray-800 hover:scale-105 cursor-default">
+                Get on-demand access to your own team of designers, developers & project 
+                managers without the hassle of managing full-time employees.
+              </p>
+
+            
+            
+
+ 
           
           {/* Enhanced buttons with hover effects */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
@@ -159,43 +183,6 @@ const Index = () => {
         </div>
       </section>
 
-     
-
-  
-
-      {/* Talent Carousel Section */}
-      <TalentCarousel />
-
-      {/* Trust Section with Hover Effects */}
-      <section className="py-16 px-6 group hover:bg-gradient-to-r hover:from-purple-50 hover:to-blue-50 transition-all duration-700">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-1/2 group-hover:transform group-hover:translate-x-2 transition-transform duration-500">
-              <h2 className="text-4xl font-bold mb-4 text-black group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-blue-600 group-hover:bg-clip-text transition-all duration-500">
-                Trusted by fast-moving<br />
-                brands & agencies worldwide
-              </h2>
-              <div className="flex flex-col gap-4">
-                <div className="flex items-center gap-4 group-hover:scale-105 transition-transform duration-300">
-                  <span className="text-3xl font-bold text-growmodo-blue group-hover:text-purple-600 transition-colors duration-300">10,000+</span>
-                  <span className="text-gray-600">Tasks delivered</span>
-                </div>
-                <div className="flex items-center gap-4 group-hover:scale-105 transition-transform duration-300 delay-100">
-                  <span className="text-3xl font-bold text-growmodo-blue group-hover:text-purple-600 transition-colors duration-300">200+</span>
-                  <span className="text-gray-600">Projects nailed</span>
-                </div>
-              </div>
-            </div>
-            <div className="lg:w-1/2 grid grid-cols-2 gap-6">
-              {companies.map((company, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-lg text-center group-hover:bg-white group-hover:shadow-lg group-hover:scale-105 transition-all duration-300" style={{transitionDelay: `${index * 50}ms`}}>
-                  <span className="text-gray-400 font-medium group-hover:text-purple-600 transition-colors duration-300">{company}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Problem Section with Enhanced Vector Graphics and Hover Effects */}
       <section className="bg-growmodo-dark text-white py-20 px-6 relative overflow-hidden group hover:bg-gradient-to-br hover:from-gray-900 hover:to-purple-900 transition-all duration-700">
@@ -244,6 +231,53 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+     
+
+  
+
+   
+      <section className="py-16 px-6 group hover:bg-gradient-to-r hover:from-purple-50 hover:to-blue-50 transition-all duration-700">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            <div className="lg:w-1/2 group-hover:transform group-hover:translate-x-2 transition-transform duration-500">
+              <h2 className="text-4xl font-bold mb-4 text-black group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-blue-600 group-hover:bg-clip-text transition-all duration-500">
+                Trusted by fast-moving<br />
+                brands & agencies worldwide
+              </h2>
+              <div className="flex flex-col gap-4">
+                <div className="flex items-center gap-4 group-hover:scale-105 transition-transform duration-300">
+                  <span className="text-3xl font-bold text-growmodo-blue group-hover:text-purple-600 transition-colors duration-300">10,000+</span>
+                  <span className="text-gray-600">Tasks delivered</span>
+                </div>
+                <div className="flex items-center gap-4 group-hover:scale-105 transition-transform duration-300 delay-100">
+                  <span className="text-3xl font-bold text-growmodo-blue group-hover:text-purple-600 transition-colors duration-300">200+</span>
+                  <span className="text-gray-600">Projects nailed</span>
+                </div>
+              </div>
+            </div>
+            <div className="lg:w-1/2 grid grid-cols-2 gap-6">
+              {companies.map((company, index) => (
+                <div key={index} className="bg-gray-50 p-6 rounded-lg text-center group-hover:bg-white group-hover:shadow-lg group-hover:scale-105 transition-all duration-300" style={{transitionDelay: `${index * 50}ms`}}>
+                  <span className="text-gray-400 font-medium group-hover:text-purple-600 transition-colors duration-300">{company}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      
+
+      
+
+
+         {/* Talent Carousel Section */}
+      <TalentCarousel />
+
+      {/* Trust Section with Hover Effects */}
 
       {/* Solution Section with Hover Effects */}
       <section className="py-20 px-6 group hover:bg-gradient-to-br hover:from-green-50 hover:to-blue-50 transition-all duration-700">

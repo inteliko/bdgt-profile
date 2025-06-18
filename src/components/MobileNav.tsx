@@ -1,82 +1,76 @@
-
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { createPortal } from "react-dom";
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  return (
-    <div className="md:hidden">
+  const closeMenu = () => setIsOpen(false);
+
+  const menuContent = (
+    <div
+      className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex flex-col items-end p-6"
+      onClick={closeMenu}
+    >
+      {/* Close Button inside overlay */}
       <Button
         variant="ghost"
         size="icon"
-        onClick={() => setIsOpen(!isOpen)}
-        className="relative z-50 bg-black hover:bg-gray-800 transition-colors duration-200"
+        onClick={closeMenu}
+        className="z-50 text-white"
       >
-        {isOpen ? (
-          <X className="h-6 w-6 text-white" />
-        ) : (
-          <Menu className="h-6 w-6 text-white" />
-        )}
+        <X className="h-6 w-6" />
       </Button>
 
-      {isOpen && (
-        <div 
-          className="fixed inset-0 z-40 bg-black/95 backdrop-blur-sm"
-          onClick={() => setIsOpen(false)}
-        >
-          <div 
-            className="flex flex-col items-center justify-center h-full w-full space-y-8 px-6"
-            onClick={(e) => e.stopPropagation()}
+      {/* Menu Links */}
+      <div
+        className="flex flex-col items-center justify-center h-full w-full space-y-8 px-6"
+        onClick={(e) => e.stopPropagation()} // Prevent close when clicking inside menu
+      >
+        {[
+          { to: "/showcase", label: "Showcase" },
+          { to: "/talents", label: "Talents" },
+          { to: "/scope", label: "Scope" },
+          { to: "/pricing", label: "Pricing" },
+          { to: "/apply-talent", label: "Apply as a Talent" },
+        ].map((item) => (
+          <Link
+            key={item.to}
+            to={item.to}
+            className="text-2xl font-medium text-white hover:text-growmodo-blue transition-transform duration-300 hover:scale-105"
+            onClick={closeMenu}
           >
-            <Link 
-              to="/showcase" 
-              className="text-2xl md:text-3xl font-medium text-white hover:text-growmodo-blue transition-colors duration-300 transform hover:scale-105"
-              onClick={() => setIsOpen(false)}
-            >
-              Showcase
-            </Link>
-            <Link 
-              to="/talents" 
-              className="text-2xl md:text-3xl font-medium text-white hover:text-growmodo-blue transition-colors duration-300 transform hover:scale-105"
-              onClick={() => setIsOpen(false)}
-            >
-              Talents
-            </Link>
-            <Link 
-              to="/scope" 
-              className="text-2xl md:text-3xl font-medium text-white hover:text-growmodo-blue transition-colors duration-300 transform hover:scale-105"
-              onClick={() => setIsOpen(false)}
-            >
-              Scope
-            </Link>
-            <Link 
-              to="/pricing" 
-              className="text-2xl md:text-3xl font-medium text-white hover:text-growmodo-blue transition-colors duration-300 transform hover:scale-105"
-              onClick={() => setIsOpen(false)}
-            >
-              Pricing
-            </Link>
-            <Link 
-              to="/apply-talent" 
-              className="text-2xl md:text-3xl font-medium text-white hover:text-growmodo-blue transition-colors duration-300 transform hover:scale-105"
-              onClick={() => setIsOpen(false)}
-            >
-              Apply as a Talent
-            </Link>
-            <Link 
-              to="/book-call"
-              onClick={() => setIsOpen(false)}
-            >
-              <Button className="bg-growmodo-blue text-white px-8 py-4 text-lg font-medium hover:bg-growmodo-green transition-all duration-300 transform hover:scale-105 rounded-lg shadow-lg">
-                Book a Call
-              </Button>
-            </Link>
-          </div>
-        </div>
+            {item.label}
+          </Link>
+        ))}
+
+        <Link to="/book-call" onClick={closeMenu}>
+          <Button className="bg-growmodo-blue text-white px-8 py-4 text-lg font-medium hover:bg-growmodo-green transition-all duration-300 transform hover:scale-105 rounded-lg shadow-lg">
+            Book a Call
+          </Button>
+        </Link>
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="md:hidden relative z-50">
+      {/* Open Button (☰) */}
+      {!isOpen && (
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() => setIsOpen(true)}
+          className="relative z-50 bg-black hover:bg-gray-800 transition-colors duration-200"
+        >
+          <Menu className="h-6 w-6 text-white" />
+        </Button>
       )}
+
+      {/* Portal for Menu */}
+      {isOpen && createPortal(menuContent, document.body)}
     </div>
   );
 };

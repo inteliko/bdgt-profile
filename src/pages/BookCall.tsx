@@ -48,7 +48,7 @@ const BookCall = () => {
                 <div className="w-8 h-8 bg-growmodo-blue rounded-full flex items-center justify-center">
                   <span className="text-white font-bold text-sm">G</span>
                 </div>
-                <span className="text-xl font-semibold">BDGT</span>
+                <span className="text-xl font-semibold">Startmodo</span>
               </div>
               
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -58,7 +58,7 @@ const BookCall = () => {
               </h1>
               
               <p className="text-xl text-gray-600 mb-8 max-w-lg">
-                Schedule a 15-min discovery call with one of our outsourcing experts and learn how BDGT can help you scale your agency or marketing team today.
+                Schedule a 15-min discovery call with one of our outsourcing experts and learn how Startmodo can help you scale your agency or marketing team today.
               </p>
               
               <div className="mb-8">
@@ -92,7 +92,7 @@ const BookCall = () => {
                 <div className="w-8 h-8 bg-growmodo-blue rounded-full flex items-center justify-center">
                   <span className="text-white font-bold text-sm">G</span>
                 </div>
-                <span className="text-xl font-semibold">BDGT</span>
+                <span className="text-xl font-semibold">Startmodo</span>
               </div>
               
               <form className="space-y-6">

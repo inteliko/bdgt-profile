@@ -135,7 +135,7 @@ const Cookies = () => {
             <p className="mb-4">
               For questions about our use of cookies, please contact us at:
             </p>
-            <p className="mb-2">BD Global Technology</p>
+            <p className="mb-2">Startmodo</p>
             <p className="mb-2">10114 102nd Street Floor 3</p>
             <p className="mb-2">Ozone Park, NY, 11416</p>
             <p className="mb-2">Email: privacy@bdglobaltech.com</p>

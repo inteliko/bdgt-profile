@@ -16,7 +16,7 @@ const Footer = () => {
             <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
               <span className="text-black font-bold text-sm">B</span>
             </div>
-            <span className="text-xl font-semibold">BD Global Technology</span>
+            <span className="text-xl font-semibold">Startmodo</span>
           </Link>
           
           <Link to="/book-call">
@@ -67,7 +67,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400 text-base">
-          <p>Copyright © 2025 BD Global Technology. All Rights Reserved.</p>
+          <p>Copyright © 2025 Startmodo. All Rights Reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <Link to="/terms" className="hover:text-white text-base">Terms & Conditions</Link>
             <Link to="/privacy" className="hover:text-white text-base">Privacy Policy</Link>

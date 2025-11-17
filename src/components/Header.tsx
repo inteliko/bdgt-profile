@@ -32,7 +32,7 @@ const Header = () => {
                 </svg>
               </div>
             </div>
-            <span className="text-xl font-semibold bg-gradient-to-r from-growmodo-blue to-growmodo-green bg-clip-text text-black">BDGT</span>
+            <span className="text-xl font-semibold bg-gradient-to-r from-growmodo-blue to-growmodo-green bg-clip-text text-black">Startmodo</span>
           </Link>
           
           <nav className="hidden md:flex items-center space-x-8">

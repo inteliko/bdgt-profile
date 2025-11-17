@@ -17,7 +17,7 @@ const Showcase = () => {
       id: 1,
       category: "Mobile",
       title: "Mobile App Design Collection",
-      image: "public/projects/community-app.gif",
+      image: "/projects/community-app.gif",
       description: "Various mobile app interfaces showcasing modern design principles"
     },
 
@@ -55,7 +55,7 @@ const Showcase = () => {
       id: 6,
       category: "Mobile",
       title: "CRM Software",
-      image: "public/projects/crm_screenshot.gif",
+      image: "/projects/crm_screenshot.gif",
       description: "Various mobile app interfaces showcasing modern design principles"
     },
   ];

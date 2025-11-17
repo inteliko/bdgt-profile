@@ -106,7 +106,7 @@ const Privacy = () => {
             <p className="mb-4">
               If you have questions about this privacy policy, please contact us at:
             </p>
-            <p className="mb-2">BD Global Technology</p>
+            <p className="mb-2">Startmodo</p>
             <p className="mb-2">Privacy Officer</p>
             <p className="mb-2">10114 102nd Street Floor 3</p>
             <p className="mb-2">Ozone Park, NY, 11416</p>

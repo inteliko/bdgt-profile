@@ -34,7 +34,7 @@ const Talents = () => {
     {
       icon: <Users className="w-6 h-6" />,
       title: "Expert Panel",
-      description: "Collaboration is a crucial part of our talent community at BD Global Technology. Therefore, we believe that other core team members should have a meaningful say in the hiring process through structured panel interviews and peer evaluations."
+      description: "Collaboration is a crucial part of our talent community at Startmodo. Therefore, we believe that other core team members should have a meaningful say in the hiring process through structured panel interviews and peer evaluations."
     },
     {
       icon: <TrendingUp className="w-6 h-6" />,
@@ -179,10 +179,10 @@ const Talents = () => {
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Great Designers & Developers<br />
               Don't Grow on Trees.<br />
-              <span className="text-growmodo-green">They Grow at BD Global Technology.</span>
+              <span className="text-growmodo-green">They Grow at Startmodo.</span>
             </h1>
             <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-              BD Global Technology uses a community-first approach to find & manage exceptional talents 
+              Startmodo uses a community-first approach to find & manage exceptional talents 
               and continuously invests in their skill development to help them accelerate their 
               careers while working with progressive brands worldwide.
             </p>
@@ -409,7 +409,7 @@ const Talents = () => {
             Without the Bad Taste
           </h2>
           <p className="text-xl text-gray-600 mb-16 max-w-4xl mx-auto">
-            BD Global Technology aims to connect fast-growing companies with ambitious 
+            Startmodo aims to connect fast-growing companies with ambitious 
             remote talent while creating sustainable win-win situations and exceptional work 
             experiences for both parties through our comprehensive support system.
           </p>

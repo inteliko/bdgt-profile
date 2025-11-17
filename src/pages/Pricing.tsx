@@ -29,8 +29,8 @@ const Pricing = () => {
 
   const faqData = [
     {
-      question: "What is BD Global Technology?",
-      answer: "BD Global Technology is a comprehensive recruiting and delivery platform that connects businesses with top remote design and development talent. We provide unlimited design requests, development projects, and dedicated project management to help fast-moving agencies, marketing teams, and scale-ups accelerate their growth without the overhead of hiring in-house teams."
+      question: "What is Startmodo?",
+      answer: "Startmodo is a comprehensive recruiting and delivery platform that connects businesses with top remote design and development talent. We provide unlimited design requests, development projects, and dedicated project management to help fast-moving agencies, marketing teams, and scale-ups accelerate their growth without the overhead of hiring in-house teams."
     },
     {
       question: "How do I request a new task or project?",
@@ -329,7 +329,7 @@ const Pricing = () => {
             Without Growing Your Team
           </h2>
           <p className="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">
-            BD Global Technology makes outsourcing design and development tasks a no-brainer by 
+            Startmodo makes outsourcing design and development tasks a no-brainer by 
             eliminating the most common pain points of the industry.
           </p>
 

@@ -16,7 +16,7 @@ const Guides = () => {
       category: "Quality Management",
       readTime: "8 min read",
       date: "Dec 15, 2024",
-      author: "BD Global Technology",
+      author: "Startmodo",
       slug: "quality-external-specialists"
     },
     {
@@ -27,7 +27,7 @@ const Guides = () => {
       category: "Team Building",
       readTime: "6 min read",
       date: "Dec 12, 2024",
-      author: "BD Global Technology",
+      author: "Startmodo",
       slug: "build-stronger-teams"
     },
     {
@@ -38,7 +38,7 @@ const Guides = () => {
       category: "Cost Optimization",
       readTime: "7 min read",
       date: "Dec 10, 2024",
-      author: "BD Global Technology",
+      author: "Startmodo",
       slug: "reduce-design-costs"
     },
     {
@@ -49,7 +49,7 @@ const Guides = () => {
       category: "Business Strategy",
       readTime: "10 min read",
       date: "Dec 8, 2024",
-      author: "BD Global Technology",
+      author: "Startmodo",
       slug: "agency-growth-2025"
     },
     {
@@ -60,7 +60,7 @@ const Guides = () => {
       category: "Web Development",
       readTime: "9 min read",
       date: "Dec 5, 2024",
-      author: "BD Global Technology",
+      author: "Startmodo",
       slug: "subscription-web-development"
     },
     {
@@ -71,7 +71,7 @@ const Guides = () => {
       category: "Tool Comparison",
       readTime: "12 min read",
       date: "Dec 3, 2024",
-      author: "BD Global Technology",
+      author: "Startmodo",
       slug: "design-platforms-comparison"
     },
     {
@@ -82,7 +82,7 @@ const Guides = () => {
       category: "Industry Insights",
       readTime: "8 min read",
       date: "Dec 1, 2024",
-      author: "BD Global Technology",
+      author: "Startmodo",
       slug: "best-design-agencies-2025"
     },
     {
@@ -93,7 +93,7 @@ const Guides = () => {
       category: "Industry Insights",
       readTime: "7 min read",
       date: "Nov 28, 2024",
-      author: "BD Global Technology",
+      author: "Startmodo",
       slug: "best-graphic-design-companies"
     },
     {
@@ -104,7 +104,7 @@ const Guides = () => {
       category: "Recruitment",
       readTime: "9 min read",
       date: "Nov 25, 2024",
-      author: "BD Global Technology",
+      author: "Startmodo",
       slug: "graphic-design-recruitment-agencies"
     },
     {
@@ -115,7 +115,7 @@ const Guides = () => {
       category: "Outsourcing",
       readTime: "11 min read",
       date: "Nov 22, 2024",
-      author: "BD Global Technology",
+      author: "Startmodo",
       slug: "outsourcing-website-management"
     },
     {
@@ -126,7 +126,7 @@ const Guides = () => {
       category: "Tool Comparison",
       readTime: "8 min read",
       date: "Nov 20, 2024",
-      author: "BD Global Technology",
+      author: "Startmodo",
       slug: "truelancer-alternatives"
     },
     {
@@ -137,7 +137,7 @@ const Guides = () => {
       category: "Hiring",
       readTime: "10 min read",
       date: "Nov 18, 2024",
-      author: "BD Global Technology",
+      author: "Startmodo",
       slug: "hire-creative-director"
     }
   ];

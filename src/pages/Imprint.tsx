@@ -10,12 +10,12 @@ const Imprint = () => {
       <div className="pt-32 pb-20 px-6">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold mb-8">Imprint</h1>
-          <p className="text-gray-600 mb-8">Legal information about BD Global Technology LLC</p>
+          <p className="text-gray-600 mb-8">Legal information about Startmodo LLC</p>
           
           <div className="prose prose-lg max-w-none">
             <h2 className="text-2xl font-semibold mt-8 mb-4">Company Information</h2>
             <div className="bg-gray-50 p-6 rounded-lg mb-6">
-              <p className="mb-2"><strong>Company Name:</strong> BD Global Technology LLC</p>
+              <p className="mb-2"><strong>Company Name:</strong> Startmodo LLC</p>
               <p className="mb-2"><strong>Address:</strong> 10114 102nd Street Floor 3</p>
               <p className="mb-2"><strong>City:</strong> Ozone Park, NY 11416</p>
               <p className="mb-2"><strong>Country:</strong> United States</p>
@@ -26,7 +26,7 @@ const Imprint = () => {
 
             <h2 className="text-2xl font-semibold mt-8 mb-4">Legal Representatives</h2>
             <p className="mb-4">
-              BD Global Technology LLC is legally represented by its managing directors, 
+              Startmodo LLC is legally represented by its managing directors, 
               who are authorized to act on behalf of the company in all business matters.
             </p>
 
@@ -40,25 +40,25 @@ const Imprint = () => {
 
             <h2 className="text-2xl font-semibold mt-8 mb-4">Tax Information</h2>
             <p className="mb-4">
-              BD Global Technology LLC is registered for tax purposes in the United States. 
+              Startmodo LLC is registered for tax purposes in the United States. 
               All applicable federal, state, and local taxes are paid in accordance with US tax law.
             </p>
 
             <h2 className="text-2xl font-semibold mt-8 mb-4">Professional Liability</h2>
             <p className="mb-4">
-              BD Global Technology maintains professional liability insurance to protect both 
+              Startmodo maintains professional liability insurance to protect both 
               our clients and our business in the provision of design and development services.
             </p>
 
             <h2 className="text-2xl font-semibold mt-8 mb-4">Intellectual Property</h2>
             <p className="mb-4">
               All trademarks, service marks, and logos used on this website are the property of 
-              BD Global Technology LLC or their respective owners. Unauthorized use is prohibited.
+              Startmodo LLC or their respective owners. Unauthorized use is prohibited.
             </p>
 
             <h2 className="text-2xl font-semibold mt-8 mb-4">Dispute Resolution</h2>
             <p className="mb-4">
-              Any disputes arising from business relationships with BD Global Technology LLC 
+              Any disputes arising from business relationships with Startmodo LLC 
               will be subject to the jurisdiction of the courts in New York, United States.
             </p>
 
@@ -66,13 +66,13 @@ const Imprint = () => {
             <div className="bg-gray-50 p-6 rounded-lg mb-6">
               <p className="mb-2"><strong>Website:</strong> www.bdglobaltech.com</p>
               <p className="mb-2"><strong>Technical Contact:</strong> tech@bdglobaltech.com</p>
-              <p className="mb-2"><strong>Content Responsibility:</strong> BD Global Technology LLC</p>
+              <p className="mb-2"><strong>Content Responsibility:</strong> Startmodo LLC</p>
               <p className="mb-2"><strong>Data Protection Officer:</strong> privacy@bdglobaltech.com</p>
             </div>
 
             <h2 className="text-2xl font-semibold mt-8 mb-4">Regulatory Compliance</h2>
             <p className="mb-4">
-              BD Global Technology LLC complies with all applicable US federal and state regulations 
+              Startmodo LLC complies with all applicable US federal and state regulations 
               regarding business operations, data protection, and consumer rights.
             </p>
 

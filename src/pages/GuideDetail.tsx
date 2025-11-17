@@ -17,7 +17,7 @@ const GuideDetail = () => {
     category: "Quality Management",
     readTime: "8 min read",
     date: "Dec 15, 2024",
-    author: "BD Global Technology",
+    author: "Startmodo",
     slug: "quality-external-specialists",
     content: `
       <h2>Introduction</h2>

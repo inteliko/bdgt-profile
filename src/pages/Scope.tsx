@@ -516,7 +516,7 @@ const Scope = () => {
             Welcome to The Candy Store of Design & Dev Work
           </h1>
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            BD Global Technology is sweeter than your grandma's cookies. Choose from our menu of tasks and projects, and let us bake your ideas into reality.
+            Startmodo is sweeter than your grandma's cookies. Choose from our menu of tasks and projects, and let us bake your ideas into reality.
           </p>
         </div>
       </section>

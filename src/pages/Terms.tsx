@@ -15,13 +15,13 @@ const Terms = () => {
           <div className="prose prose-lg max-w-none">
             <h2 className="text-2xl font-semibold mt-8 mb-4">1. Agreement to Terms</h2>
             <p className="mb-4">
-              By accessing and using BD Global Technology's services, you agree to be bound by these Terms and Conditions. 
+              By accessing and using Startmodo's services, you agree to be bound by these Terms and Conditions. 
               If you do not agree with any part of these terms, you may not access our services.
             </p>
 
             <h2 className="text-2xl font-semibold mt-8 mb-4">2. Description of Services</h2>
             <p className="mb-4">
-              BD Global Technology provides design and development subscription services, connecting clients with 
+              Startmodo provides design and development subscription services, connecting clients with 
               vetted remote designers and developers. Our services include but are not limited to:
             </p>
             <ul className="list-disc pl-6 mb-4">
@@ -49,7 +49,7 @@ const Terms = () => {
             <h2 className="text-2xl font-semibold mt-8 mb-4">5. Intellectual Property</h2>
             <p className="mb-4">
               All work created through our platform becomes the intellectual property of the client upon payment. 
-              BD Global Technology retains the right to showcase completed work in our portfolio and marketing materials, 
+              Startmodo retains the right to showcase completed work in our portfolio and marketing materials, 
               unless specifically requested otherwise by the client.
             </p>
 
@@ -62,7 +62,7 @@ const Terms = () => {
 
             <h2 className="text-2xl font-semibold mt-8 mb-4">7. Limitation of Liability</h2>
             <p className="mb-4">
-              BD Global Technology's liability is limited to the amount paid for services. We are not responsible 
+              Startmodo's liability is limited to the amount paid for services. We are not responsible 
               for any indirect, incidental, or consequential damages arising from the use of our services.
             </p>
 
@@ -88,7 +88,7 @@ const Terms = () => {
             <p className="mb-4">
               For questions about these Terms & Conditions, please contact us at:
             </p>
-            <p className="mb-2">BD Global Technology</p>
+            <p className="mb-2">Startmodo</p>
             <p className="mb-2">10114 102nd Street Floor 3</p>
             <p className="mb-2">Ozone Park, NY, 11416</p>
             <p className="mb-2">Email: legal@bdglobaltech.com</p>

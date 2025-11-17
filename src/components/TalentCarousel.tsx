@@ -13,26 +13,26 @@ const TalentCarousel = () => {
       name: "Fahima Islam Moon",
       role: "Project Manager",
       rating: 5,
-      image: "public/lovable-uploads/0bb5d39a-0f1c-405f-8d5b-fbc8f34bc3a0.png",
+      image: "/lovable-uploads/0bb5d39a-0f1c-405f-8d5b-fbc8f34bc3a0.png",
       skills: ["Agile", "Team Leadership", "Client Relations"],
       experience: "8+ years"
     },
 
 
      {
-      name: "Sanjida Subha",
-      role: "Founder",
+      name: "Angshuman Saha",
+      role: "QA Engineer",
       rating: 5,
-      image: "public/lovable-uploads/founder-photo.png",
+      image: "",
       skills: ["", "", ""],
       experience: ""
     },
 
     {
       name: "Maksus Bin Islam Riad",
-      role: "Co-Founder & CEO",
+      role: "Software Engineer",
       rating: 5,
-      image: "public/lovable-uploads/co-founder-photo.png",
+      image: "/lovable-uploads/co-founder-photo.png",
       skills: ["", "", ""],
       experience: ""
     },
@@ -48,7 +48,7 @@ const TalentCarousel = () => {
       name: "Lamia Islam",
       role: "Graphic Designer",
       rating: 5,
-      image: "public/lovable-uploads/7596d42d-8ba8-4fc6-84e7-e0b36f5fd049.png",
+      image: "/lovable-uploads/7596d42d-8ba8-4fc6-84e7-e0b36f5fd049.png",
       skills: ["Brand Identity", "Print Design", "Illustration"],
       
     },

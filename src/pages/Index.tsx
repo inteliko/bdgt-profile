@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TalentCarousel from "@/components/TalentCarousel";
 import ToolsGrid from "@/components/ToolsGrid";
+import ReferenceOrTools from "@/components/ReferenceOrTools";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const Index = () => {
@@ -179,19 +180,7 @@ const Index = () => {
         </div>
 
         <div className="max-w-6xl mx-auto text-center relative z-10">
-          {/* Large centered logo */}
-          <div className="mb-12">
-            <div className="w-32 h-32 mx-auto bg-gradient-to-br from-growmodo-blue to-growmodo-green rounded-full flex items-center justify-center shadow-2xl transform transition-all duration-500 hover:scale-110 hover:rotate-3 hover:shadow-3xl group cursor-pointer relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-growmodo-green to-growmodo-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></div>
-              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" className="text-white transform transition-transform duration-300 group-hover:scale-110 relative z-10">
-                <path d="M6 6h7.5c2.485 0 4.5 2.015 4.5 4.5v0c0 2.485-2.015 4.5-4.5 4.5H7.5v3h4.5c2.485 0 4.5-2.015 4.5-4.5v0c0-2.485 2.015-4.5 4.5-4.5h0" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                <circle cx="6" cy="10.5" r="1.5" fill="currentColor"/>
-                <circle cx="18" cy="13.5" r="1.5" fill="currentColor"/>
-              </svg>
-            </div>
-          </div>
-
-          <h1 className="text-5xl md:text-7xl font-bold text-black mb-8 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-black mb-8 leading-tight mt-6 md:mt-8">
             Hire Your Whole Product<br />
             Team With a Few Clicks
           </h1>
@@ -478,29 +467,22 @@ const Index = () => {
       </section>
 
       {/* Tools Section */}
-      <section className="bg-growmodo-dark py-20 px-6">
+      <section className="bg-black py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+          <h2 className="text-5xl md:text-6xl font-extrabold text-white mb-8 leading-tight">
             Build Whatever You Want,<br />
             With the Tools You Love
           </h2>
           
-          <div className="flex justify-center mb-8">
-            <div className="overflow-hidden w-full max-w-5xl">
-              <div className="flex justify-center animate-[scroll-left_30s_linear_infinite] gap-4">
-                {['UI Designs', 'Funnels', 'Automations', 'Portal', 'Graphics', 'Ecommerce Stores', 'Websites', 'UI Designs', 'Funnels', 'Automations', 'Portal'].map((tool, index) => (
-                  <span key={index} className="text-gray-300 text-sm px-3 py-1 bg-black/30 backdrop-blur-sm rounded-full whitespace-nowrap">
-                    {tool}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
+          {/* single scrolling pills are handled inside ToolsGrid to avoid duplicate marquees */}
 
           <div className="mt-12 flex justify-center">
-            {/* Replace raster image with a DOM grid of icon placeholders for exact layout control */}
             <div className="w-full max-w-6xl">
-              <ToolsGrid />
+              {/* Show a reference image if present in public/assets, otherwise the dynamic grid */}
+              <React.Suspense fallback={<div />}>{/* lazy not used but keep wrapper */}
+                {/* @ts-ignore: next line imports a local component */}
+                <ReferenceOrTools />
+              </React.Suspense>
             </div>
           </div>
         </div>
@@ -627,13 +609,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* As Seen On Section */}
-      <section className="py-12 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          
+      {/* As Seen On Section (full width) */}
+      <section className="py-12 bg-white w-full overflow-x-hidden">
+        <div className="w-full">
 
           {/* Flowing Text Animation */}
-          <div className="relative overflow-hidden h-32 bg-white">
+          <div className="relative overflow-hidden h-32 bg-white w-full">
             <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white z-10"></div>
 
             {/* (removed base left-scrolling row to keep only the crossing X) */}

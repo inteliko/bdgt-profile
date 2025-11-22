@@ -21,63 +21,69 @@ const logoColors = [
 
 function Logo({ slug, name, color, size = 48 }: { slug: string; name: string; color: string; size?: number }) {
   const [failed, setFailed] = useState(false);
-  const srcSvg = `/tools/${slug}.svg`;
-  const srcPng = `/tools/${slug}.png`;
+  // try multiple extensions in order: .png -> .jpeg -> .jpg -> .svg
+  const exts = ['png', 'jpeg', 'jpg', 'svg'];
+  const [extIndex, setExtIndex] = useState(0);
+  const src = `/tools/${slug}.${exts[extIndex]}`;
+
+  const handleError = (_e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    if (extIndex < exts.length - 1) {
+      setExtIndex((i) => i + 1);
+    } else {
+      setFailed(true);
+    }
+  };
 
   if (!failed) {
     return (
       <img
-        src={srcSvg}
+        src={src}
         alt={name}
         width={size}
         height={size}
-        className="w-full h-full object-contain rounded-full"
-        onError={(e) => {
-          // try PNG if SVG fails
-          const el = e.currentTarget as HTMLImageElement;
-          el.src = srcPng;
-          // if png also fails, set failed true on next error
-          el.onerror = () => setFailed(true);
-        }}
+        className="w-full h-full object-contain rounded-full bg-transparent"
+        onError={handleError}
       />
     );
   }
 
   // Fallback: simple letter mark with background gradient
   return (
-    <div className="w-full h-full flex items-center justify-center text-white font-bold" style={{ background: `linear-gradient(135deg, ${color} 0%, rgba(0,0,0,0.15) 100%)` }}>
-      <span style={{ fontSize: 12 }}>{name.charAt(0)}</span>
+    <div className="w-full h-full flex items-center justify-center text-white font-bold" style={{ background: `linear-gradient(135deg, ${color} 0%, rgba(0,0,0,0.3) 100%)` }}>
+      <span style={{ fontSize: 14 }}>{name.charAt(0)}</span>
     </div>
   );
 }
 
 export default function ToolsGrid() {
   return (
-    <section className="w-full bg-black">
+    <section className="w-full">
       {/* Full-width tag pills (scrolling) */}
-      <div className="w-full py-10">
+      <div className="w-full py-6">
         <div className="w-full">
           <div className="overflow-hidden">
-            <div className="flex animate-[scroll-left_30s_linear_infinite] items-center gap-6 px-6">
+            <div className="flex animate-[scroll-left_30s_linear_infinite] items-center gap-4 px-4">
               {['Portal','Graphics','Ecommerce Stores','Websites','UI Designs','Funnels','Automations','Portal','Graphics','Ecommerce Stores'].map((t, i) => (
-                <span key={i} className="text-gray-300 text-sm px-4 py-2 bg-black/30 backdrop-blur-sm rounded-full whitespace-nowrap border border-white/5">{t}</span>
+                <span key={i} className="text-gray-300 text-sm px-3 py-1 bg-black/30 backdrop-blur-sm rounded-full whitespace-nowrap border border-white/5">{t}</span>
               ))}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Centered, full-width circular icon grid */}
+      {/* Centered, raised black panel with circular icon grid */}
       <div className="w-full">
-        <div className="max-w-7xl mx-auto px-6 py-10">
-          <div className="grid grid-cols-8 gap-6 justify-items-center items-center">
-            {tools.map((t, i) => (
-              <div key={t.slug} className="tool-item w-20 h-20 rounded-full flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.02)' }}>
-                <div className="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center">
-                  <Logo slug={t.slug} name={t.name} color={logoColors[i % logoColors.length]} />
+        <div className="max-w-6xl mx-auto px-6 py-12">
+          <div className="bg-black p-8 md:p-12 rounded-md shadow-2xl" style={{ boxShadow: '0 40px 80px rgba(0,0,0,0.6)' }}>
+            <div className="grid grid-cols-6 sm:grid-cols-7 md:grid-cols-9 lg:grid-cols-10 gap-6 justify-items-center items-center">
+              {tools.map((t, i) => (
+                <div key={t.slug} className="w-24 h-24 md:w-28 md:h-28 rounded-full flex items-center justify-center transform transition-all duration-300 hover:scale-105" style={{ background: 'rgba(255,255,255,0.02)' }}>
+                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden flex items-center justify-center" style={{ boxShadow: 'inset 0 6px 0 rgba(0,0,0,0.4), 0 10px 30px rgba(0,0,0,0.6)' }}>
+                    <Logo slug={t.slug} name={t.name} color={logoColors[i % logoColors.length]} />
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

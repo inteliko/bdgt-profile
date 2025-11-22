@@ -500,7 +500,7 @@ const Index = () => {
 
             <div className="md:pl-6">
               <blockquote className="text-2xl md:text-4xl font-semibold text-black leading-tight mb-6">
-                “I have been working with Growmodo for nearly two years now. With their keen eye for design, development skills, and expert project management, I have managed to serve a lot more clients than I would without them.”
+                “I have been working with Startmodo for nearly two years now. With their keen eye for design, development skills, and expert project management, I have managed to serve a lot more clients than I would without them.”
               </blockquote>
 
               <div className="flex items-center gap-4 mb-4">
@@ -633,6 +633,8 @@ const Index = () => {
                 </div>
               </div>
             </div>
+
+
 
             {/* Reverse diagonal left-scrolling band to form an X */}
             <div className="diagonal-marquee reverse">

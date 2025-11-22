@@ -123,16 +123,91 @@
 
   .scrolling-content {
     display: inline-block;
-    animation: scroll-left 30s linear infinite;
+    /* slower default duration; uses --marquee-duration variable */
+    --marquee-duration: 60s;
+    animation: scroll-left var(--marquee-duration) linear infinite;
+    will-change: transform;
+    transition: transform 200ms linear;
   }
+
+.scrolling-content:hover {
+  animation-play-state: paused;
+}
+
+/* grayscale on hover for talent images */
+.talent-card:hover img {
+  filter: grayscale(100%);
+  transform: scale(1.02);
+}
 
   @keyframes scroll-left {
     0% {
-      transform: translateX(100%);
+      transform: translateX(0%);
     }
     100% {
-      transform: translateX(-100%);
+      transform: translateX(-50%);
     }
+  }
+
+  @keyframes scroll-right {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  .scrolling-content-right {
+    display: inline-block;
+    --marquee-duration: 40s;
+    animation: scroll-right var(--marquee-duration) linear infinite;
+    will-change: transform;
+  }
+
+  .diagonal-marquee {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-6deg);
+    /* extend across viewport so the X is full-width */
+    width: 200vw;
+    height: 64px;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 30;
+  }
+
+  .diagonal-marquee .band {
+    width: 100%;
+    height: 56px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 8px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+    border: 2px solid rgba(0,0,0,0.06);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .diagonal-marquee .band .inner {
+    display: flex;
+    gap: 36px;
+    align-items: center;
+    padding: 0 28px;
+  }
+
+  /* Reverse diagonal for the crossing X */
+  .diagonal-marquee.reverse {
+    transform: translate(-50%, -50%) rotate(6deg);
+    z-index: 29;
+  }
+
+  .diagonal-marquee.reverse .band {
+    background: rgba(255,255,255,0.95);
+    border: 2px solid rgba(0,0,0,0.06);
   }
 
   .bg-growmodo-blue {
@@ -158,6 +233,48 @@
   .text-growmodo-gray {
     color: hsl(var(--growmodo-gray));
   }
+
+  /* Glass / frosted card utility */
+  .glass {
+    background-color: rgba(255,255,255,0.6);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(15,23,42,0.06);
+  }
+
+  .glass-strong {
+    background-color: rgba(255,255,255,0.5);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(15,23,42,0.09);
+  }
+
+  /* Tools grid styling */
+  .tools-grid-container {
+    padding: 0.5rem 0 1.5rem;
+  }
+
+  .tools-grid {
+    background: linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.7) 100%);
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+
+  .tool-item {
+    background: rgba(255,255,255,0.02);
+    backdrop-filter: blur(4px);
+  }
+
+  .tool-inner {
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  }
+
+  .tool-item:hover .tool-inner {
+    transform: scale(1.07);
+    transition: transform 200ms ease;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  }
+
 }
 
 

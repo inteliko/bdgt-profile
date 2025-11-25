@@ -54,6 +54,14 @@ const Index = () => {
     "SPOTIFY", "YOUTUBE", "ORACLE"
   ];
 
+  // Talent images (place your files in `public/talents/` as talent1.jpg..talent4.jpg)
+  const talentPics = [
+    "/talents/talent1.jpeg",
+    "/talents/talent2.jpeg",
+    "/talents/talent3.jpg",
+    "/talents/talent4.jpeg",
+  ];
+
   const features = [
     {
       title: "Scalable Workforce",
@@ -167,7 +175,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       <Header />
 
       {/* Hero Section */}
@@ -555,7 +563,7 @@ const Index = () => {
               >
                 <CarouselContent className="!ml-0">
                   {workItems.map((item) => (
-                    <CarouselItem key={item.id} className="pl-6 md:basis-[52%] lg:basis-[40%]">
+                    <CarouselItem key={item.id} className="px-4 w-full flex-shrink-0 md:basis-[52%] lg:basis-[40%]">
                       <div className="group cursor-pointer">
                         <div className="bg-white rounded-2xl overflow-hidden shadow-xl aspect-[3/2] hover:shadow-2xl transition-all duration-300">
                           <img
@@ -568,7 +576,7 @@ const Index = () => {
                     </CarouselItem>
                   ))}
 
-                  <CarouselItem key="see-more" className="pl-6 md:basis-[52%] lg:basis-[40%]">
+                  <CarouselItem key="see-more" className="px-4 w-full flex-shrink-0 md:basis-[52%] lg:basis-[40%]">
                     <Link to="/showcase" className="group block">
                       <div className="rounded-2xl overflow-hidden shadow-xl aspect-[3/2] flex items-center justify-center">
                         <div className="w-56 h-56 rounded-full bg-white flex items-center justify-center shadow-2xl text-2xl font-semibold">
@@ -688,9 +696,11 @@ const Index = () => {
         </div>
         
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <div className="flex justify-center -space-x-2 mb-6">
-            {Array.from({ length: 4 }).map((_, i) => (
-              <div key={i} className="w-12 h-12 bg-white rounded-full"></div>
+          <div className="flex justify-center -space-x-3 mb-6">
+            {talentPics.map((src, i) => (
+              <div key={i} className="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-sm">
+                <Avatar src={src} alt={`Talent ${i + 1}`} className="w-full h-full object-cover" />
+              </div>
             ))}
           </div>
           <h2 className="text-4xl font-bold text-white mb-6">

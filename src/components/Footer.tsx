@@ -30,50 +30,50 @@ const Footer = () => {
           <div>
             <h5 className="font-semibold mb-4 text-base">Quick Links</h5>
             <ul className="space-y-2 text-gray-400">
-              <li><Link to="/talents" className="hover:text-white text-base">Talents</Link></li>
-              <li><Link to="/showcase" className="hover:text-white text-base">Showcase</Link></li>
-              <li><Link to="/pricing" className="hover:text-white text-base">Pricing</Link></li>
-              <li><Link to="/apply-talent" className="hover:text-white text-base">Careers</Link></li>
+              <li><Link to="/talents" className="hover:text-white text-sm">Talents</Link></li>
+              <li><Link to="/showcase" className="hover:text-white text-sm">Showcase</Link></li>
+              <li><Link to="/pricing" className="hover:text-white text-sm">Pricing</Link></li>
+              <li><Link to="/apply-talent" className="hover:text-white text-sm">Careers</Link></li>
             </ul>
           </div>
           <div>
             <h5 className="font-semibold mb-4 text-base">Resources</h5>
             <ul className="space-y-2 text-gray-400">
-              <li><Link to="/guides" className="hover:text-white text-base">Guides</Link></li>
-              <li className="text-base">Products</li>
-              <li><Link to="/scope" className="hover:text-white text-base">Scope of work</Link></li>
-              <li> <Link to="/FAQ" className="hover:text-white text-base">FAQ</Link></li>
+              <li><Link to="/guides" className="hover:text-white text-sm">Guides</Link></li>
+              <li className="text-sm">Products</li>
+              <li><Link to="/scope" className="hover:text-white text-sm">Scope of work</Link></li>
+              <li> <Link to="/FAQ" className="hover:text-white text-sm">FAQ</Link></li>
             </ul>
           </div>
           <div>
             <h5 className="font-semibold mb-4 text-base">Follow Us</h5>
             <ul className="space-y-2 text-gray-400">
-              <li className="text-base">LinkedIn</li>
-              <li className="text-base">Facebook</li>
-              <li className="text-base">Instagram</li>
-              <li className="text-base">Twitter</li>
+              <li className="text-sm">LinkedIn</li>
+              <li className="text-sm">Facebook</li>
+              <li className="text-sm">Instagram</li>
+              <li className="text-sm">Twitter</li>
             </ul>
           </div>
           <div>
             <h5 className="font-semibold mb-4 text-base">Contact Info</h5>
-            <div className="text-gray-400 text-base space-y-2">
-              <p>10114 102nd Street Floor 3</p>
-              <p>Ozone Park, NY, 11416</p>
-              <p>+1 929 3938 698</p>
-              <p>sales@startmodo.com</p>
-              <p>Mon-Fri 10am-6pm</p>
+            <div className="text-gray-400 text-sm space-y-2">
+              <p className="leading-snug">10114 102nd Street Floor 3</p>
+              <p className="leading-snug">Ozone Park, NY, 11416</p>
+              <p className="leading-snug">+1 929 3938 698</p>
+              <p className="leading-snug">sales@startmodo.com</p>
+              <p className="leading-snug">Mon-Fri 10am-6pm</p>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400 text-base">
-          <p>Copyright © 2025 Startmodo. All Rights Reserved.</p>
+        <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
+          <p className="text-sm">Copyright © 2025 Startmodo. All Rights Reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <Link to="/terms" className="hover:text-white text-base">Terms & Conditions</Link>
-            <Link to="/privacy" className="hover:text-white text-base">Privacy Policy</Link>
-            <Link to="/cookies" className="hover:text-white text-base">Cookie Policy</Link>
-            <Link to="/data-preferences" className="hover:text-white text-base">Data Preferences</Link>
-            <Link to="/imprint" className="hover:text-white text-base">Imprint</Link>
+            <Link to="/terms" className="hover:text-white text-sm">Terms & Conditions</Link>
+            <Link to="/privacy" className="hover:text-white text-sm">Privacy Policy</Link>
+            <Link to="/cookies" className="hover:text-white text-sm">Cookie Policy</Link>
+            <Link to="/data-preferences" className="hover:text-white text-sm">Data Preferences</Link>
+            <Link to="/imprint" className="hover:text-white text-sm">Imprint</Link>
           </div>
         </div>
       </div>

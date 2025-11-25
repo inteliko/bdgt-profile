@@ -169,11 +169,11 @@ const Talents = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black text-white">
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 bg-growmodo-dark text-white">
+      <section className="pt-32 pb-20 px-6 bg-black text-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
@@ -202,79 +202,76 @@ const Talents = () => {
 
           
 
-          {/* Visual Talent Showcase Grid */}
-          <div className="relative mb-16">
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-8">
-              {Array.from({ length: 24 }).map((_, index) => (
-                <div key={index} className="relative">
-                  <div className="w-full aspect-square bg-gray-700 rounded-lg overflow-hidden">
-                    {/* Add actual talent photos for highlighted positions */}
-                    {[2, 7, 11, 18, 21].includes(index) ? (
-                      <img 
-                        src={talentImages[Math.floor(Math.random() * talentImages.length)]} 
-                        alt={`Talent ${index}`}
-                        className="w-full h-full object-cover"
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-gray-600 to-gray-800"></div>
-                    )}
+              {/* Visual Talent Showcase Cluster (positioned tiles to mimic reference) */}
+              <div className="relative mb-16">
+                <div className="max-w-5xl mx-auto">
+                  <div className="relative h-64 md:h-80 lg:h-[360px]">
+                    {/* Define positioned tiles */}
+                    {(
+                      [
+                        { left: '8%', top: '20%', size: 72, type: 'avatar', imgIndex: 0 },
+                        { left: '22%', top: '6%', size: 96, type: 'avatar', imgIndex: 1, ring: true },
+                        { left: '34%', top: '14%', size: 140, type: 'card', card: 'chart' },
+                        { left: '46%', top: '4%', size: 96, type: 'avatar', imgIndex: 2 },
+                        { left: '60%', top: '18%', size: 220, type: 'card', card: 'stat' },
+                        { left: '72%', top: '10%', size: 80, type: 'avatar', imgIndex: 3 },
+                        { left: '14%', top: '36%', size: 84, type: 'avatar', imgIndex: 4 },
+                        { left: '30%', top: '40%', size: 120, type: 'card', card: 'map' },
+                        { left: '50%', top: '36%', size: 100, type: 'avatar', imgIndex: 5 },
+                        { left: '66%', top: '36%', size: 84, type: 'avatar', imgIndex: 6 },
+                        { left: '78%', top: '30%', size: 72, type: 'avatar', imgIndex: 7 },
+                        { left: '40%', top: '54%', size: 110, type: 'card', card: 'panel' },
+                        { left: '56%', top: '56%', size: 88, type: 'avatar', imgIndex: 2 },
+                        { left: '68%', top: '52%', size: 76, type: 'avatar', imgIndex: 4 },
+                      ]
+                    ).map((tile, i) => (
+                      <div
+                        key={i}
+                        className="absolute rounded-lg shadow-2xl flex items-center justify-center overflow-hidden"
+                        style={{ left: tile.left, top: tile.top, width: tile.size, height: tile.size, transform: 'translate(-50%,-50%)' }}
+                      >
+                        {tile.type === 'avatar' ? (
+                          <div className="w-full h-full rounded-lg bg-black/60 border border-white/6 flex items-center justify-center">
+                            <img
+                              src={talentImages[tile.imgIndex % talentImages.length]}
+                              alt={`Talent ${tile.imgIndex}`}
+                              className={`object-cover ${tile.ring ? 'rounded-lg ring-4 ring-[#00f2a6]' : 'rounded-lg'}`} 
+                              style={{ width: '100%', height: '100%' }}
+                            />
+                          </div>
+                        ) : (
+                          // simple card placeholders (chart / stat / panel)
+                          (tile.card === 'chart') ? (
+                            <div className="w-full h-full bg-white rounded-lg p-2 flex items-center justify-center">
+                              <svg viewBox="0 0 100 60" className="w-full h-full">
+                                <rect width="100" height="60" rx="6" fill="#f8fafc" />
+                                <polyline points="6,48 24,36 42,40 60,24 78,28 94,18" fill="none" stroke="#3b82f6" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                              </svg>
+                            </div>
+                          ) : tile.card === 'stat' ? (
+                            <div className="w-full h-full bg-white rounded-lg p-3 flex flex-col justify-center">
+                              <div className="text-2xl font-bold text-black">70%</div>
+                              <div className="text-xs text-gray-500">Monthly Growth</div>
+                            </div>
+                          ) : tile.card === 'map' ? (
+                            <div className="w-full h-full bg-white rounded-lg p-2 flex items-center justify-center">
+                              <div className="w-full h-full bg-blue-500 rounded-md flex items-center justify-center text-white font-semibold">Map</div>
+                            </div>
+                          ) : (
+                            <div className="w-full h-full bg-white rounded-lg p-2"></div>
+                          )
+                        )}
+                      </div>
+                    ))}
                   </div>
-                  {/* Overlay some with data visualizations */}
-                  {index === 5 && (
-                    <div className="absolute inset-0 bg-white bg-opacity-95 rounded-lg p-3 flex flex-col justify-center">
-                      <div className="text-xs text-gray-600 mb-2">Monthly Growth Movement</div>
-                      <div className="space-y-1">
-                        <div className="h-1 bg-blue-500 rounded w-3/4"></div>
-                        <div className="h-1 bg-blue-500 rounded w-full"></div>
-                        <div className="h-1 bg-blue-500 rounded w-1/2"></div>
-                      </div>
-                    </div>
-                  )}
-                  {index === 15 && (
-                    <div className="absolute inset-0 bg-white bg-opacity-95 rounded-lg p-3 flex flex-col justify-center">
-                      <div className="text-2xl font-bold text-blue-600">70%</div>
-                      <div className="text-xs text-gray-600">Growth</div>
-                    </div>
-                  )}
-                  {index === 9 && (
-                    <div className="absolute inset-0 bg-blue-500 bg-opacity-95 rounded-lg p-3 flex flex-col justify-center">
-                      <div className="text-xs text-white mb-1">Developers Growth Map</div>
-                      <div className="flex space-x-1">
-                        <div className="w-2 h-6 bg-white rounded"></div>
-                        <div className="w-2 h-8 bg-white rounded"></div>
-                        <div className="w-2 h-4 bg-white rounded"></div>
-                        <div className="w-2 h-10 bg-white rounded"></div>
-                      </div>
-                    </div>
-                  )}
-                  {/* Add coding/development related visuals */}
-                  {index === 13 && (
-                    <div className="absolute inset-0 bg-green-500 bg-opacity-95 rounded-lg p-3 flex flex-col justify-center">
-                      <div className="text-xs text-white mb-1">Code Quality Score</div>
-                      <div className="text-lg font-bold text-white">95%</div>
-                    </div>
-                  )}
-                  {index === 19 && (
-                    <div className="absolute inset-0 bg-purple-500 bg-opacity-95 rounded-lg p-3 flex flex-col justify-center">
-                      <div className="text-xs text-white mb-1">Design Systems</div>
-                      <div className="grid grid-cols-2 gap-1">
-                        <div className="w-full h-2 bg-white rounded"></div>
-                        <div className="w-full h-2 bg-white rounded"></div>
-                        <div className="w-full h-2 bg-white rounded"></div>
-                        <div className="w-full h-2 bg-white rounded"></div>
-                      </div>
-                    </div>
-                  )}
                 </div>
-              ))}
-            </div>
-          </div>
+              </div>
 
           {/* Stats Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
-            {stats.map((stat, index) => (
+            {stats.slice(0, 3).map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-growmodo-green mb-2">{stat.number}</div>
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.number}</div>
                 <div className="text-sm text-gray-300">{stat.label}</div>
               </div>
             ))}
@@ -283,32 +280,32 @@ const Talents = () => {
       </section>
 
       {/* Screening Process */}
-      <section className="py-20 px-6 bg-gray-50">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-start">
             <div>
-              <h2 className="text-4xl font-bold mb-6">
-                Our Comprehensive Screening &<br />
+              <h2 className="text-5xl font-bold mb-6 text-black">
+                Our Screening &<br />
                 Talent Development Process
               </h2>
-              <p className="text-gray-600 mb-8 text-lg">
-                We've designed a thorough 6-step process to ensure only the most qualified, 
+              <p className="text-gray-700 mb-8 text-lg">
+                We've designed a thorough 6-step process to ensure only the most qualified,
                 committed, and culturally aligned professionals join our talent community.
               </p>
-              <Button className="bg-growmodo-blue text-white px-8 py-3 mb-8">
+              <Button className="bg-growmodo-blue text-white px-6 py-3 mb-8">
                 Join Talent Community
               </Button>
             </div>
 
-            <div className="space-y-8">
+            <div className="space-y-6">
               {screeningProcess.map((step, index) => (
-                <div key={index} className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-growmodo-blue rounded-lg flex items-center justify-center text-white">
+                <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm flex gap-4 items-start">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-growmodo-blue flex items-center justify-center text-white">
                     {step.icon}
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
+                    <h3 className="text-lg font-semibold mb-1 text-black">{step.title}</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
                   </div>
                 </div>
               ))}

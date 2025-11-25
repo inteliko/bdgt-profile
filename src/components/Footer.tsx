@@ -60,7 +60,7 @@ const Footer = () => {
               <p>10114 102nd Street Floor 3</p>
               <p>Ozone Park, NY, 11416</p>
               <p>+1 929 3938 698</p>
-              <p>sales@bdglobaltech.com</p>
+              <p>sales@startmodo.com</p>
               <p>Mon-Fri 10am-6pm</p>
             </div>
           </div>

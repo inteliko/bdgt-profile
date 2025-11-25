@@ -241,32 +241,36 @@ const Index = () => {
 
       
 
-      {/* Trusted Section */}
-      <section className="py-16 px-6">
+      {/* Trusted Section (reference layout) */}
+      <section className="py-16 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-1/2">
-              <h2 className="text-4xl font-bold mb-4 text-black">
+          <div className="grid md:grid-cols-12 gap-8 items-start">
+            <div className="md:col-span-5">
+              <h2 className="text-5xl font-extrabold mb-6 text-black leading-tight">
                 Trusted by fast-moving<br />
                 brands & agencies worldwide
               </h2>
-              <div className="flex flex-col gap-4">
-                <div className="flex items-center gap-4">
-                  <span className="text-3xl font-bold text-growmodo-blue">10,000+</span>
-                  <span className="text-gray-600">Tasks delivered</span>
+
+              <div className="mt-6 space-y-6">
+                <div className="flex items-center gap-6">
+                  <div className="text-growmodo-blue text-3xl md:text-4xl font-extrabold">10,000+</div>
+                  <div className="text-gray-600">Tasks delivered</div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <span className="text-3xl font-bold text-growmodo-blue">200+</span>
-                  <span className="text-gray-600">Projects nailed</span>
+                <div className="flex items-center gap-6">
+                  <div className="text-growmodo-blue text-3xl md:text-4xl font-extrabold">200+</div>
+                  <div className="text-gray-600">Projects nailed</div>
                 </div>
               </div>
             </div>
-            <div className="lg:w-1/2 grid grid-cols-2 gap-6">
-              {companies.map((company, index) => (
-                <div key={index} className="bg-gray-50 p-6 rounded-lg text-center">
-                  <span className="text-gray-400 font-medium">{company}</span>
-                </div>
-              ))}
+
+            <div className="md:col-span-7">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {companies.map((company, index) => (
+                  <div key={index} className="bg-gray-50 rounded-2xl py-8 px-6 flex items-center justify-center">
+                    <span className="uppercase text-gray-400 font-semibold tracking-wider">{company}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -522,57 +526,61 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Selected Work Section */}
-      <section className="py-20 px-6 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-12 items-start gap-8">
-            <div className="md:col-span-4">
-              <h2 className="text-5xl md:text-6xl font-bold mb-4 text-black">
-                Selected Work
-                <br />
-                From Our Talents
-              </h2>
+      {/* Selected Work Section - full width carousel with left heading */}
+      <section className="py-20 bg-gray-50 w-full overflow-hidden">
+        <div className="flex items-start">
+          {/* Left heading column (desktop) */}
+          <div className="hidden md:block w-[360px] px-6">
+            <h2 className="text-5xl md:text-6xl font-bold mb-4 text-black leading-tight">
+              Selected Work
+              <br />
+              From Our Talents
+            </h2>
+          </div>
+
+          {/* Carousel column (fills remaining width) */}
+          <div className="flex-1">
+            {/* Mobile heading above carousel */}
+            <div className="md:hidden px-6 mb-6">
+              <h2 className="text-3xl font-bold text-black">Selected Work From Our Talents</h2>
             </div>
 
-
-
-
-            <div className="md:col-span-8 relative">
+            <div className="w-full px-6">
               <Carousel
                 opts={{
                   align: "center",
-                  loop: true,
+                  loop: false,
                 }}
-                className="w-full"
+                className="w-full max-w-none"
               >
-                <CarouselContent className="-ml-4">
+                <CarouselContent className="!ml-0">
                   {workItems.map((item) => (
-                    <CarouselItem key={item.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                    <CarouselItem key={item.id} className="pl-6 md:basis-[52%] lg:basis-[40%]">
                       <div className="group cursor-pointer">
-                        <div className="bg-white rounded-2xl overflow-hidden shadow-lg aspect-[4/3] hover:shadow-2xl transition-all duration-300">
-                          <img 
-                            src={item.image} 
+                        <div className="bg-white rounded-2xl overflow-hidden shadow-xl aspect-[3/2] hover:shadow-2xl transition-all duration-300">
+                          <img
+                            src={item.image}
                             alt={item.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           />
                         </div>
-                        <div className="mt-4">
-                          <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                          <p className="text-gray-600 text-sm">{item.description}</p>
-                        </div>
                       </div>
                     </CarouselItem>
                   ))}
-                </CarouselContent>
-                <CarouselPrevious className="absolute right-20 top-4 z-40 w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-md" />
-                <CarouselNext className="absolute right-4 top-4 z-40 w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-md" />
-              </Carousel>
 
-              <Link to="/showcase" className="absolute -right-24 top-1/2 transform -translate-y-1/2 z-30">
-                <div className="w-40 h-40 rounded-full bg-white flex items-center justify-center shadow-xl">
-                  <span className="text-lg font-medium">See More &rarr;</span>
-                </div>
-              </Link>
+                  <CarouselItem key="see-more" className="pl-6 md:basis-[52%] lg:basis-[40%]">
+                    <Link to="/showcase" className="group block">
+                      <div className="rounded-2xl overflow-hidden shadow-xl aspect-[3/2] flex items-center justify-center">
+                        <div className="w-56 h-56 rounded-full bg-white flex items-center justify-center shadow-2xl text-2xl font-semibold">
+                          See More →
+                        </div>
+                      </div>
+                    </Link>
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious className="absolute left-4 top-1/2 transform -translate-y-1/2 z-40 w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-md" />
+                <CarouselNext className="absolute right-4 top-1/2 transform -translate-y-1/2 z-40 w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-md" />
+              </Carousel>
             </div>
           </div>
         </div>

@@ -46,11 +46,7 @@ const MobileNav = () => {
           </Link>
         ))}
 
-        <Link to="/book-call" onClick={closeMenu}>
-          <Button className="bg-growmodo-blue text-white px-8 py-4 text-lg font-medium hover:bg-growmodo-green transition-all duration-300 transform hover:scale-105 rounded-lg shadow-lg">
-            Book a Call
-          </Button>
-        </Link>
+        {/* Book a Call intentionally omitted from mobile menu per design requirement */}
       </div>
     </div>
   );

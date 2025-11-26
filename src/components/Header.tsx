@@ -44,7 +44,7 @@ const Header = () => {
           </nav>
           
           <div className="flex items-center gap-4">
-            <Link to="/book-call">
+            <Link to="/book-call" className="hidden md:inline-block">
               <Button className="bg-black hover:bg-gray-800 text-white px-6 py-2 rounded-lg transition-all duration-300 text-lg">
                 Book a Call
               </Button>

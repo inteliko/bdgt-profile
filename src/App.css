@@ -40,3 +40,29 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Marquee / auto-scrolling skills */
+.marquee {
+  overflow: hidden;
+  width: 100%;
+}
+.marquee__track {
+  display: inline-flex;
+  gap: 2.25rem;
+  align-items: center;
+  white-space: nowrap;
+  will-change: transform;
+  animation-name: marquee-scroll;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.marquee__item {
+  display: inline-block;
+  color: #1e40af; /* Tailwind blue-800 */
+  font-weight: 500;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0%); }
+  to   { transform: translateX(-50%); }
+}

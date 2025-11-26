@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -50,32 +50,32 @@ const Talents = () => {
 
   const benefits = [
     {
-      icon: <Clock className="w-8 h-8" />,
+      icon: <Clock className="w-5 h-5" />,
       title: "Long-Term Engagement",
       description: "We don't work with random freelancers who we pull in for a project and then let go. We believe that people work best when they have a stable work environment with clear career advancement opportunities and long-term project commitments that allow for deep expertise development."
     },
     {
-      icon: <Target className="w-8 h-8" />,
+      icon: <Target className="w-5 h-5" />,
       title: "Fair Wages",
       description: "Most of our talents live in countries with lower living costs than the US or Europe. However, we make sure that they receive competitive compensation that reflects their skills and contributions, with regular performance-based rate increases and transparent salary progression paths."
     },
     {
-      icon: <Heart className="w-8 h-8" />,
+      icon: <Heart className="w-5 h-5" />,
       title: "Health Benefits",
       description: "Taking comprehensive care of our talents is as important as providing excellent service to our customers. We provide long-term contractors access to health benefits, wellness programs, and mental health support to ensure their overall well-being and work-life balance."
     },
     {
-      icon: <Users className="w-8 h-8" />,
+      icon: <Users className="w-5 h-5" />,
       title: "Remote Social Events",
       description: "Working from home has many benefits but also apparent drawbacks, like isolation and loneliness. We make it a priority that our talents feel part of a vibrant community through regular virtual team building events, skill sharing sessions, and fun social interactions."
     },
     {
-      icon: <TrendingUp className="w-8 h-8" />,
+      icon: <TrendingUp className="w-5 h-5" />,
       title: "8.6 eNPS Score",
       description: "A significant portion of our talent community growth has happened through referrals from our current team members. It turns out that A-players tend to attract more A-players, and our monthly team satisfaction surveys consistently reflect this positive culture and high engagement levels."
     },
     {
-      icon: <Shield className="w-8 h-8" />,
+      icon: <Shield className="w-5 h-5" />,
       title: "<1% Turnover",
       description: "Our rigorous applicant screening process, comprehensive skill development programs, and strong community platform have helped us build lasting relationships with talents who previously jumped from one client to the next, creating unprecedented stability in the industry."
     }
@@ -167,6 +167,63 @@ const Talents = () => {
     "/lovable-uploads/42bc35cf-64cd-49d8-a36c-b34ac31583a3.png",
     "/lovable-uploads/e3679983-32c7-4d6f-bd01-bc7873910659.png"
   ];
+
+  // Marquee component used for skill tags auto-scrolling (full-width, 3 alternating lines)
+  const Marquee = ({ text }: { text: string }) => {
+    const [tick, setTick] = useState(0);
+
+    useEffect(() => {
+      const interval = setInterval(() => setTick((t) => t + 1), 6000);
+      return () => clearInterval(interval);
+    }, []);
+
+    // Make the marquee much slower so it's easier to read
+    const baseDuration = Math.max(40, Math.min(120, Math.floor(text.length / 3)));
+
+    const FullWidthWrapper = ({ children }: { children: React.ReactNode }) => (
+      <div
+        style={{
+          position: 'relative',
+          left: '50%',
+          right: '50%',
+          marginLeft: '-50vw',
+          marginRight: '-50vw',
+          width: '100vw',
+          overflow: 'hidden',
+        }}
+      >
+        {children}
+      </div>
+    );
+
+    const Track = ({ dir, duration }: { dir: 'left' | 'right'; duration: number }) => {
+      const cls = dir === 'left' ? 'scrolling-content' : 'scrolling-content-right';
+      return (
+        <div className="scrolling-wrapper py-2">
+          <div className={cls} style={{ ['--marquee-duration' as any]: `${duration}s` }}>
+            <div className="inline-block font-medium mr-9 text-black" style={{ color: '#000' }}>{text}</div>
+            <div className="inline-block font-medium mr-9 text-black" style={{ color: '#000' }}>{text}</div>
+          </div>
+        </div>
+      );
+    };
+
+    return (
+      <div className="mt-8 mb-8">
+        <FullWidthWrapper>
+          <Track dir={tick % 2 === 0 ? 'left' : 'right'} duration={baseDuration} />
+        </FullWidthWrapper>
+
+        <FullWidthWrapper>
+          <Track dir={tick % 2 === 0 ? 'right' : 'left'} duration={Math.max(14, baseDuration - 6)} />
+        </FullWidthWrapper>
+
+        <FullWidthWrapper>
+          <Track dir={tick % 2 === 0 ? 'left' : 'right'} duration={Math.max(20, baseDuration + 6)} />
+        </FullWidthWrapper>
+      </div>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -280,35 +337,113 @@ const Talents = () => {
       </section>
 
       {/* Screening Process */}
-      <section className="py-20 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-16 items-start">
-            <div>
-              <h2 className="text-5xl font-bold mb-6 text-black">
-                Our Screening &<br />
-                Talent Development Process
+      <section className="bg-black text-white py-28">
+        <div className="max-w-6xl mx-auto px-6 lg:px-0">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Left - heading + CTA */}
+            <div className="lg:pr-12">
+              <h2 className="text-4xl lg:text-5xl font-bold leading-tight mb-6">
+                Our Comprehensive Screening
+                <br />
+                &amp; Talent Development Process
               </h2>
-              <p className="text-gray-700 mb-8 text-lg">
-                We've designed a thorough 6-step process to ensure only the most qualified,
+              <p className="text-gray-300 mb-8 max-w-xl">
+                We've designed a thorough 6‑step process to ensure only the most qualified,
                 committed, and culturally aligned professionals join our talent community.
               </p>
-              <Button className="bg-growmodo-blue text-white px-6 py-3 mb-8">
+              <button className="inline-block bg-[#3b82f6] hover:bg-[#2b6be6] text-white rounded-md px-6 py-3 font-medium">
                 Join Talent Community
-              </Button>
+              </button>
             </div>
 
-            <div className="space-y-6">
-              {screeningProcess.map((step, index) => (
-                <div key={index} className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm flex gap-4 items-start">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-growmodo-blue flex items-center justify-center text-white">
-                    {step.icon}
+            {/* Right - stacked white/vector cards (on black bg) */}
+            <div className="space-y-6 relative">
+              {/* Card 1 - Skill Review (slight rotation for visual) */}
+              <div className="bg-white text-gray-800 rounded-xl shadow-xl p-5 max-w-md transform -rotate-1">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-md bg-[#3b82f6] flex items-center justify-center flex-shrink-0">
+                    {/* shield svg */}
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+                      <path d="M12 2l7 3v5c0 5-3.5 9-7 11-3.5-2-7-6-7-11V5l7-3z" fill="#fff"/>
+                    </svg>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold mb-1 text-black">{step.title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
+                    <h3 className="font-semibold text-lg">Skill Review</h3>
+                    <p className="text-sm text-gray-600 mt-2">
+                      Every applicant completes a questionnaire, rates their skills, and provides a portfolio for our team to review.
+                    </p>
                   </div>
                 </div>
-              ))}
+              </div>
+
+              {/* Card 2 - Intro Call (center card / larger vector) */}
+              <div className="bg-white text-gray-800 rounded-xl shadow-2xl p-6 max-w-xl mx-auto transform rotate-1">
+                <div className="flex items-center gap-6">
+                  <div className="w-12 h-12 rounded-md bg-[#06b6d4] flex items-center justify-center flex-shrink-0">
+                    {/* person svg */}
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+                      <circle cx="12" cy="8" r="3" fill="#fff"/>
+                      <path d="M4 20c0-4 4-6 8-6s8 2 8 6" fill="#fff"/>
+                    </svg>
+                  </div>
+
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-lg">Intro Call</h3>
+                    <p className="text-sm text-gray-600 mt-2">
+                      Our recruitment manager schedules a detailed intro call to dive deeper into technical knowledge and culture fit.
+                    </p>
+                  </div>
+
+                  {/* small chart/vector preview on the right */}
+                  <div className="w-28 h-18 bg-gray-100 rounded-lg flex items-center justify-center">
+                    <svg width="80" height="44" viewBox="0 0 80 44" fill="none" aria-hidden>
+                      <rect x="4" y="8" width="10" height="28" rx="2" fill="#e6eefc"/>
+                      <rect x="20" y="2" width="10" height="34" rx="2" fill="#c3ddff"/>
+                      <rect x="36" y="12" width="10" height="24" rx="2" fill="#7aa9ff"/>
+                      <rect x="52" y="6" width="10" height="30" rx="2" fill="#2b6be6"/>
+                      <rect x="68" y="16" width="8" height="20" rx="2" fill="#1e40af"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 3 - Trial Project */}
+              <div className="bg-white text-gray-800 rounded-xl shadow-xl p-5 max-w-md transform -rotate-1 ml-auto">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-md bg-[#f59e0b] flex items-center justify-center flex-shrink-0">
+                    {/* target svg */}
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+                      <circle cx="12" cy="12" r="9" stroke="#fff" strokeWidth="1.5"/>
+                      <circle cx="12" cy="12" r="5" fill="#fff"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Trial Project</h3>
+                    <p className="text-sm text-gray-600 mt-2">
+                      We assign a carefully designed test project to evaluate how candidates work under real conditions and meet deadlines.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 4 - Expert Panel (smaller, offset) */}
+              <div className="bg-white text-gray-800 rounded-xl shadow-lg p-5 max-w-sm transform rotate-1">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-md bg-[#10b981] flex items-center justify-center flex-shrink-0">
+                    {/* group svg */}
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+                      <path d="M16 11a3 3 0 100-6 3 3 0 000 6zM8 11a3 3 0 100-6 3 3 0 000 6z" fill="#fff"/>
+                      <path d="M2 20a6 3 0 0114 0H2z" fill="#fff" opacity="0.9"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Expert Panel</h3>
+                    <p className="text-sm text-gray-600 mt-2">
+                      Structured panel interviews and peer evaluations ensure collaborative hiring decisions and quality control.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -317,82 +452,94 @@ const Talents = () => {
       {/* Skills Section */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-8">Cherry-Pick Skills On-Demand</h2>
+          <h2 className="text-4xl font-bold mb-8 text-black">Cherry-Pick Skills On-Demand</h2>
           <p className="text-xl text-gray-600 mb-12">
             Your dedicated Project Manager delegates work on a task-by-task basis and ensures a qualified 
             expert gets the job done efficiently, even if you need these specialized skills for just one day.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-3 mb-8 text-blue-600 text-base leading-loose">
-            {[
-              'No-Code Apps', 'Elementor Website', 'Landing Pages', 'Custom CSS', 'Shopify Development', 'Vue.js', 'Presentation Design',
-              'Logo Design', 'Google Analytics', 'Sales Funnels', 'Motion Graphics', 'UI/UX Design', 'Membership Sites', 'Tailwind CSS',
-              'Email Templates', 'HTML', 'Mobile App Design', 'WordPress', 'Figma', 'Automation', 'Branding', 'Online Course Setup',
-              'Sitemap Creation', 'Web App Design', 'Zapier', 'Site Speed Optimization', 'React Development', 'Python Programming',
-              'Database Design', 'API Integration', 'E-commerce Solutions', 'SEO Optimization', 'Content Management', 'Digital Marketing'
-            ].join(' • ')}
-          </div>
+          <Marquee text={[
+            'No-Code Apps', 'Elementor Website', 'Landing Pages', 'Custom CSS', 'Shopify Development', 'Vue.js', 'Presentation Design',
+            'Logo Design', 'Google Analytics', 'Sales Funnels', 'Motion Graphics', 'UI/UX Design', 'Membership Sites', 'Tailwind CSS',
+            'Email Templates', 'HTML', 'Mobile App Design', 'WordPress', 'Figma', 'Automation', 'Branding', 'Online Course Setup',
+            'Sitemap Creation', 'Web App Design', 'Zapier', 'Site Speed Optimization', 'React Development', 'Python Programming',
+            'Database Design', 'API Integration', 'E-commerce Solutions', 'SEO Optimization', 'Content Management', 'Digital Marketing'
+          ].join(' • ')} />
 
         </div>
       </section>
 
-      {/* Growth Maps Section */}
-      <section className="py-20 px-6 bg-gray-50">
+      {/* Growth Maps Section (updated to match reference collage) */}
+      <section className="py-20 px-6 bg-black text-white">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <div className="text-center mb-6">
-                <div className="text-growmodo-green text-sm mb-4">📈 Monthly Growth Movement</div>
-                <div className="space-y-3 mb-6">
-                  <div className="h-2 bg-blue-500 rounded w-3/4"></div>
-                  <div className="h-2 bg-blue-500 rounded w-full"></div>
-                  <div className="h-2 bg-blue-500 rounded w-1/2"></div>
-                  <div className="h-2 bg-blue-500 rounded w-5/6"></div>
+            {/* Left: collage of vector/chart card, small meeting card, profile stat card */}
+            <div className="relative flex justify-center">
+              <div className="relative w-full max-w-[520px] h-[420px]">
+                {/* Big chart card */}
+                <div className="absolute left-1/2 -translate-x-1/2 top-10 w-[340px] h-[280px] bg-white rounded-xl shadow-2xl p-4">
+                  <div className="text-sm text-gray-500 mb-2">Monthly Growth Movement</div>
+                  <svg viewBox="0 0 360 220" className="w-full h-full" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Monthly Growth Movement">
+                    <rect width="100%" height="100%" rx="8" fill="#ffffff" />
+                    <g transform="translate(28,30)" fill="none">
+                      <line x1="0" y1="15" x2="320" y2="15" stroke="#e6eefc" strokeWidth="10" strokeLinecap="round" opacity="0.45" />
+                      <line x1="0" y1="45" x2="230" y2="45" stroke="#3b82f6" strokeWidth="10" strokeLinecap="round" />
+                      <line x1="0" y1="75" x2="300" y2="75" stroke="#3b82f6" strokeWidth="10" strokeLinecap="round" />
+                      <line x1="0" y1="105" x2="180" y2="105" stroke="#3b82f6" strokeWidth="10" strokeLinecap="round" />
+                      <line x1="0" y1="135" x2="320" y2="135" stroke="#3b82f6" strokeWidth="10" strokeLinecap="round" />
+                    </g>
+                  </svg>
                 </div>
-                <div className="bg-gray-50 p-4 rounded-lg mb-4">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-8 h-8 bg-blue-500 rounded-full"></div>
-                    <div className="text-left">
-                      <div className="font-semibold text-sm">Advanced Skills Review</div>
-                      <div className="text-xs text-gray-500">Peer Mentoring Session</div>
+
+                {/* Small meeting card - top-right */}
+                <div className="absolute right-6 top-6 w-40 bg-white text-gray-900 rounded-lg shadow-lg p-3 flex flex-col items-start gap-2">
+                  <div className="flex items-center gap-2">
+                    <div className="flex -space-x-2">
+                      <img src={talentImages[0]} alt="a" className="w-8 h-8 rounded-full border-2 border-white" />
+                      <img src={talentImages[1]} alt="b" className="w-8 h-8 rounded-full border-2 border-white" />
+                      <img src={talentImages[2]} alt="c" className="w-8 h-8 rounded-full border-2 border-white" />
                     </div>
                   </div>
+                  <div className="text-sm font-semibold">Design Review</div>
+                  <button className="mt-1 bg-gray-100 text-gray-800 rounded-md px-3 py-1 text-sm">Join Meeting</button>
                 </div>
-                <div className="bg-blue-500 text-white p-4 rounded-lg">
-                  <div className="text-3xl font-bold mb-1">86%</div>
-                  <div className="text-sm opacity-90">Growth Performance</div>
-                  <div className="text-xs opacity-75 mt-1">Current Position: Senior Full Stack Developer</div>
+
+                {/* Profile stat card - bottom-left */}
+                <div className="absolute left-8 bottom-6 w-56 bg-white text-gray-900 rounded-lg shadow-2xl overflow-hidden">
+                  <div className="bg-blue-500 py-4 flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-white overflow-hidden flex items-center justify-center">
+                      <img src={talentImages[3]} alt="profile" className="w-full h-full object-cover" />
+                    </div>
+                  </div>
+                  <div className="p-4 text-center">
+                    <div className="text-2xl font-bold">86%</div>
+                    <div className="text-xs text-gray-500 mt-1">Growth Performance</div>
+                    <div className="text-sm font-semibold mt-3">Advance UI Designer</div>
+                    <div className="text-xs text-gray-500 mt-2">Courses Taken <strong className="text-black">10</strong></div>
+                  </div>
                 </div>
               </div>
             </div>
-            
+
+            {/* Right: headline, paragraph, and check list */}
             <div>
-              <h2 className="text-4xl font-bold mb-6">
-                We Develop Comprehensive Growth Maps Instead of Believing the Talent Myth
-              </h2>
-              <p className="text-gray-600 mb-8">
-                In a rapidly evolving industry like ours, recruiting great talent is not enough anymore. 
-                We must continuously invest in the development of new skills and provide our designers & developers 
-                with clear, structured career advancement paths and ongoing learning opportunities.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-growmodo-green" />
-                  <span>Monthly tracked skill assessments and work quality improvements</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-growmodo-green" />
-                  <span>Weekly peer-to-peer coaching sessions and knowledge sharing</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-growmodo-green" />
-                  <span>Access to premium online courses for learning cutting-edge technologies</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-growmodo-green" />
-                  <span>Personalized career development plans with clear milestones</span>
-                </div>
-              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-6">We Develop Growth Maps Instead of Believing the Talent Myth</h2>
+              <p className="text-gray-300 mb-8 max-w-prose">In a fast-moving industry like ours, recruiting great talent is not enough anymore. We have to invest in the development of new skills and give our designers & developers a clear path for their careers.</p>
+
+              <ul className="space-y-5">
+                <li className="flex items-start gap-4 text-gray-200">
+                  <span className="mt-1 text-green-400 text-xl">✓</span>
+                  <span>Monthly tracked skill and work quality improvements</span>
+                </li>
+                <li className="flex items-start gap-4 text-gray-200">
+                  <span className="mt-1 text-green-400 text-xl">✓</span>
+                  <span>Weekly peer-to-peer coaching sessions</span>
+                </li>
+                <li className="flex items-start gap-4 text-gray-200">
+                  <span className="mt-1 text-green-400 text-xl">✓</span>
+                  <span>Access to the latest online courses to learn new tech and trends</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -401,9 +548,11 @@ const Talents = () => {
       {/* Benefits Section */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">
-            Outsource <span className="text-growmodo-blue">Sustainably</span><br />
-            Without the Bad Taste
+          <h2 className="text-4xl font-bold mb-6 text-black">
+            <span className="text-black">Outsource</span>{' '}
+            <span className="text-growmodo-blue">Sustainably</span>
+            <br />
+            <span className="text-black">Without the Bad Taste</span>
           </h2>
           <p className="text-xl text-gray-600 mb-16 max-w-4xl mx-auto">
             Startmodo aims to connect fast-growing companies with ambitious 
@@ -414,11 +563,11 @@ const Talents = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {benefits.map((benefit, index) => (
               <div key={index} className="text-left p-6 bg-gray-50 rounded-2xl">
-                <div className="w-12 h-12 bg-growmodo-blue rounded-lg mb-4 flex items-center justify-center text-white">
+                <div className="w-10 h-10 rounded-md border border-gray-100 mb-4 flex items-center justify-center text-growmodo-blue">
                   {benefit.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-                <p className="text-gray-600 text-sm">{benefit.description}</p>
+                <h3 className="text-base font-semibold mb-2 text-gray-900">{benefit.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -426,7 +575,7 @@ const Talents = () => {
       </section>
 
       {/* Traditional Way Section - Now Interactive */}
-      <section className="py-20 px-6 bg-growmodo-dark text-white">
+      <section className="py-20 px-6 bg-black text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">
             The Traditional Way of Hiring<br />

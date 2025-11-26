@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import { useEffect } from "react";
 
 const Pricing = () => {
-  const [selectedTalents, setSelectedTalents] = useState<number | "more">(2);
+  const [selectedTalents, setSelectedTalents] = useState<number | "more">(1);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const Pricing = () => {
 
   const getPricing = () => {
     switch (selectedTalents) {
-      case 1: return "$1995";
+      case 1: return "$1990";
       case 2: return "$3990";
       case 4: return "$9975";
       case 5: return "$9975";
@@ -333,58 +333,68 @@ const Pricing = () => {
             eliminating the most common pain points of the industry.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-6">
-              <div className="flex items-center gap-3">
-                <Check className="w-6 h-6 text-green-500" />
-                <span className="text-lg">Scalable Remote Workforce</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Check className="w-6 h-6 text-green-500" />
-                <span className="text-lg">Top 3% Designers & Developers</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Check className="w-6 h-6 text-green-500" />
-                <span className="text-lg">You Own 100% of Everything We Do</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Check className="w-6 h-6 text-green-500" />
-                <span className="text-lg">Dedicated Project Manager</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Check className="w-6 h-6 text-green-500" />
-                <span className="text-lg">Daily Updates (Monday to Friday)</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Check className="w-6 h-6 text-green-500" />
-                <span className="text-lg">No Contract. Cancel Anytime.</span>
-              </div>
-            </div>
-            
-            <div className="space-y-6">
-              <div className="flex items-center gap-3">
-                <div className="w-6 h-6 text-red-500">✕</div>
-                <span className="text-lg">No Long Hiring Process</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-6 h-6 text-red-500">✕</div>
-                <span className="text-lg">No Disappearing Remote Workers</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-6 h-6 text-red-500">✕</div>
-                <span className="text-lg">No Dependency on Your Agency for Updates</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-6 h-6 text-red-500">✕</div>
-                <span className="text-lg">No Big Lump-sum Payment</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-6 h-6 text-red-500">✕</div>
-                <span className="text-lg">No Long-Term Commitment</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-6 h-6 text-red-500">✕</div>
-                <span className="text-lg">No Endless Waiting for a Response by Your Web Designer</span>
+          <div className="relative">
+            <div className="max-w-5xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-12 items-start">
+                {/* Left: floating white card with check list */}
+                <div className="relative">
+                  <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md mx-auto -mt-8">
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3">
+                        <Check className="w-5 h-5 text-green-500" />
+                        <span className="text-base font-medium">Scalable Remote Workforce</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Check className="w-5 h-5 text-green-500" />
+                        <span className="text-base font-medium">Top 3% Designers & Developers</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Check className="w-5 h-5 text-green-500" />
+                        <span className="text-base font-medium">You Own 100% of Everything We Do</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Check className="w-5 h-5 text-green-500" />
+                        <span className="text-base font-medium">Dedicated Project Manager</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Check className="w-5 h-5 text-green-500" />
+                        <span className="text-base font-medium">Daily Updates (Monday to Friday)</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Check className="w-5 h-5 text-green-500" />
+                        <span className="text-base font-medium">No Contract. Cancel Anytime.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right: negative list */}
+                <div className="space-y-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-red-50 flex items-center justify-center text-red-500">✕</div>
+                    <span className="text-base">No Long Hiring Process</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-red-50 flex items-center justify-center text-red-500">✕</div>
+                    <span className="text-base">No Disappearing Remote Workers</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-red-50 flex items-center justify-center text-red-500">✕</div>
+                    <span className="text-base">No Dependency on Your Agency for Updates</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-red-50 flex items-center justify-center text-red-500">✕</div>
+                    <span className="text-base">No Big Lump-sum Payment</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-red-50 flex items-center justify-center text-red-500">✕</div>
+                    <span className="text-base">No Long-Term Commitment</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-red-50 flex items-center justify-center text-red-500">✕</div>
+                    <span className="text-base">No Endless Waiting for a Response by Your Web Designer</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

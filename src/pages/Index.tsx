@@ -218,7 +218,7 @@ const Index = () => {
               </Button>
             </Link>
             <Link to="/showcase" className="transform transition-all duration-300 hover:scale-105">
-              <Button variant="outline" className="border-2 border-growmodo-blue text-growmodo-blue px-8 py-4 text-xl font-medium hover:bg-growmodo-blue hover:text-white transition-all duration-300 rounded-lg relative overflow-hidden group">
+              <Button variant="outline" className="border-2 border-growmodo-blue text-growmodo-blue px-8 py-4 text-xl font-medium transition-all duration-300 rounded-lg relative overflow-hidden group btn-hero-outline">
                 <span className="relative z-10">See Previous Work</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-growmodo-blue to-growmodo-green opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
               </Button>
@@ -228,15 +228,15 @@ const Index = () => {
           {/* Features list */}
           <div className="flex flex-col md:flex-row justify-center items-center gap-8 text-lg text-gray-700">
             <div className="flex items-center gap-2">
-              <Check className="w-6 h-6 text-growmodo-green" />
+              <Check className="w-6 h-6 text-growmodo-blue" />
               <span className="font-medium">Unlimited design & dev requests</span>
             </div>
             <div className="flex items-center gap-2">
-              <Check className="w-6 h-6 text-growmodo-green" />
+              <Check className="w-6 h-6 text-growmodo-blue" />
               <span className="font-medium">Monthly flat-rate</span>
             </div>
             <div className="flex items-center gap-2">
-              <Check className="w-6 h-6 text-growmodo-green" />
+              <Check className="w-6 h-6 text-growmodo-blue" />
               <span className="font-medium">No Contract. Cancel anytime</span>
             </div>
           </div>

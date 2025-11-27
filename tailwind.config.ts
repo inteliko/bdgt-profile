@@ -53,7 +53,7 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				'growmodo-blue': 'hsl(224 100% 65%)',
+				'growmodo-blue': 'hsl(220 90% 56%)',
 				'growmodo-green': 'hsl(86 100% 65%)',
 				'growmodo-dark': 'hsl(220 13% 18%)',
 				'growmodo-gray': 'hsl(220 9% 46%)',
@@ -93,6 +93,9 @@ export default {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'scroll-left': 'scroll-left 30s linear infinite'
+			}
+			,fontFamily: {
+				sans: ["'Space Grotesk Old'", "'Space Grotesk'", 'Arial', 'sans-serif']
 			}
 		}
 	},

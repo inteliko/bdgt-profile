@@ -77,7 +77,7 @@ const TalentCarousel = () => {
         <div className="mb-8">
           {/* Continuous right-to-left marquee */}
           <div className="scrolling-wrapper w-full overflow-x-hidden">
-            <div className="scrolling-content inline-flex items-center gap-8 whitespace-nowrap">
+            <div className="scrolling-content inline-flex items-center gap-8 whitespace-nowrap" style={{ ['--marquee-duration' as any]: '30s' }}>
               {[...talents, ...talents].map((talent, idx) => {
                 const colors = ["bg-white", "bg-blue-500 text-white", "bg-green-400 text-black", "bg-yellow-300 text-black", "bg-white", "bg-slate-50"];
                 const colorClass = colors[idx % colors.length];

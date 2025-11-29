@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import MobileNav from "@/components/MobileNav";
+import { useBookingModal } from '@/context/BookingModalContext';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,11 +45,7 @@ const Header = () => {
           </nav>
           
           <div className="flex items-center gap-4">
-            <Link to="/book-call" className="hidden md:inline-block">
-              <Button className="bg-black hover:bg-gray-800 text-white px-6 py-2 rounded-lg transition-all duration-300 text-lg">
-                Book a Call
-              </Button>
-            </Link>
+            <DesktopBookCall />
             <MobileNav />
           </div>
         </div>
@@ -56,5 +53,16 @@ const Header = () => {
     </header>
   );
 };
+
+function DesktopBookCall() {
+  const { open } = useBookingModal();
+  return (
+    <button onClick={open} className="hidden md:inline-block">
+      <Button className="bg-black hover:bg-gray-800 text-white px-6 py-2 rounded-lg transition-all duration-300 text-lg">
+        Book a Call
+      </Button>
+    </button>
+  );
+}
 
 export default Header;

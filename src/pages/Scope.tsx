@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Link } from "react-router-dom";
+import { useBookingModal } from "@/context/BookingModalContext";
 
 const Scope = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -503,6 +503,8 @@ const Scope = () => {
     return acc;
   }, {} as typeof projectServices);
 
+  const { open } = useBookingModal();
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -597,11 +599,9 @@ const Scope = () => {
 
                 <div>
                   <h4 className="font-semibold mb-4">Need Help?</h4>
-                  <Link to="/book-call">
-                    <Button className="w-full bg-black text-white hover:bg-gray-800">
-                      Chat With Us
-                    </Button>
-                  </Link>
+                  <Button onClick={() => open()} className="w-full bg-black text-white hover:bg-gray-800">
+                    Chat With Us
+                  </Button>
                 </div>
               </div>
             </div>
@@ -714,11 +714,9 @@ const Scope = () => {
           <p className="text-xl text-white/90 mb-8">
             Let's discuss your project requirements and how we can help bring your vision to life.
           </p>
-          <Link to="/book-call">
-            <Button className="bg-white text-black px-8 py-3 text-lg hover:bg-gray-100">
-              Book a Discovery Call
-            </Button>
-          </Link>
+          <Button onClick={() => open()} className="bg-white text-black px-8 py-3 text-lg hover:bg-gray-100">
+            Book a Discovery Call
+          </Button>
         </div>
       </section>
       

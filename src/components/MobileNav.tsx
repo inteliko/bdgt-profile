@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { createPortal } from "react-dom";
+import { useBookingModal } from '@/context/BookingModalContext';
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,11 +47,7 @@ const MobileNav = () => {
           </Link>
         ))}
         {/* Re-add Book a Call CTA for mobile overlay — closes menu when clicked */}
-        <Link to="/book-call" onClick={closeMenu} className="mt-6">
-          <Button className="bg-growmodo-blue text-white px-8 py-4 text-lg font-medium hover:bg-growmodo-green transition-all duration-300 transform hover:scale-105 rounded-lg shadow-lg">
-            Book a Call
-          </Button>
-        </Link>
+        <MobileBookingButton onClick={closeMenu} />
       </div>
     </div>
   );
@@ -74,5 +71,22 @@ const MobileNav = () => {
     </div>
   );
 };
+
+function MobileBookingButton({ onClick }: { onClick?: () => void }) {
+  const { open } = useBookingModal();
+  return (
+    <button
+      onClick={() => {
+        open();
+        onClick && onClick();
+      }}
+      className="mt-6"
+    >
+      <Button className="bg-growmodo-blue text-white px-8 py-4 text-lg font-medium hover:bg-growmodo-green transition-all duration-300 transform hover:scale-105 rounded-lg shadow-lg">
+        Book a Call
+      </Button>
+    </button>
+  );
+}
 
 export default MobileNav;

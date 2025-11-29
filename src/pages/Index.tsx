@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import TalentCarousel from "@/components/TalentCarousel";
 import ToolsGrid from "@/components/ToolsGrid";
 import ReferenceOrTools from "@/components/ReferenceOrTools";
+import { useBookingModal } from '@/context/BookingModalContext';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const Index = () => {
@@ -214,11 +215,7 @@ const Index = () => {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-            <Link to="/book-call" className="transform transition-all duration-300 hover:scale-105">
-              <Button className="bg-black text-white px-8 py-4 text-xl font-medium transition-all duration-300 transform hover:scale-105 rounded-lg relative overflow-hidden group border-b-4 border-transparent group-hover:border-growmodo-blue">
-                <span className="relative z-10">Book a Discovery Call</span>
-              </Button>
-            </Link>
+            <IndexBookCall />
             <Link to="/showcase" className="transform transition-all duration-300 hover:scale-105">
               <Button variant="outline" className="border-2 border-growmodo-blue text-growmodo-blue px-8 py-4 text-xl font-medium transition-all duration-300 rounded-lg relative overflow-hidden group btn-hero-outline">
                 <span className="relative z-10">See Previous Work</span>
@@ -719,11 +716,7 @@ const Index = () => {
             Why would you chase random freelancers if you could have your own creative dream team today?
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/book-call">
-              <Button className="bg-black text-white px-8 py-3 text-lg hover:bg-gray-900 transition-colors duration-300">
-                Book a Discovery Call
-              </Button>
-            </Link>
+            <IndexBookCallSmall />
             <Link to="/pricing">
               <Button variant="outline" className="bg-white text-black px-8 py-3 text-lg border-0 hover:bg-gray-200 transition-colors duration-300">
                 Pricing Plans
@@ -740,3 +733,25 @@ const Index = () => {
 };
 
 export default Index;
+
+function IndexBookCall() {
+  const { open } = useBookingModal();
+  return (
+    <button onClick={open} className="transform transition-all duration-300 hover:scale-105">
+      <Button className="bg-black text-white px-8 py-4 text-xl font-medium transition-all duration-300 transform hover:scale-105 rounded-lg relative overflow-hidden group border-b-4 border-transparent group-hover:border-growmodo-blue">
+        <span className="relative z-10">Book a Discovery Call</span>
+      </Button>
+    </button>
+  );
+}
+
+function IndexBookCallSmall() {
+  const { open } = useBookingModal();
+  return (
+    <button onClick={open} className="">
+      <Button className="bg-black text-white px-8 py-3 text-lg hover:bg-gray-900 transition-colors duration-300">
+        Book a Discovery Call
+      </Button>
+    </button>
+  );
+}

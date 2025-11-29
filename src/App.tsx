@@ -21,6 +21,8 @@ import NotFound from "./pages/NotFound";
 import Guides from "./pages/Guides";
 import GuideDetail from "./pages/GuideDetail";
 import FAQ from "./pages/FAQ";
+import { BookingModalProvider } from '@/context/BookingModalContext';
+import BookingModal from '@/components/BookingModal';
 
 const queryClient = new QueryClient();
 
@@ -39,9 +41,10 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
+      <BookingModalProvider>
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/showcase" element={<Showcase />} />
           <Route path="/talents" element={<Talents />} />
@@ -59,8 +62,10 @@ const App = () => (
           <Route path="/faq" element={<FAQ />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+          </Routes>
+          <BookingModal />
+        </BrowserRouter>
+      </BookingModalProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

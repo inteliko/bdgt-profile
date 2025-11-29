@@ -5,8 +5,10 @@ import { Calendar, Clock, User, ArrowRight, Search } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
+import { useBookingModal } from '@/context/BookingModalContext';
 
 const Guides = () => {
+  const { open } = useBookingModal();
   const guides = [
     {
       id: 1,
@@ -321,11 +323,11 @@ const Guides = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/book-call">
+            <button onClick={() => open()}>
               <Button className="bg-growmodo-blue hover:bg-blue-600 px-8 py-3 text-lg">
                 Book a Discovery Call
               </Button>
-            </Link>
+            </button>
             <Link to="/pricing">
               <Button variant="outline" className="border-white text-white hover:bg-white hover:text-black px-8 py-3 text-lg">
                 View Pricing Plans

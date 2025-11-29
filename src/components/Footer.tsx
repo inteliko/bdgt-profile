@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useBookingModal } from '@/context/BookingModalContext';
 
 const Footer = () => {
   return (
@@ -19,11 +20,7 @@ const Footer = () => {
             <span className="text-xl font-semibold">Startmodo</span>
           </Link>
           
-          <Link to="/book-call">
-            <Button className="bg-white text-black px-6 py-2 rounded-lg text-base">
-              Book a Discovery Call
-            </Button>
-          </Link>
+          <BookingCTA />
         </div>
 
         <div className="grid md:grid-cols-4 gap-8 mb-12">
@@ -82,3 +79,14 @@ const Footer = () => {
 };
 
 export default Footer;
+
+function BookingCTA() {
+  const { open } = useBookingModal();
+  return (
+    <button onClick={open}>
+      <Button className="bg-white text-black px-6 py-2 rounded-lg text-base">
+        Book a Discovery Call
+      </Button>
+    </button>
+  );
+}

@@ -6,12 +6,9 @@ const tools = [
   { name: 'Illustrator', slug: 'illustrator' }, { name: 'Shopify', slug: 'shopify' }, { name: 'Photoshop', slug: 'photoshop' }, { name: 'Elementor', slug: 'elementor' },
   { name: 'XD', slug: 'xd' }, { name: 'Framer', slug: 'framer' }, { name: 'Webflow', slug: 'webflow' }, { name: 'Woo', slug: 'woo' },
   { name: 'Sketch', slug: 'sketch' }, { name: 'InDesign', slug: 'indesign' }, { name: 'React', slug: 'react' }, { name: 'Canva', slug: 'canva' },
-  { name: 'Zapier', slug: 'zapier' }, { name: 'Google', slug: 'google' }, { name: 'Vimeo', slug: 'vimeo' }, { name: 'Lottie', slug: 'lottie' },
-  { name: 'AfterEffects', slug: 'aftereffects' }, { name: 'Intercom', slug: 'intercom' }, { name: 'Notion', slug: 'notion' }, { name: 'Typeform', slug: 'typeform' },
-  { name: 'Vercel', slug: 'vercel' }, { name: 'Netlify', slug: 'netlify' }, { name: 'Stripe', slug: 'stripe' }, { name: 'Airtable', slug: 'airtable' },
-  { name: 'Sentry', slug: 'sentry' }, { name: 'Mixpanel', slug: 'mixpanel' }, { name: 'Webpack', slug: 'webpack' }, { name: 'Storybook', slug: 'storybook' },
-  { name: 'Tailwind', slug: 'tailwind' }, { name: 'Radix', slug: 'radix' }, { name: 'FramerMotion', slug: 'framermotion' }, { name: 'Gatsby', slug: 'gatsby' },
-  { name: 'Next', slug: 'next' }, { name: 'Sanity', slug: 'sanity' }, { name: 'Amplitude', slug: 'amplitude' }
+  { name: 'Zapier', slug: 'zapier' }, { name: 'Google', slug: 'google' }, ,
+
+
 ];
 
 const logoColors = [
@@ -75,10 +72,19 @@ export default function ToolsGrid() {
       <div className="w-full">
         <div className="max-w-6xl mx-auto px-6 py-12">
           <div className="bg-black p-8 md:p-12 rounded-md shadow-2xl" style={{ boxShadow: '0 40px 80px rgba(0,0,0,0.6)' }}>
-            <div className="grid grid-cols-6 sm:grid-cols-7 md:grid-cols-9 lg:grid-cols-10 gap-6 justify-items-center items-center">
+            <div
+              className="w-full"
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(96px, 1fr))',
+                gap: '24px',
+                justifyContent: 'space-between',
+                alignItems: 'center'
+              }}
+            >
               {tools.map((t, i) => (
-                <div key={t.slug} className="w-24 h-24 md:w-28 md:h-28 rounded-full flex items-center justify-center transform transition-all duration-300 hover:scale-105" style={{ background: 'rgba(255,255,255,0.02)' }}>
-                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden flex items-center justify-center" style={{ boxShadow: 'inset 0 6px 0 rgba(0,0,0,0.4), 0 10px 30px rgba(0,0,0,0.6)' }}>
+                <div key={t.slug} className="rounded-full flex items-center justify-center transform transition-all duration-300 hover:scale-105" style={{ width: 96, height: 96, background: 'rgba(255,255,255,0.02)' }}>
+                  <div className="rounded-full overflow-hidden flex items-center justify-center" style={{ width: 80, height: 80, boxShadow: 'inset 0 6px 0 rgba(0,0,0,0.4), 0 10px 30px rgba(0,0,0,0.6)' }}>
                     <Logo slug={t.slug} name={t.name} color={logoColors[i % logoColors.length]} />
                   </div>
                 </div>

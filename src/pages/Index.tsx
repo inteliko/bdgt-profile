@@ -49,6 +49,8 @@ const Index = () => {
     'Front-End Developer', 'Back-End Developer', 'No-Code Developer'
   ];
 
+  const iconColors = ['#34D399', '#06B6D4', '#60A5FA', '#F97316', '#F472B6', '#A78BFA', '#10B981', '#F59E0B'];
+
   const companies = [
     "AMAZON", "ODOO", "YAMAHA", "BLUECHEM", "AZURE", 
     "SPOTIFY", "YOUTUBE", "ORACLE"
@@ -641,8 +643,11 @@ const Index = () => {
                 <div className="inner scrolling-wrapper">
                   <div className="scrolling-content-right">
                     {Array.from({ length: 2 }).flatMap(() => scrollingText).map((text, index) => (
-                      <span key={`diag-${index}`} className="text-gray-800 text-lg mx-6 whitespace-nowrap">
-                        {text}
+                      <span key={`diag-${index}`} className="flex items-center gap-3 text-gray-900 text-xl font-medium mx-6 whitespace-nowrap">
+                        <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0" style={{display: 'block'}}>
+                          <circle cx="8" cy="8" r="6" fill={iconColors[index % iconColors.length]} />
+                        </svg>
+                        <span>{text}</span>
                       </span>
                     ))}
                   </div>
@@ -658,8 +663,11 @@ const Index = () => {
                 <div className="inner scrolling-wrapper">
                   <div className="scrolling-content" style={{['--marquee-duration' as any]: '48s'}}>
                     {Array.from({ length: 2 }).flatMap(() => scrollingText).map((text, index) => (
-                      <span key={`diag-rev-${index}`} className="text-gray-800 text-lg mx-6 whitespace-nowrap">
-                        {text}
+                      <span key={`diag-rev-${index}`} className="flex items-center gap-3 text-gray-900 text-xl font-medium mx-6 whitespace-nowrap">
+                        <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0" style={{display: 'block'}}>
+                          <circle cx="8" cy="8" r="6" fill={iconColors[index % iconColors.length]} />
+                        </svg>
+                        <span>{text}</span>
                       </span>
                     ))}
                   </div>

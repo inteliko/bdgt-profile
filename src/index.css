@@ -175,21 +175,22 @@
     transform: translate(-50%, -50%) rotate(-6deg);
     /* extend across viewport so the X is full-width */
     width: 200vw;
-    height: 64px;
+    height: 92px;
     pointer-events: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 30;
+    z-index: 9999;
+    mix-blend-mode: normal;
   }
 
   .diagonal-marquee .band {
     width: 100%;
-    height: 56px;
-    background: rgba(255,255,255,0.95);
-    border-radius: 8px;
-    box-shadow: 0 6px 24px rgba(0,0,0,0.06);
-    border: 2px solid rgba(0,0,0,0.06);
+    height: 84px;
+    background: rgba(255,255,255,0.96);
+    border-radius: 10px;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.08);
+    border: 3px solid rgba(0,0,0,0.08);
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -199,18 +200,53 @@
     display: flex;
     gap: 36px;
     align-items: center;
-    padding: 0 28px;
+    padding: 0 36px;
+  }
+
+  /* ensure text/icons inside diagonal bands are high contrast */
+  .diagonal-marquee .band,
+  .diagonal-marquee .band * {
+    color: #0F172A !important; /* tailwind gray-900 */
+    -webkit-text-fill-color: #0F172A !important;
+  }
+
+  .diagonal-marquee .band svg {
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.1));
+    width: 24px !important;
+    height: 24px !important;
+    display: inline-block !important;
+  }
+
+  /* apply to both left/right scrolling content */
+  .diagonal-marquee .band .inner .scrolling-content span,
+  .diagonal-marquee .band .inner .scrolling-content-right span {
+    color: #0F172A !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    opacity: 1 !important;
+  }
+
+  .diagonal-marquee .band {
+    background: rgba(255,255,255,0.98) !important;
+    mix-blend-mode: normal;
   }
 
   /* Reverse diagonal for the crossing X */
   .diagonal-marquee.reverse {
     transform: translate(-50%, -50%) rotate(6deg);
-    z-index: 29;
+    z-index: 9999;
+    mix-blend-mode: normal;
   }
 
   .diagonal-marquee.reverse .band {
-    background: rgba(255,255,255,0.95);
-    border: 2px solid rgba(0,0,0,0.06);
+    height: 84px;
+    background: rgba(255,255,255,0.98) !important;
+    border-radius: 10px;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.08) !important;
+    border: 3px solid rgba(0,0,0,0.08) !important;
+    mix-blend-mode: normal;
   }
 
   .bg-growmodo-blue {

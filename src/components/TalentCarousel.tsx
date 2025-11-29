@@ -83,10 +83,10 @@ const TalentCarousel = () => {
                 const colorClass = colors[idx % colors.length];
                 return (
                   <div key={`${talent.name}-${idx}`} className="inline-flex flex-shrink-0 w-56 md:w-64 lg:w-72">
-                    <div className="talent-card rounded-2xl overflow-hidden shadow-lg transition-all duration-300 border border-gray-100 bg-white m-2">
+                      <div className="talent-card group rounded-2xl overflow-hidden shadow-lg transition-all duration-300 border border-gray-100 bg-white m-2">
                       <div className="relative aspect-[4/5] bg-gray-100">
                         {talent.image ? (
-                          <img src={talent.image} alt={talent.name} className="w-full h-full object-cover transition-filter duration-300" />
+                            <img src={talent.image} alt={talent.name} className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300 ease-out" />
                         ) : (
                           <div className="w-full h-full bg-gray-50 flex items-center justify-center text-gray-400">{talent.name}</div>
                         )}

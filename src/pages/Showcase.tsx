@@ -107,12 +107,12 @@ const Showcase = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {filteredItems.map((item) => (
-              <div key={item.id} className="group cursor-pointer">
+              <div key={item.id} className="group cursor-pointer bw-hover">
                 <div className="bg-gray-100 rounded-2xl overflow-hidden mb-4 h-96 md:h-[520px] lg:h-[520px]">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-300"
                   />
                 </div>
               </div>

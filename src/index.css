@@ -137,11 +137,33 @@
   animation-play-state: paused;
 }
 
-/* grayscale on hover for talent images */
-.talent-card:hover img {
-  filter: grayscale(100%);
-  transform: scale(1.02);
-}
+  /* Make talent / upload photos appear black & white by default, reveal color on hover/focus/active */
+  .talent-card img,
+  .bw-hover img {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    transition: filter 280ms ease, -webkit-filter 280ms ease, transform 280ms ease;
+    will-change: filter, transform;
+  }
+
+  /* When user hovers / focuses / activates the container, show full color */
+  .talent-card:hover img,
+  .talent-card:focus-within img,
+  .bw-hover:hover img,
+  .bw-hover:focus-within img,
+  .bw-hover:active img {
+    filter: none;
+    -webkit-filter: none;
+    transform: translateZ(0) scale(1.02);
+  }
+
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .talent-card img,
+    .bw-hover img {
+      transition: none;
+    }
+  }
 
   @keyframes scroll-left {
     0% {

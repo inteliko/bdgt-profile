@@ -88,11 +88,12 @@ const Terms = () => {
             <p className="mb-4">
               For questions about these Terms & Conditions, please contact us at:
             </p>
-            <p className="mb-2">Startmodo</p>
-            <p className="mb-2">10114 102nd Street Floor 3</p>
-            <p className="mb-2">Ozone Park, NY, 11416</p>
-            <p className="mb-2">Email: legal@bdglobaltech.com</p>
-            <p className="mb-2">Phone: +1 929 3938 698</p>
+            <p className="mb-2">Startmodo LLC</p>
+            <p className="mb-2">Rocky Mountain Registered Agent</p>
+            <p className="mb-2">1621 CENTRAL AVE STE M</p>
+            <p className="mb-2">CHEYENNE, WY 82001</p>
+            <p className="mb-2">Email: legal@startmodo.com</p>
+            <p className="mb-2">Phone: Tel: 307-369-0696</p>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+/* Fonts: keep Space Grotesk for body, add Poppins for strong headings and Inter for UI text */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800;900&family=Inter:wght@300;400;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -73,6 +74,7 @@
 @layer base {
   * {
     @apply border-border;
+    font-family: 'Space Grotesk Old', 'Space Grotesk', Arial, sans-serif;
   }
 
   body {
@@ -118,6 +120,29 @@
   }
 }
 
+/* Hero & display typography utilities to mimic the reference style */
+@layer utilities {
+  .hero-title {
+    font-family: Poppins, 'Space Grotesk Old', 'Space Grotesk', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    /* Removed text shadow to match plain typography */
+    /* text-shadow intentionally removed */
+    color: #071026; /* deep navy for good contrast */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Slightly smaller display style for H2/H3 headings */
+  .display-title {
+    font-family: Poppins, 'Space Grotesk Old', 'Space Grotesk', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    /* text-shadow intentionally removed */
+    color: #071026;
+  }
+}
+
 @layer utilities {
   .scrolling-wrapper {
     overflow: hidden;
@@ -126,8 +151,8 @@
 
   .scrolling-content {
     display: inline-block;
-    /* slower default duration; uses --marquee-duration variable */
-    --marquee-duration: 60s;
+    /* faster default duration; uses --marquee-duration variable */
+    --marquee-duration: 40s;
     animation: scroll-left var(--marquee-duration) linear infinite;
     will-change: transform;
     transition: transform 200ms linear;
@@ -135,6 +160,11 @@
 
 .scrolling-content:hover {
   animation-play-state: paused;
+}
+
+/* For marquees that should never pause on hover (use class `no-pause`) */
+.scrolling-content.no-pause:hover {
+  animation-play-state: running !important;
 }
 
   /* Make talent / upload photos appear black & white by default, reveal color on hover/focus/active */
@@ -185,7 +215,7 @@
 
   .scrolling-content-right {
     display: inline-block;
-    --marquee-duration: 40s;
+    --marquee-duration: 27s;
     animation: scroll-right var(--marquee-duration) linear infinite;
     will-change: transform;
   }

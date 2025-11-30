@@ -188,7 +188,7 @@ const Index = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 bg-gray-50 relative overflow-hidden">
+      <section className="pt-32 pb-20 px-6 bg-white relative overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-growmodo-blue/10 to-growmodo-green/10 rounded-full blur-3xl animate-pulse"></div>
@@ -197,9 +197,9 @@ const Index = () => {
         </div>
 
         <div className="max-w-6xl mx-auto text-center relative z-10">
-          <h1 className="text-5xl md:text-7xl font-bold text-black mb-8 leading-tight mt-6 md:mt-8">
+          <h1 className="text-5xl md:text-7xl font-bold text-black mb-8 leading-tight mt-6 md:mt-8 hero-title">
             Hire Your Whole Product<br />
-            Team With a Few Clicks
+            Team on a Subscription
           </h1>
 
           {/* Product Hunt Featured Upvote Badge */}
@@ -215,8 +215,7 @@ const Index = () => {
           </div>
 
           <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Get on-demand access to your own team of designers, developers & project 
-            managers without the hassle of managing full-time employees.
+            Scale your marketing team with vetted designers & developers who work as an extension of your in-house team.
           </p>
 
           {/* Buttons */}
@@ -259,7 +258,7 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-5">
-              <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-black leading-tight">
+              <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-black leading-tight display-title">
                 Trusted by fast-moving<br />
                 brands & agencies worldwide
               </h2>
@@ -284,9 +283,13 @@ const Index = () => {
                 {companies.map((company, index) => (
                   <div key={index} className="flex items-center justify-center h-16 md:h-20">
                     {company.logo ? (
-                      <img src={company.logo} alt={company.name} className="h-6 md:h-8 w-auto object-contain filter grayscale opacity-50" />
+                      <div className="w-24 md:w-28 h-12 md:h-14 bg-white rounded-md flex items-center justify-center overflow-hidden p-2 shadow-sm">
+                        <img src={company.logo} alt={company.name} className="max-w-full max-h-full object-contain filter grayscale opacity-60" />
+                      </div>
                     ) : (
-                      <span className="text-sm text-gray-400 uppercase font-semibold tracking-wider">{company.name}</span>
+                      <div className="w-24 md:w-28 h-12 md:h-14 bg-white rounded-md flex items-center justify-center">
+                        <span className="text-sm text-gray-400 uppercase font-semibold tracking-wider">{company.name}</span>
+                      </div>
                     )}
                   </div>
                 ))}
@@ -296,12 +299,34 @@ const Index = () => {
         </div>
       </section>
 
-    
+      {/* Collaborate / Partners Marquee Section (matches provided design) */}
+      <section className="py-16 px-6 bg-growmodo-blue w-full overflow-hidden">
+        <div className="w-full text-center">
+          <h2 className="text-5xl md:text-6xl font-extrabold text-white mb-8 display-title" style={{ color: '#ffffff' }}>
+            You can collaborate
+            <br />
+            anywhere with your team.
+          </h2>
+
+          <div className="mt-6 overflow-hidden w-full">
+            <div className="scrolling-wrapper w-full">
+              <div className="scrolling-content no-pause inline-flex items-center gap-12 py-6 flex-nowrap whitespace-nowrap" style={{['--marquee-duration' as any]: '18s'}}>
+                {Array.from({ length: 2 }).flatMap(() => companies).map((company, idx) => (
+                  <div key={`collab-${idx}`} className="inline-flex flex-col items-center justify-center w-36 flex-shrink-0">
+                    <img src={company.logo} alt={company.name} className="w-16 h-16 object-contain mb-2" />
+                    <span className="text-base md:text-lg font-medium text-black">{company.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Solution Section - redesigned to match reference with left-aligned cards and vector icons */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black display-title">
             The Quickest Way To Onboard<br />
             Talent To Your Team
           </h2>
@@ -356,10 +381,10 @@ const Index = () => {
       </section>
 
       {/* Made Super Simple Section */}
-      <section className="py-20 px-6 bg-gray-50">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black display-title">
               Made <span className="text-growmodo-blue">Super</span> Simple
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -491,9 +516,9 @@ const Index = () => {
       </section>
 
       {/* Tools Section */}
-      <section className="bg-black py-20 px-6">
+      <section className="bg-white py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl md:text-6xl font-extrabold text-white mb-8 leading-tight">
+          <h2 className="text-5xl md:text-6xl font-extrabold text-black mb-8 leading-tight">
             Build Whatever You Want,<br />
             With the Tools You Love
           </h2>
@@ -511,6 +536,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      
 
       {/* Testimonial Section */}
       <section className="py-20 px-6">
@@ -547,7 +574,7 @@ const Index = () => {
       </section>
 
       {/* Selected Work Section - full width carousel with left heading */}
-      <section className="py-20 bg-gray-50 w-full overflow-hidden">
+      <section className="py-20 bg-white w-full overflow-hidden">
         <div className="flex items-start">
           {/* Left heading column (desktop) */}
           <div className="hidden md:block w-[360px] px-6">
@@ -668,10 +695,10 @@ const Index = () => {
 
 
             {/* Reverse diagonal left-scrolling band to form an X */}
-            <div className="diagonal-marquee reverse">
+                  <div className="diagonal-marquee reverse">
               <div className="band">
-                <div className="inner scrolling-wrapper">
-                  <div className="scrolling-content" style={{['--marquee-duration' as any]: '48s'}}>
+                  <div className="inner scrolling-wrapper">
+                  <div className="scrolling-content" style={{['--marquee-duration' as any]: '32s'}}>
                     {Array.from({ length: 2 }).flatMap(() => scrollingText).map((text, index) => (
                       <span key={`diag-rev-${index}`} className="flex items-center gap-3 text-gray-900 text-xl font-medium mx-6 whitespace-nowrap">
                         <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0" style={{display: 'block'}}>
@@ -691,7 +718,7 @@ const Index = () => {
       {/* Final CTA Section */}
       <section className="bg-growmodo-blue py-20 px-6 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="flex animate-[scroll-left_50s_linear_infinite] items-center h-full">
+          <div className="flex animate-[scroll-left_32s_linear_infinite] items-center h-full">
             {scrollingText.map((text, index) => (
               <span key={index} className="text-white text-sm mx-6 whitespace-nowrap opacity-30">
                 {text}

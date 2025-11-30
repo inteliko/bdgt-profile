@@ -54,11 +54,11 @@ const Footer = () => {
           <div>
             <h5 className="font-semibold mb-4 text-base">Contact Info</h5>
             <div className="text-gray-400 text-sm space-y-2">
-              <p className="leading-snug">10114 102nd Street Floor 3</p>
-              <p className="leading-snug">Ozone Park, NY, 11416</p>
-              <p className="leading-snug">+1 929 3938 698</p>
+              <p className="leading-snug">Rocky Mountain Registered Agent</p>
+              <p className="leading-snug">1621 CENTRAL AVE STE M</p>
+              <p className="leading-snug">CHEYENNE, WY 82001</p>
+              <p className="leading-snug">Tel: 307-369-0696</p>
               <p className="leading-snug">sales@startmodo.com</p>
-              <p className="leading-snug">Mon-Fri 10am-6pm</p>
             </div>
           </div>
         </div>

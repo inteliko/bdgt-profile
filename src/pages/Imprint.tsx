@@ -16,11 +16,12 @@ const Imprint = () => {
             <h2 className="text-2xl font-semibold mt-8 mb-4">Company Information</h2>
             <div className="bg-gray-50 p-6 rounded-lg mb-6">
               <p className="mb-2"><strong>Company Name:</strong> Startmodo LLC</p>
-              <p className="mb-2"><strong>Address:</strong> 10114 102nd Street Floor 3</p>
-              <p className="mb-2"><strong>City:</strong> Ozone Park, NY 11416</p>
+              <p className="mb-2"><strong>Address:</strong> Rocky Mountain Registered Agent</p>
+              <p className="mb-2"><strong>Address (cont.):</strong> 1621 CENTRAL AVE STE M</p>
+              <p className="mb-2"><strong>City / ZIP:</strong> CHEYENNE, WY 82001</p>
               <p className="mb-2"><strong>Country:</strong> United States</p>
-              <p className="mb-2"><strong>Phone:</strong> +1 929 3938 698</p>
-              <p className="mb-2"><strong>Email:</strong> sales@bdglobaltech.com</p>
+              <p className="mb-2"><strong>Phone:</strong> Tel: 307-369-0696</p>
+              <p className="mb-2"><strong>Email:</strong> sales@startmodo.com</p>
               <p className="mb-2"><strong>Business Hours:</strong> Monday - Friday, 10am - 6pm EST</p>
             </div>
 
@@ -64,10 +65,10 @@ const Imprint = () => {
 
             <h2 className="text-2xl font-semibold mt-8 mb-4">Website Information</h2>
             <div className="bg-gray-50 p-6 rounded-lg mb-6">
-              <p className="mb-2"><strong>Website:</strong> www.bdglobaltech.com</p>
-              <p className="mb-2"><strong>Technical Contact:</strong> tech@bdglobaltech.com</p>
+              <p className="mb-2"><strong>Website:</strong> www.startmodo.com</p>
+              <p className="mb-2"><strong>Technical Contact:</strong> tech@startmodo.com</p>
               <p className="mb-2"><strong>Content Responsibility:</strong> Startmodo LLC</p>
-              <p className="mb-2"><strong>Data Protection Officer:</strong> privacy@bdglobaltech.com</p>
+              <p className="mb-2"><strong>Data Protection Officer:</strong> privacy@startmodo.com</p>
             </div>
 
             <h2 className="text-2xl font-semibold mt-8 mb-4">Regulatory Compliance</h2>
@@ -95,8 +96,8 @@ const Imprint = () => {
                 please don't hesitate to contact us.
               </p>
               <div className="flex flex-col sm:flex-row gap-2">
-                <span className="text-sm"><strong>Email:</strong> legal@bdglobaltech.com</span>
-                <span className="text-sm"><strong>Phone:</strong> +1 929 3938 698</span>
+                <span className="text-sm"><strong>Email:</strong> legal@startmodo.com</span>
+                <span className="text-sm"><strong>Phone:</strong> Tel: 307-369-0696</span>
               </div>
             </div>
           </div>

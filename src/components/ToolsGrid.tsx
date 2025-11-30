@@ -1,22 +1,54 @@
 import React, { useState } from "react";
 
-// Tools list with slugs that map to files you should place in `public/tools/`.
+// Tools / Services list that maps to `public/tools/<slug>.(png|svg|jpg)` where available.
 const tools = [
-  { name: 'Dribbble', slug: 'dribbble' }, { name: 'HubSpot', slug: 'hubspot' }, { name: 'WordPress', slug: 'wordpress' }, { name: 'Figma', slug: 'figma' },
-  { name: 'Illustrator', slug: 'illustrator' }, { name: 'Shopify', slug: 'shopify' }, { name: 'Photoshop', slug: 'photoshop' }, { name: 'Elementor', slug: 'elementor' },
-  { name: 'XD', slug: 'xd' }, { name: 'Framer', slug: 'framer' }, { name: 'Webflow', slug: 'webflow' }, { name: 'Woo', slug: 'woo' },
-  { name: 'Sketch', slug: 'sketch' }, { name: 'InDesign', slug: 'indesign' }, { name: 'React', slug: 'react' }, { name: 'Canva', slug: 'canva' },
-  { name: 'Zapier', slug: 'zapier' }, { name: 'Google', slug: 'google' }, ,
-
-
+  { name: 'Branding & Logo', slug: 'branding-logo' },
+  { name: 'Human Illustration', slug: 'human-illustration' },
+  { name: 'Web UI', slug: 'web-ui' },
+  { name: 'Mobile App UI', slug: 'mobile-app-ui' },
+  { name: 'Artworks', slug: 'artworks' },
+  { name: 'T-shirt Design', slug: 'tshirt-design' },
+  { name: 'Stationery', slug: 'stationery' },
+  { name: 'E-Book & Cover', slug: 'ebook-cover' },
+  { name: 'Packaging', slug: 'packaging' },
+  { name: 'Banner Ad', slug: 'banner-ad' },
+  { name: 'Infographic', slug: 'infographic' },
+  { name: 'Social Media', slug: 'social-media' },
+  { name: 'Pitchdeck', slug: 'pitchdeck' },
+  { name: 'Flyer & Poster', slug: 'flyer-poster' },
+  { name: 'Brochure', slug: 'brochure' },
+  { name: 'Newsletter', slug: 'newsletter' },
+  { name: 'Icon Pack', slug: 'icon-pack' },
+  { name: 'Podcast Cover', slug: 'podcast-cover' },
+  { name: 'Mascot', slug: 'mascot' },
+  { name: 'Photo Retouching', slug: 'photo-retouching' },
+  { name: 'Explainer Videos', slug: 'explainer-videos' },
+  { name: 'Logo Animation', slug: 'logo-animation' },
+  { name: 'Typography Videos', slug: 'typography-videos' },
+  { name: 'Gif Animations', slug: 'gif-animations' },
+  { name: 'E-Learning Videos', slug: 'e-learning-videos' },
+  { name: 'Character Animation', slug: 'character-animation' },
+  { name: 'Testimonial Videos', slug: 'testimonial-videos' },
+  { name: 'Video Editing', slug: 'video-editing' },
+  { name: 'UI Animation', slug: 'ui-animation' },
+  { name: 'Tutorial Videos', slug: 'tutorial-videos' },
+  { name: 'Text Overlays', slug: 'text-overlays' },
+  { name: 'Reels & Videos', slug: 'reels-videos' },
+  { name: 'WordPress', slug: 'wordpress' },
+  { name: 'Beaver Builder', slug: 'beaver-builder' },
+  { name: 'WooCommerce', slug: 'woocommerce' },
+  { name: 'Unbounce', slug: 'unbounce' },
+  { name: 'Visual Composer', slug: 'visual-composer' },
+  { name: 'Oxygen Builder', slug: 'oxygen-builder' },
+  { name: 'Divi Builder', slug: 'divi-builder' },
+  { name: 'WP Bakery', slug: 'wp-bakery' },
+  { name: 'Elementor', slug: 'elementor' },
+  { name: 'Webflow', slug: 'webflow' },
+  { name: 'Wix Classic', slug: 'wix-classic' },
+  { name: 'React JS', slug: 'react' }
 ];
 
-const logoColors = [
-  '#0EA5E9','#FB923C','#6366F1','#06B6D4','#F97316','#10B981','#6366F1','#EF4444','#8B5CF6','#06B6D4',
-  '#60A5FA','#A78BFA','#F472B6','#F59E0B','#34D399','#60A5FA','#F97316','#06B6D4','#7C3AED','#F43F5E'
-];
-
-function Logo({ slug, name, color, size = 48 }: { slug: string; name: string; color: string; size?: number }) {
+function Logo({ slug, name, size = 48 }: { slug: string; name: string; size?: number }) {
   const [failed, setFailed] = useState(false);
   // try multiple extensions in order: .png -> .jpeg -> .jpg -> .svg
   const exts = ['png', 'jpeg', 'jpg', 'svg'];
@@ -38,15 +70,16 @@ function Logo({ slug, name, color, size = 48 }: { slug: string; name: string; co
         alt={name}
         width={size}
         height={size}
-        className="w-full h-full object-contain rounded-full bg-transparent"
+        className="w-full h-full object-contain rounded-sm bg-transparent"
+        style={{ filter: 'grayscale(100%) contrast(1.1)' }}
         onError={handleError}
       />
     );
   }
 
-  // Fallback: simple letter mark with background gradient
+  // Fallback: simple letter mark with black and white (no color gradient)
   return (
-    <div className="w-full h-full flex items-center justify-center text-white font-bold" style={{ background: `linear-gradient(135deg, ${color} 0%, rgba(0,0,0,0.3) 100%)` }}>
+    <div className="w-full h-full flex items-center justify-center text-black font-bold" style={{ background: '#f3f4f6' }}>
       <span style={{ fontSize: 14 }}>{name.charAt(0)}</span>
     </div>
   );
@@ -55,37 +88,30 @@ function Logo({ slug, name, color, size = 48 }: { slug: string; name: string; co
 export default function ToolsGrid() {
   return (
     <section className="w-full">
-      {/* Full-width tag pills (scrolling) */}
-      <div className="w-full py-6">
-        <div className="w-full">
-          <div className="overflow-hidden">
-            <div className="flex animate-[scroll-left_30s_linear_infinite] items-center gap-4 px-4">
-              {['Portal','Graphics','Ecommerce Stores','Websites','UI Designs','Funnels','Automations','Portal','Graphics','Ecommerce Stores'].map((t, i) => (
-                <span key={i} className="text-gray-300 text-sm px-3 py-1 bg-black/30 backdrop-blur-sm rounded-full whitespace-nowrap border border-white/5">{t}</span>
-              ))}
-            </div>
-          </div>
+      {/* Full-width infinite scrolling tag pills */}
+      <div className="w-full bg-white overflow-hidden py-4">
+        <div className="flex animate-[scroll-left_30s_linear_infinite] items-center gap-3">
+          {Array.from({ length: 3 }).flatMap(() => ['Portal','Graphics','Ecommerce Stores','Websites','UI Designs','Funnels','Automations']).map((t, i) => (
+            <span key={i} className="text-white text-xs px-3 py-1 bg-black rounded-full whitespace-nowrap border border-gray-800 flex-shrink-0 shadow-sm">{t}</span>
+          ))}
         </div>
       </div>
 
-      {/* Centered, raised black panel with circular icon grid */}
+      {/* Full-width services grid */}
       <div className="w-full">
-        <div className="max-w-6xl mx-auto px-6 py-12">
-          <div className="bg-black p-8 md:p-12 rounded-md shadow-2xl" style={{ boxShadow: '0 40px 80px rgba(0,0,0,0.6)' }}>
-            <div
-              className="w-full"
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(96px, 1fr))',
-                gap: '24px',
-                justifyContent: 'space-between',
-                alignItems: 'center'
-              }}
-            >
+        <div className="w-full px-6 py-10 bg-white">
+          <div className="bg-white p-6 md:p-10 rounded-xl shadow-sm border border-gray-100">
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 items-stretch">
               {tools.map((t, i) => (
-                <div key={t.slug} className="rounded-full flex items-center justify-center transform transition-all duration-300 hover:scale-105" style={{ width: 96, height: 96, background: 'rgba(255,255,255,0.02)' }}>
-                  <div className="rounded-full overflow-hidden flex items-center justify-center" style={{ width: 80, height: 80, boxShadow: 'inset 0 6px 0 rgba(0,0,0,0.4), 0 10px 30px rgba(0,0,0,0.6)' }}>
-                    <Logo slug={t.slug} name={t.name} color={logoColors[i % logoColors.length]} />
+                <div key={t.slug} className="bg-white rounded-lg p-3 flex flex-col items-center gap-2 hover:shadow-md hover:border-growmodo-blue/30 transform transition-all duration-200 border border-gray-200 shadow-sm" style={{ minHeight: 100 }}>
+                  <div className="w-14 h-14 flex-shrink-0 rounded-md bg-gray-50 flex items-center justify-center p-1 border border-gray-100" style={{ boxShadow: 'inset 0 4px 8px rgba(0,0,0,0.05)' }}>
+                    <div className="w-10 h-10">
+                      <Logo slug={t.slug} name={t.name} size={32} />
+                    </div>
+                  </div>
+
+                  <div className="flex-1 w-full text-center">
+                    <div className="text-sm text-black font-semibold leading-tight transition-colors duration-200 hover:text-growmodo-blue line-clamp-2">{t.name}</div>
                   </div>
                 </div>
               ))}

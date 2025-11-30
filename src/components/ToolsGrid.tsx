@@ -90,7 +90,7 @@ export default function ToolsGrid() {
     <section className="w-full">
       {/* Full-width infinite scrolling tag pills */}
       <div className="w-full bg-white overflow-hidden py-4">
-        <div className="flex animate-[scroll-left_30s_linear_infinite] items-center gap-3">
+        <div className="flex animate-[scroll-left_10s_linear_infinite] items-center gap-3">
           {Array.from({ length: 3 }).flatMap(() => ['Portal','Graphics','Ecommerce Stores','Websites','UI Designs','Funnels','Automations']).map((t, i) => (
             <span key={i} className="text-white text-xs px-3 py-1 bg-black rounded-full whitespace-nowrap border border-gray-800 flex-shrink-0 shadow-sm">{t}</span>
           ))}

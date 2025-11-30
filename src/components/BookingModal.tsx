@@ -41,7 +41,7 @@ export default function BookingModal() {
       <div className="absolute inset-0 bg-black/50" onClick={close} />
 
       {/* Modal container: bottom sheet on mobile, centered dialog on sm+ */}
-      <div className="relative w-full max-w-3xl mx-4">
+      <div className="relative w-full max-w-3xl mx-4 transform -translate-y-12 sm:translate-y-0">
         {/* Close button placed here (outside overflow-hidden) so it isn't clipped */}
         <button
           onClick={close}

@@ -53,8 +53,14 @@ const Index = () => {
   const iconColors = ['#34D399', '#06B6D4', '#60A5FA', '#F97316', '#F472B6', '#A78BFA', '#10B981', '#F59E0B'];
 
   const companies = [
-    "AMAZON", "ODOO", "YAMAHA", "BLUECHEM", "AZURE", 
-    "SPOTIFY", "YOUTUBE", "ORACLE"
+    { name: 'Figma', logo: '/tools/figma.svg' },
+    { name: 'Webflow', logo: '/tools/webflow.svg' },
+    { name: 'Shopify', logo: '/tools/shopify.svg' },
+    { name: 'Google', logo: '/tools/google.svg' },
+    { name: 'Tailwind', logo: '/tools/tailwind.svg' },
+    { name: 'React', logo: '/tools/react.svg' },
+    { name: 'Next', logo: '/tools/next.svg' },
+    { name: 'Netlify', logo: '/tools/netlify.svg' }
   ];
 
   // Talent images (place your files in `public/talents/` as talent1.jpg..talent4.jpg)
@@ -251,30 +257,37 @@ const Index = () => {
       {/* Trusted Section (reference layout) */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-12 gap-8 items-start">
+          <div className="grid md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-5">
-              <h2 className="text-5xl font-extrabold mb-6 text-black leading-tight">
+              <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-black leading-tight">
                 Trusted by fast-moving<br />
                 brands & agencies worldwide
               </h2>
 
-              <div className="mt-6 space-y-6">
-                <div className="flex items-center gap-6">
-                  <div className="text-growmodo-blue text-3xl md:text-4xl font-extrabold">10,000+</div>
-                  <div className="text-gray-600">Tasks delivered</div>
-                </div>
-                <div className="flex items-center gap-6">
-                  <div className="text-growmodo-blue text-3xl md:text-4xl font-extrabold">200+</div>
-                  <div className="text-gray-600">Projects nailed</div>
+              <div className="mt-8">
+                <div className="grid grid-cols-2 gap-4 max-w-lg">
+                  <div className="flex flex-col items-start">
+                    <div className="text-growmodo-blue text-3xl sm:text-4xl md:text-5xl font-extrabold">10,000+</div>
+                    <div className="text-sm md:text-base text-gray-600 mt-1">Tasks delivered</div>
+                  </div>
+
+                  <div className="flex flex-col items-start sm:pl-6 sm:border-l sm:border-gray-200/60">
+                    <div className="text-growmodo-blue text-3xl sm:text-4xl md:text-5xl font-extrabold">200+</div>
+                    <div className="text-sm md:text-base text-gray-600 mt-1">Projects nailed</div>
+                  </div>
                 </div>
               </div>
             </div>
 
             <div className="md:col-span-7">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-3 md:grid-cols-4 gap-6">
                 {companies.map((company, index) => (
-                  <div key={index} className="bg-gray-50 rounded-2xl py-8 px-6 flex items-center justify-center">
-                    <span className="uppercase text-gray-400 font-semibold tracking-wider">{company}</span>
+                  <div key={index} className="flex items-center justify-center h-16 md:h-20">
+                    {company.logo ? (
+                      <img src={company.logo} alt={company.name} className="h-6 md:h-8 w-auto object-contain filter grayscale opacity-50" />
+                    ) : (
+                      <span className="text-sm text-gray-400 uppercase font-semibold tracking-wider">{company.name}</span>
+                    )}
                   </div>
                 ))}
               </div>

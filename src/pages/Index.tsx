@@ -53,14 +53,14 @@ const Index = () => {
   const iconColors = ['#34D399', '#06B6D4', '#60A5FA', '#F97316', '#F472B6', '#A78BFA', '#10B981', '#F59E0B'];
 
   const companies = [
-    { name: 'Figma', logo: '/tools/figma.svg' },
-    { name: 'Webflow', logo: '/tools/webflow.svg' },
-    { name: 'Shopify', logo: '/tools/shopify.svg' },
-    { name: 'Google', logo: '/tools/google.svg' },
-    { name: 'Tailwind', logo: '/tools/tailwind.svg' },
-    { name: 'React', logo: '/tools/react.svg' },
-    { name: 'Next', logo: '/tools/next.svg' },
-    { name: 'Netlify', logo: '/tools/netlify.svg' }
+    { name: 'Slack', logo: '/tools/slack.svg' },
+    { name: 'Notion', logo: '/tools/notion.svg' },
+    { name: 'Zoho', logo: '/tools/zoho.svg' },
+    { name: 'Trello', logo: '/tools/trello.svg' },
+    { name: 'Dropbox', logo: '/tools/dropbox.svg' },
+    { name: 'Asana', logo: '/tools/asana.svg' },
+    { name: 'GitHub', logo: '/tools/github.svg' },
+    { name: 'Zoom', logo: '/tools/zoom.svg' }
   ];
 
   // Talent images (place your files in `public/talents/` as talent1.jpg..talent4.jpg)
@@ -300,9 +300,9 @@ const Index = () => {
       </section>
 
       {/* Collaborate / Partners Marquee Section (matches provided design) */}
-      <section className="py-16 px-6 bg-growmodo-blue w-full overflow-hidden">
+      <section className="py-16 px-6 bg-white w-full overflow-hidden">
         <div className="w-full text-center">
-          <h2 className="text-5xl md:text-6xl font-extrabold text-white mb-8 display-title" style={{ color: '#ffffff' }}>
+          <h2 className="text-5xl md:text-6xl font-extrabold text-black mb-8 display-title">
             You can collaborate
             <br />
             anywhere with your team.

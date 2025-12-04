@@ -409,10 +409,10 @@ const Index = () => {
                 Add an additional team member with a click of a button.
               </p>
               <div className="flex -space-x-2 mb-4">
-                {/* small AI avatars: left, active middle, right */}
-                <Avatar src="https://thispersondoesnotexist.com/image" alt="AI avatar" className="w-12 h-12 rounded-full object-cover border-2 border-white" />
-                <Avatar src="https://thispersondoesnotexist.com/image" alt="AI avatar active" className="w-12 h-12 rounded-full object-cover ring-2 ring-growmodo-green" />
-                <Avatar src="https://thispersondoesnotexist.com/image" alt="AI avatar" className="w-12 h-12 rounded-full object-cover border-2 border-white" />
+                {/* Talent avatars from your team */}
+                <Avatar src={talentPics[0]} alt="Talent 1" className="w-12 h-12 rounded-full object-cover border-2 border-white" />
+                <Avatar src={talentPics[1]} alt="Talent 2 active" className="w-12 h-12 rounded-full object-cover ring-2 ring-growmodo-green" />
+                <Avatar src={talentPics[2]} alt="Talent 3" className="w-12 h-12 rounded-full object-cover border-2 border-white" />
               </div>
             </div>
 
@@ -431,16 +431,16 @@ const Index = () => {
               </p>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Avatar src="https://thispersondoesnotexist.com/image" alt="Roel avatar" className="w-8 h-8 rounded-full object-cover" />
-                  <span className="text-sm text-gray-600 group-hover:text-white">Roel F. Developer
+                  <Avatar src="/talents/talent6.jpg" alt="Maksus B. Developer avatar" className="w-8 h-8 rounded-full object-cover" />
+                  <span className="text-sm text-gray-600 group-hover:text-white">Maksus B. Developer
                     <span className="inline-flex ml-2">{Array.from({length:5}).map((_,i)=>(
                       <svg key={i} className="w-3 h-3 ml-0.5" viewBox="0 0 20 20" fill="#FBBF24" xmlns="http://www.w3.org/2000/svg"><path d="M10 15l-5.878 3.09L5.64 11.545 1 7.545l6.06-.545L10 1l2.94 6 6.06.545-4.64 4-1.262 6.545z"/></svg>
                     ))}</span>
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Avatar src="https://thispersondoesnotexist.com/image" alt="PJ avatar" className="w-8 h-8 rounded-full object-cover" />
-                  <span className="text-sm text-gray-600 group-hover:text-white">PJ A. UI/UX Designer
+                  <Avatar src="/talents/talent7.jpg" alt="Rupa A. UI/UX Designer avatar" className="w-8 h-8 rounded-full object-cover" />
+                  <span className="text-sm text-gray-600 group-hover:text-white">Rupa A. UI/UX Designer
                     <span className="inline-flex ml-2">{Array.from({length:5}).map((_,i)=>(
                       <svg key={i} className="w-3 h-3 ml-0.5" viewBox="0 0 20 20" fill="#FBBF24" xmlns="http://www.w3.org/2000/svg"><path d="M10 15l-5.878 3.09L5.64 11.545 1 7.545l6.06-.545L10 1l2.94 6 6.06.545-4.64 4-1.262 6.545z"/></svg>
                     ))}</span>

@@ -165,19 +165,19 @@ const Index = () => {
   const workItems = [
     {
       id: 1,
-      image: "/projects/community-app.gif",
+      image: "/projects/1.png",
       title: "Mobile App Design Collection",
       description: "Various mobile app interfaces showcasing modern design principles"
     },
     {
       id: 2,
-      image: "/projects/crm_screenshot.gif",
+      image: "/projects/2.png",
       title: "Web & Dashboard Designs",
       description: "Clean and functional web interfaces and dashboard designs"
     },
     {
       id: 3,
-      image: "/projects/trix-rap.gif",
+      image: "/projects/3.png",
       title: "Brand Identity Materials",
       description: "Complete brand identity and print design solutions"
     }
@@ -523,21 +523,24 @@ const Index = () => {
             With the Tools You Love
           </h2>
           
-          {/* single scrolling pills are handled inside ToolsGrid to avoid duplicate marquees */}
-
-          <div className="mt-12 flex justify-center">
-            <div className="w-full max-w-6xl">
-              {/* Show a reference image if present in public/assets, otherwise the dynamic grid */}
-              <React.Suspense fallback={<div />}>{/* lazy not used but keep wrapper */}
-                {/* @ts-ignore: next line imports a local component */}
-                <ReferenceOrTools />
-              </React.Suspense>
+          {/* Scrolling pills marquee */}
+          <div className="mt-8 overflow-hidden w-full">
+            <div className="scrolling-wrapper w-full">
+              <div className="scrolling-content no-pause inline-flex items-center gap-3 py-4 flex-nowrap whitespace-nowrap" style={{['--marquee-duration' as any]: '20s'}}>
+                {Array.from({ length: 2 }).flatMap(() => [
+                  'Websites', 'UI Designs', 'Funnels', 'Automations', 'Portal', 'Graphics', 'Ecommerce Stores'
+                ]).map((item, idx) => (
+                  <span key={`pill-${idx}`} className="inline-flex items-center px-4 py-2 bg-black text-white rounded-full text-sm font-medium flex-shrink-0">
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      
+          
+        </div>
+      </section>      
 
       {/* Testimonial Section */}
       <section className="py-20 px-6">

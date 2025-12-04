@@ -1,0 +1,220 @@
+<svg viewBox="0 0 1000 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1000" height="450" fill="white"/>
+  
+  <!-- Row 1 -->
+  <circle cx="60" cy="60" r="40" fill="#001f3f"/>
+  <text x="60" y="72" font-size="28" font-weight="bold" fill="white" text-anchor="middle">I</text>
+  
+  <circle cx="140" cy="60" r="40" fill="#FF7A3D"/>
+  <circle cx="135" cy="52" r="4" fill="white"/><circle cx="145" cy="52" r="4" fill="white"/><circle cx="140" cy="68" r="4" fill="white"/>
+  
+  <circle cx="220" cy="60" r="40" fill="#888888"/>
+  <text x="220" y="72" font-size="22" font-weight="bold" fill="white" text-anchor="middle">Lr</text>
+  
+  <circle cx="300" cy="60" r="40" fill="#888888"/>
+  <circle cx="294" cy="52" r="6" fill="#FF6B9D"/><circle cx="306" cy="52" r="6" fill="#1DB94C"/><circle cx="306" cy="68" r="6" fill="#0ACF83"/><circle cx="294" cy="68" r="6" fill="#9C27B0"/>
+  
+  <circle cx="380" cy="60" r="40" fill="#888888"/>
+  <text x="380" y="72" font-size="26" font-weight="bold" fill="#FFB81C" text-anchor="middle">Ai</text>
+  
+  <circle cx="460" cy="60" r="40" fill="#96C839"/>
+  <text x="460" y="72" font-size="28" font-weight="bold" fill="white" text-anchor="middle">S</text>
+  
+  <circle cx="540" cy="60" r="40" fill="#0073AA"/>
+  <text x="540" y="72" font-size="28" font-weight="bold" fill="white" text-anchor="middle">W</text>
+  
+  <circle cx="620" cy="60" r="40" fill="#001C3D"/>
+  <text x="620" y="72" font-size="24" font-weight="bold" fill="#31A8FF" text-anchor="middle">Ps</text>
+  
+  <circle cx="700" cy="60" r="40" fill="#FFB3D9"/>
+  <text x="700" y="72" font-size="24" font-weight="bold" fill="#FF1493" text-anchor="middle">E</text>
+  
+  <circle cx="780" cy="60" r="40" fill="#5B21B6"/>
+  <text x="780" y="72" font-size="24" font-weight="bold" fill="#FF61F6" text-anchor="middle">Xd</text>
+  
+  <!-- Row 2 -->
+  <circle cx="60" cy="160" r="40" fill="#001A3D"/>
+  <text x="60" y="172" font-size="24" font-weight="bold" fill="#9C27B0" text-anchor="middle">Ae</text>
+  
+  <circle cx="140" cy="160" r="40" fill="#0073E6"/>
+  <text x="140" y="172" font-size="28" font-weight="bold" fill="white" text-anchor="middle">W</text>
+  
+  <circle cx="220" cy="160" r="40" fill="#0099FF"/>
+  <rect x="212" y="155" width="16" height="16" fill="white" rx="2"/>
+  
+  <circle cx="300" cy="160" r="40" fill="#0073E6"/>
+  <text x="300" y="172" font-size="28" font-weight="bold" fill="white" text-anchor="middle">b</text>
+  
+  <circle cx="380" cy="160" r="40" fill="#7A2AF9"/>
+  <text x="380" y="172" font-size="22" font-weight="bold" fill="white" text-anchor="middle">WC</text>
+  
+  <circle cx="460" cy="160" r="40" fill="#888888"/>
+  <text x="460" y="172" font-size="24" font-weight="bold" fill="#FF5C5C" text-anchor="middle">H</text>
+  
+  <circle cx="540" cy="160" r="40" fill="#8B0000"/>
+  <text x="540" y="172" font-size="24" font-weight="bold" fill="#FF69B4" text-anchor="middle">Id</text>
+  
+  <circle cx="620" cy="160" r="40" fill="#61DAFB"/>
+  <circle cx="616" cy="156" r="2" fill="#222"/><circle cx="624" cy="156" r="2" fill="#222"/><circle cx="620" cy="164" r="2" fill="#222"/>
+  
+  <circle cx="700" cy="160" r="40" fill="#FF6B35"/>
+  <text x="700" y="172" font-size="22" font-weight="bold" fill="white" text-anchor="middle">⚡</text>
+  
+  <circle cx="780" cy="160" r="40" fill="#7B5AFF"/>
+  <text x="780" y="172" font-size="28" font-weight="bold" fill="white" text-anchor="middle">C</text>
+  
+  <!-- Row 3 -->
+  <circle cx="60" cy="260" r="40" fill="#888888"/>
+  <text x="60" y="272" font-size="24" font-weight="bold" fill="white" text-anchor="middle">⚙</text>
+  
+  <circle cx="140" cy="260" r="40" fill="#0099FF"/>
+  <circle cx="136" cy="254" r="3" fill="white"/><circle cx="144" cy="254" r="3" fill="white"/>
+  
+  <circle cx="220" cy="260" r="40" fill="#888888"/>
+  <text x="220" y="272" font-size="24" font-weight="bold" fill="white" text-anchor="middle">▭</text>
+  
+  <circle cx="300" cy="260" r="40" fill="#FF6B35"/>
+  <text x="300" y="272" font-size="28" font-weight="bold" fill="white" text-anchor="middle">M</text>
+  
+  <circle cx="380" cy="260" r="40" fill="#00D9FF"/>
+  <text x="380" y="272" font-size="26" font-weight="bold" fill="#222" text-anchor="middle">~</text>
+  
+  <circle cx="460" cy="260" r="40" fill="#888888"/>
+  <circle cx="456" cy="254" r="3" fill="#4285F4"/><circle cx="464" cy="254" r="3" fill="#EA4335"/><circle cx="456" cy="266" r="3" fill="#FBBC04"/><circle cx="464" cy="266" r="3" fill="#34A853"/>
+  
+  <circle cx="540" cy="260" r="40" fill="#00D9FF"/>
+  <text x="540" y="272" font-size="28" font-weight="bold" fill="white" text-anchor="middle">C</text>
+  
+  <circle cx="620" cy="260" r="40" fill="#2FC66F"/>
+  <text x="620" y="272" font-size="28" font-weight="bold" fill="white" text-anchor="middle">✓</text>
+  
+  <circle cx="700" cy="260" r="40" fill="#FF6B35"/>
+  <text x="700" y="272" font-size="28" font-weight="bold" fill="white" text-anchor="middle">›</text>
+  
+  <circle cx="780" cy="260" r="40" fill="#00D9FF"/>
+  <text x="780" y="272" font-size="24" font-weight="bold" fill="white" text-anchor="middle">◆</text>
+</svg>
+  <circle cx="200" cy="100" r="45" fill="none" stroke="white" stroke-width="8"/>
+  
+  <!-- Adobe Lightroom (Gray) -->
+  <circle cx="320" cy="100" r="50" fill="#888888"/>
+  <text x="320" y="115" font-size="35" font-weight="bold" fill="white" text-anchor="middle">Lr</text>
+  
+  <!-- Figma (Gray) -->
+  <circle cx="440" cy="100" r="50" fill="#888888"/>
+  <circle cx="430" cy="90" r="8" fill="#FF6B9D"/>
+  <circle cx="450" cy="90" r="8" fill="#1DB94C"/>
+  <circle cx="450" cy="110" r="8" fill="#0ACF83"/>
+  <circle cx="430" cy="110" r="8" fill="#9C27B0"/>
+  
+  <!-- Adobe AI (Gray) -->
+  <circle cx="560" cy="100" r="50" fill="#888888"/>
+  <text x="560" y="115" font-size="35" font-weight="bold" fill="#FFB81C" text-anchor="middle">Ai</text>
+  
+  <!-- Shopify (Green) -->
+  <circle cx="680" cy="100" r="50" fill="#96C839"/>
+  <text x="680" y="115" font-size="40" font-weight="bold" fill="white" text-anchor="middle">S</text>
+  
+  <!-- WordPress (Teal) -->
+  <circle cx="800" cy="100" r="50" fill="#0073AA"/>
+  <text x="800" y="115" font-size="40" font-weight="bold" fill="white" text-anchor="middle">W</text>
+  
+  <!-- Adobe Photoshop (Dark) -->
+  <circle cx="920" cy="100" r="50" fill="#001C3D"/>
+  <text x="920" y="115" font-size="40" font-weight="bold" fill="#31A8FF" text-anchor="middle">Ps</text>
+  
+  <!-- Elementor (Pink) -->
+  <circle cx="1040" cy="100" r="50" fill="#FFB3D9"/>
+  <text x="1040" y="115" font-size="35" font-weight="bold" fill="#FF1493" text-anchor="middle">E</text>
+  
+  <!-- Adobe XD (Purple) -->
+  <circle cx="1160" cy="100" r="50" fill="#5B21B6"/>
+  <text x="1160" y="115" font-size="40" font-weight="bold" fill="#FF61F6" text-anchor="middle">Xd</text>
+  
+  <!-- Row 2 -->
+  <!-- Adobe After Effects (Dark Blue) -->
+  <circle cx="80" cy="280" r="50" fill="#001A3D"/>
+  <text x="80" y="295" font-size="40" font-weight="bold" fill="#9C27B0" text-anchor="middle">Ae</text>
+  
+  <!-- Notion (Blue) -->
+  <circle cx="200" cy="280" r="50" fill="#0073E6"/>
+  <text x="200" y="295" font-size="40" font-weight="bold" fill="white" text-anchor="middle">W</text>
+  
+  <!-- Framer (Blue) -->
+  <circle cx="320" cy="280" r="50" fill="#0099FF"/>
+  <text x="320" y="295" font-size="35" font-weight="bold" fill="white" text-anchor="middle">▶</text>
+  
+  <!-- Webflow (Blue) -->
+  <circle cx="440" cy="280" r="50" fill="#2E5BFF"/>
+  <text x="440" y="295" font-size="40" font-weight="bold" fill="white" text-anchor="middle">b</text>
+  
+  <!-- WooCommerce (Purple) -->
+  <circle cx="560" cy="280" r="50" fill="#7A2AF9"/>
+  <text x="560" y="295" font-size="35" font-weight="bold" fill="white" text-anchor="middle">WC</text>
+  
+  <!-- Adobe XD Red (Gray) -->
+  <circle cx="680" cy="280" r="50" fill="#888888"/>
+  <text x="680" y="295" font-size="40" font-weight="bold" fill="#FF5C5C" text-anchor="middle">H</text>
+  
+  <!-- Adobe InDesign Red (Dark Red) -->
+  <circle cx="800" cy="280" r="50" fill="#8B0000"/>
+  <text x="800" y="295" font-size="40" font-weight="bold" fill="#FF69B4" text-anchor="middle">Id</text>
+  
+  <!-- React (Cyan) -->
+  <circle cx="920" cy="280" r="50" fill="#61DAFB" opacity="0.7"/>
+  <text x="920" y="295" font-size="30" font-weight="bold" fill="#222" text-anchor="middle">⚛</text>
+  
+  <!-- Zapier (Orange) -->
+  <circle cx="1040" cy="280" r="50" fill="#FF6B35"/>
+  <text x="1040" y="295" font-size="35" font-weight="bold" fill="white" text-anchor="middle">_z</text>
+  
+  <!-- Canva (Purple/Cyan) -->
+  <circle cx="1160" cy="280" r="50" fill="#7B5AFF"/>
+  <text x="1160" y="295" font-size="40" font-weight="bold" fill="white" text-anchor="middle">C</text>
+  
+  <!-- Row 3 -->
+  <!-- Supabase (Gray) -->
+  <circle cx="80" cy="460" r="50" fill="#888888"/>
+  <text x="80" y="475" font-size="35" font-weight="bold" fill="white" text-anchor="middle">⚛</text>
+  
+  <!-- Webflow (Blue) -->
+  <circle cx="200" cy="460" r="50" fill="#0099FF"/>
+  <circle cx="195" cy="455" r="6" fill="white"/>
+  <circle cx="205" cy="455" r="6" fill="white"/>
+  
+  <!-- Isometric (Gray) -->
+  <circle cx="320" cy="460" r="50" fill="#888888"/>
+  <text x="320" y="475" font-size="35" font-weight="bold" fill="white" text-anchor="middle">▭</text>
+  
+  <!-- Miro (Red/Orange) -->
+  <circle cx="440" cy="460" r="50" fill="#FF6B35"/>
+  <text x="440" y="475" font-size="40" font-weight="bold" fill="white" text-anchor="middle">M</text>
+  
+  <!-- Framer (Cyan) -->
+  <circle cx="560" cy="460" r="50" fill="#00D9FF"/>
+  <text x="560" y="475" font-size="35" font-weight="bold" fill="white" text-anchor="middle">~</text>
+  
+  <!-- Google Photos (Gray) -->
+  <circle cx="680" cy="460" r="50" fill="#888888"/>
+  <circle cx="675" cy="455" r="5" fill="#4285F4"/>
+  <circle cx="685" cy="455" r="5" fill="#EA4335"/>
+  <circle cx="675" cy="465" r="5" fill="#FBBC04"/>
+  <circle cx="685" cy="465" r="5" fill="#34A853"/>
+  
+  <!-- Canva (Cyan/Blue) -->
+  <circle cx="800" cy="460" r="50" fill="#00D9FF"/>
+  <text x="800" y="475" font-size="40" font-weight="bold" fill="white" text-anchor="middle">C</text>
+  
+  <!-- Checkmark (Green/Teal) -->
+  <circle cx="920" cy="460" r="50" fill="#2FC66F"/>
+  <text x="920" y="475" font-size="40" font-weight="bold" fill="white" text-anchor="middle">✓</text>
+  
+  <!-- Framer (Orange) -->
+  <circle cx="1040" cy="460" r="50" fill="#FF6B35"/>
+  <text x="1040" y="475" font-size="40" font-weight="bold" fill="white" text-anchor="middle">›</text>
+  
+  <!-- Commandbar (Cyan) -->
+  <circle cx="1160" cy="460" r="50" fill="#00D9FF"/>
+  <text x="1160" y="475" font-size="35" font-weight="bold" fill="white" text-anchor="middle">⌘</text>
+</svg>

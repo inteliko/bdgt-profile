@@ -59,7 +59,7 @@ const TalentCarousel = () => {
       name: "Rahin Hossain",
       role: "Video Edtior",
       rating: 5,
-      image: "/lovable-uploads/af5c552b-0743-40a7-8e07-9df37d3a60d9.png",
+      image: "/lovable-uploads/rahin-editor.jpg",
       skills: ["Adobe", "Adobe Premier Pro", "Final Cut Pro", "Shots/Reels"],
       experience: "3+ years"
     },

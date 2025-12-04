@@ -340,7 +340,7 @@ const Index = () => {
             {/* Card 1 */}
             <div className="relative bg-gray-50 rounded-2xl p-10 min-h-[220px]">
               <h3 className="text-2xl font-bold mb-4 text-black">Kick-off</h3>
-              <p className="text-gray-600 mb-6">our partnership today and delegate your first projects.</p>
+              <p className="text-gray-600 mb-6">partnership today with us today and delegate your first projects.</p>
               <div className="absolute right-6 bottom-6 w-20 h-12 opacity-90">
                 {/* Vector: three diamonds (one filled) */}
                 <svg viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">

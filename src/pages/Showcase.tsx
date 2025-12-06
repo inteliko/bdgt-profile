@@ -13,50 +13,358 @@ const Showcase = () => {
   ];
 
   const portfolioItems = [
+    // UI/UX Design
     {
       id: 1,
-      category: "Mobile",
-      title: "Mobile App Design Collection",
-      image: "/projects/community-app.gif",
-      description: "Various mobile app interfaces showcasing modern design principles"
+      category: "UI/UX Design",
+      title: "Mail UI & UX Design",
+      image: "/projects/mail-ui&ux.gif",
+      description: "Professional email interface design"
     },
-
-    
     {
       id: 2,
       category: "UI/UX Design",
-      title: "Web & Dashboard Designs",
-      image: "/lovable-projects/b70b02c9-6355-4086-ac6d-bea8fb03bba2.png",
-      description: "Clean and functional web interfaces and dashboard designs"
+      title: "Mobile UI & UX Design",
+      image: "/projects/mobile-ui&ux.png",
+      description: "Mobile application interface design"
     },
     {
       id: 3,
-      category: "Print Design & Stationary",
-      title: "Brand Identity Materials",
-      image: "/lovable-uploads/36753a71-1856-4b9d-a422-e01ee181a666.png",
-      description: "Complete brand identity and print design solutions"
+      category: "UI/UX Design",
+      title: "Website UI & UX Design",
+      image: "/projects/website-ui&ux.gif",
+      description: "Website interface and user experience design"
     },
+
+    // Mobile
     {
       id: 4,
-      category: "Branding",
-      title: "Brand Guidelines & Systems",
-      image: "/lovable-uploads/566bc442-6476-465a-8511-7e28ed062cf6.png",
-      description: "Comprehensive brand guideline documents and design systems"
+      category: "Mobile",
+      title: "Mobile App 1",
+      image: "/projects/mobile1.gif",
+      description: "Mobile application design"
     },
     {
       id: 5,
-      category: "Illustrations",
-      title: "Creative Illustrations & Graphics",
-      image: "/lovable-uploads/98174431-d1e5-419a-8eed-acd6cbca6716.png",
-      description: "Custom illustrations and creative graphic design work"
+      category: "Mobile",
+      title: "Mobile App 2",
+      image: "/projects/mobile2.png",
+      description: "Mobile application design"
     },
-
-     {
+    {
       id: 6,
       category: "Mobile",
-      title: "CRM Software",
-      image: "/projects/crm_screenshot.gif",
-      description: "Various mobile app interfaces showcasing modern design principles"
+      title: "Mobile App 3",
+      image: "/projects/mobile3.png",
+      description: "Mobile application design"
+    },
+    {
+      id: 7,
+      category: "Mobile",
+      title: "Mobile App 4",
+      image: "/projects/mobile4.png",
+      description: "Mobile application design"
+    },
+    {
+      id: 8,
+      category: "Mobile",
+      title: "Mobile App 5",
+      image: "/projects/mobile5.png",
+      description: "Mobile application design"
+    },
+    {
+      id: 9,
+      category: "Mobile",
+      title: "Mobile App 6",
+      image: "/projects/mobile6.png",
+      description: "Mobile application design"
+    },
+    {
+      id: 10,
+      category: "Mobile",
+      title: "Mobile App 7",
+      image: "/projects/mobile7.png",
+      description: "Mobile application design"
+    },
+
+    // Illustrations
+    {
+      id: 11,
+      category: "Illustrations",
+      title: "Illustration 1",
+      image: "/projects/illustrate-1.png",
+      description: "Custom illustration"
+    },
+    {
+      id: 12,
+      category: "Illustrations",
+      title: "Illustration 2",
+      image: "/projects/illustrate-2.png",
+      description: "Custom illustration"
+    },
+    {
+      id: 13,
+      category: "Illustrations",
+      title: "Illustration 3",
+      image: "/projects/illustrate-3.png",
+      description: "Custom illustration"
+    },
+    {
+      id: 14,
+      category: "Illustrations",
+      title: "Illustration 4",
+      image: "/projects/illustrate-4.png",
+      description: "Custom illustration"
+    },
+
+    // Branding
+    {
+      id: 15,
+      category: "Branding",
+      title: "Brand Identity 1",
+      image: "/projects/branding1.png",
+      description: "Brand identity and guidelines"
+    },
+    {
+      id: 16,
+      category: "Branding",
+      title: "Brand Identity 2",
+      image: "/projects/branding2.png",
+      description: "Brand identity and guidelines"
+    },
+    {
+      id: 17,
+      category: "Branding",
+      title: "Brand Identity 3",
+      image: "/projects/branding3.png",
+      description: "Brand identity and guidelines"
+    },
+    {
+      id: 18,
+      category: "Branding",
+      title: "Brand Identity 4",
+      image: "/projects/branding4.png",
+      description: "Brand identity and guidelines"
+    },
+    {
+      id: 19,
+      category: "Branding",
+      title: "Brand Identity 5",
+      image: "/projects/branding5.png",
+      description: "Brand identity and guidelines"
+    },
+
+    // eBook & Digital Guides
+    {
+      id: 20,
+      category: "eBook & Digital Guides",
+      title: "eBook 1",
+      image: "/projects/ebook1.png",
+      description: "Digital guide and eBook design"
+    },
+    {
+      id: 21,
+      category: "eBook & Digital Guides",
+      title: "eBook 2",
+      image: "/projects/ebook2.png",
+      description: "Digital guide and eBook design"
+    },
+    {
+      id: 22,
+      category: "eBook & Digital Guides",
+      title: "eBook 3",
+      image: "/projects/ebook3.png",
+      description: "Digital guide and eBook design"
+    },
+    {
+      id: 23,
+      category: "eBook & Digital Guides",
+      title: "eBook 4",
+      image: "/projects/ebook4.png",
+      description: "Digital guide and eBook design"
+    },
+    {
+      id: 24,
+      category: "eBook & Digital Guides",
+      title: "eBook 5",
+      image: "/projects/ebook5.png",
+      description: "Digital guide and eBook design"
+    },
+    {
+      id: 25,
+      category: "eBook & Digital Guides",
+      title: "eBook 6",
+      image: "/projects/ebook6.png",
+      description: "Digital guide and eBook design"
+    },
+
+    // Presentation
+    {
+      id: 26,
+      category: "Presentation",
+      title: "Presentation 1",
+      image: "/projects/presentation1.gif",
+      description: "Professional presentation design"
+    },
+    {
+      id: 27,
+      category: "Presentation",
+      title: "Presentation 2",
+      image: "/projects/presentation2.gif",
+      description: "Professional presentation design"
+    },
+    {
+      id: 28,
+      category: "Presentation",
+      title: "Presentation 3",
+      image: "/projects/presentation3.gif",
+      description: "Professional presentation design"
+    },
+    {
+      id: 29,
+      category: "Presentation",
+      title: "Presentation 4",
+      image: "/projects/presentation4.gif",
+      description: "Professional presentation design"
+    },
+
+    // Packaging
+    {
+      id: 30,
+      category: "Packaging",
+      title: "Packaging 1",
+      image: "/projects/packaging1.png",
+      description: "Product packaging design"
+    },
+    {
+      id: 31,
+      category: "Packaging",
+      title: "Packaging 2",
+      image: "/projects/packaging2.png",
+      description: "Product packaging design"
+    },
+    {
+      id: 32,
+      category: "Packaging",
+      title: "Packaging 3",
+      image: "/projects/packaging3.png",
+      description: "Product packaging design"
+    },
+    {
+      id: 33,
+      category: "Packaging",
+      title: "Packaging 4",
+      image: "/projects/packaging4.png",
+      description: "Product packaging design"
+    },
+    {
+      id: 34,
+      category: "Packaging",
+      title: "Packaging 5",
+      image: "/projects/packaging5.png",
+      description: "Product packaging design"
+    },
+    {
+      id: 35,
+      category: "Packaging",
+      title: "Packaging 6",
+      image: "/projects/packaging6.png",
+      description: "Product packaging design"
+    },
+    {
+      id: 36,
+      category: "Packaging",
+      title: "Packaging 7",
+      image: "/projects/packaging7.png",
+      description: "Product packaging design"
+    },
+    {
+      id: 37,
+      category: "Packaging",
+      title: "Packaging 8",
+      image: "/projects/packaging8.png",
+      description: "Product packaging design"
+    },
+    {
+      id: 38,
+      category: "Packaging",
+      title: "Packaging 9",
+      image: "/projects/packaging9.png",
+      description: "Product packaging design"
+    },
+    {
+      id: 39,
+      category: "Packaging",
+      title: "Packaging 10",
+      image: "/projects/packaging10.png",
+      description: "Product packaging design"
+    },
+    {
+      id: 40,
+      category: "Packaging",
+      title: "Packaging 11",
+      image: "/projects/packaging11.png",
+      description: "Product packaging design"
+    },
+
+    // Ad Creative
+    {
+      id: 41,
+      category: "Ad Creative",
+      title: "Ad Creative 1",
+      image: "/projects/graphic-1.png",
+      description: "Advertising creative design"
+    },
+    {
+      id: 42,
+      category: "Ad Creative",
+      title: "Ad Creative 2",
+      image: "/projects/graphic-2.png",
+      description: "Advertising creative design"
+    },
+    {
+      id: 43,
+      category: "Ad Creative",
+      title: "Ad Creative 3",
+      image: "/projects/graphic-3.png",
+      description: "Advertising creative design"
+    },
+    {
+      id: 44,
+      category: "Ad Creative",
+      title: "Ad Creative 4",
+      image: "/projects/graphic-4.png",
+      description: "Advertising creative design"
+    },
+
+    // Social Media Graphics
+    {
+      id: 45,
+      category: "Social Media Graphics",
+      title: "Social Media 1",
+      image: "/projects/graphic-5.png",
+      description: "Social media graphic design"
+    },
+    {
+      id: 46,
+      category: "Social Media Graphics",
+      title: "Social Media 2",
+      image: "/projects/graphic-6.png",
+      description: "Social media graphic design"
+    },
+    {
+      id: 47,
+      category: "Social Media Graphics",
+      title: "Social Media 3",
+      image: "/projects/graphic-7.gif",
+      description: "Social media graphic design"
+    },
+    {
+      id: 48,
+      category: "Social Media Graphics",
+      title: "Social Media 4",
+      image: "/projects/graphic-8.png",
+      description: "Social media graphic design"
     },
   ];
 
@@ -107,12 +415,12 @@ const Showcase = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {filteredItems.map((item) => (
-              <div key={item.id} className="group cursor-pointer bw-hover">
-                <div className="bg-gray-100 rounded-2xl overflow-hidden mb-4 h-96 md:h-[520px] lg:h-[520px]">
+              <div key={item.id} className="group cursor-pointer">
+                <div className="bg-gray-100 rounded-2xl overflow-hidden mb-4 h-96 md:h-[520px] lg:h-[520px] shadow-lg group-hover:shadow-2xl transition-all duration-300">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-300"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
                   />
                 </div>
               </div>

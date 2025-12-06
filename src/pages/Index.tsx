@@ -165,19 +165,19 @@ const Index = () => {
   const workItems = [
     {
       id: 1,
-      image: "/projects/1.png",
+      image: "/projects/website-ui&ux.gif",
       title: "Mobile App Design Collection",
       description: "Various mobile app interfaces showcasing modern design principles"
     },
     {
       id: 2,
-      image: "/projects/2.png",
+      image: "/projects/presentation1.gif",
       title: "Web & Dashboard Designs",
       description: "Clean and functional web interfaces and dashboard designs"
     },
     {
       id: 3,
-      image: "/projects/3.png",
+      image: "/projects/mobile1.gif",
       title: "Brand Identity Materials",
       description: "Complete brand identity and print design solutions"
     }

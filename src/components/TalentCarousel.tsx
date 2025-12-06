@@ -77,22 +77,22 @@ const TalentCarousel = () => {
         <div className="mb-8">
           {/* Continuous right-to-left marquee */}
           <div className="scrolling-wrapper w-full overflow-x-hidden">
-            <div className="scrolling-content inline-flex items-center gap-8 whitespace-nowrap" style={{ ['--marquee-duration' as any]: '20s' }}>
+            <div className="scrolling-content inline-flex items-center gap-8 whitespace-nowrap pointer-events-none" style={{ ['--marquee-duration' as any]: '20s' }}>
               {[...talents, ...talents].map((talent, idx) => {
                 const colors = ["bg-white", "bg-blue-500 text-white", "bg-green-400 text-black", "bg-yellow-300 text-black", "bg-white", "bg-slate-50"];
                 const colorClass = colors[idx % colors.length];
                 return (
-                  <div key={`${talent.name}-${idx}`} className="inline-flex flex-shrink-0 w-56 md:w-64 lg:w-72">
+                  <div key={`${talent.name}-${idx}`} className="inline-flex flex-shrink-0 w-56 md:w-64 lg:w-72 pointer-events-auto">
                       <div className="talent-card group rounded-2xl overflow-hidden shadow-lg transition-all duration-300 border border-gray-100 bg-white m-2">
                       <div className="relative aspect-[4/5] bg-gray-100">
                         {talent.image ? (
-                            <img src={talent.image} alt={talent.name} className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300 ease-out" />
+                            <img src={talent.image} alt={talent.name} className="w-full h-full object-cover transition-all duration-300 ease-out" />
                         ) : (
                           <div className="w-full h-full bg-gray-50 flex items-center justify-center text-gray-400">{talent.name}</div>
                         )}
 
-                        {/* label overlay */}
-                        <div className={`absolute left-4 bottom-4 px-4 py-2 rounded-md ${colorClass} inline-block shadow-lg`}>
+                        {/* label overlay - always visible */}
+                        <div className={`absolute left-4 bottom-4 px-4 py-2 rounded-md ${colorClass} inline-block shadow-lg z-10`}>
                           <div className="text-sm font-semibold">
                             {talent.name.split(' ')[0]}
                             {talent.name.split(' ').length > 1 ? ' ' + talent.name.split(' ')[1].charAt(0) + '.' : ''}

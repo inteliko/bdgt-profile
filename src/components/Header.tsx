@@ -17,7 +17,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`fixed top-4 left-4 right-4 z-50 transition-all duration-300 rounded-2xl ${
+    <header className={`fixed top-4 left-8 right-8 z-50 transition-all duration-300 rounded-2xl shadow-md ${
       isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-white/80 backdrop-blur-sm'
     }`}>
       <div className="max-w-7xl mx-auto px-6 py-4">

@@ -71,7 +71,6 @@ function Logo({ slug, name, size = 48 }: { slug: string; name: string; size?: nu
         width={size}
         height={size}
         className="w-full h-full object-contain rounded-sm bg-transparent"
-        style={{ filter: 'grayscale(100%) contrast(1.1)' }}
         onError={handleError}
       />
     );

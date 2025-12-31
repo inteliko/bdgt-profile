@@ -284,7 +284,7 @@ const Index = () => {
                   <div key={index} className="flex items-center justify-center h-16 md:h-20">
                     {company.logo ? (
                       <div className="w-24 md:w-28 h-12 md:h-14 bg-white rounded-md flex items-center justify-center overflow-hidden p-2 shadow-sm">
-                        <img src={company.logo} alt={company.name} className="max-w-full max-h-full object-contain filter grayscale opacity-60" />
+                        <img src={company.logo} alt={company.name} className="max-w-full max-h-full object-contain filter opacity-60" />
                       </div>
                     ) : (
                       <div className="w-24 md:w-28 h-12 md:h-14 bg-white rounded-md flex items-center justify-center">

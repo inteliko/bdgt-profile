@@ -259,7 +259,7 @@ const Index = () => {
           <div className="grid md:grid-cols-12 gap-8 items-center">
             <div className="md:col-span-5">
               <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-black leading-tight display-title">
-                Trusted by fast-moving<br />
+                Trusted by fast-moving
                 brands & agencies worldwide
               </h2>
 

@@ -260,68 +260,7 @@ const Talents = () => {
           
 
               {/* Visual Talent Showcase Cluster (positioned tiles to mimic reference) */}
-              <div className="relative mb-16">
-                <div className="max-w-5xl mx-auto">
-                  <div className="relative h-64 md:h-80 lg:h-[360px]">
-                    {/* Define positioned tiles */}
-                    {(
-                      [
-                        { left: '8%', top: '20%', size: 72, type: 'avatar', imgIndex: 1 },
-                        { left: '22%', top: '6%', size: 96, type: 'avatar', imgIndex: 2, ring: true },
-                        { left: '34%', top: '14%', size: 70, type: 'card', card: 'chart' },
-                        { left: '46%', top: '4%', size: 96, type: 'avatar', imgIndex: 3 },
-                        { left: '60%', top: '18%', size: 100, type: 'card', card: 'stat' },
-                        { left: '72%', top: '10%', size: 80, type: 'avatar', imgIndex: 4 },
-                        { left: '14%', top: '36%', size: 84, type: 'avatar', imgIndex: 5 },
-                        { left: '30%', top: '40%', size: 120, type: 'card', card: 'map' },
-                        { left: '50%', top: '36%', size: 100, type: 'avatar', imgIndex: 6 },
-                        { left: '66%', top: '36%', size: 84, type: 'avatar', imgIndex: 7 },
-                        { left: '78%', top: '30%', size: 72, type: 'avatar', imgIndex: 8 },
-                        { left: '40%', top: '54%', size: 110, type: 'card', card: 'panel' },
-                      
-                      ]
-                    ).map((tile, i) => (
-                      <div
-                        key={i}
-                        className="absolute rounded-lg shadow-2xl flex items-center justify-center overflow-hidden"
-                        style={{ left: tile.left, top: tile.top, width: tile.size, height: tile.size, transform: 'translate(-50%,-50%)' }}
-                      >
-                        {tile.type === 'avatar' ? (
-                          <div className="w-full h-full rounded-lg bg-black/60 border border-white/6 flex items-center justify-center">
-                            <img
-                              src={talentImages[tile.imgIndex % talentImages.length]}
-                              alt={`Talent ${tile.imgIndex}`}
-                              className={`object-cover ${tile.ring ? 'rounded-lg ring-4 ring-[#00f2a6]' : 'rounded-lg'}`} 
-                              style={{ width: '100%', height: '100%' }}
-                            />
-                          </div>
-                        ) : (
-                          // simple card placeholders (chart / stat / panel)
-                          (tile.card === 'chart') ? (
-                            <div className="w-full h-full bg-white rounded-lg p-2 flex items-center justify-center">
-                              <svg viewBox="0 0 100 60" className="w-full h-full">
-                                <rect width="100" height="60" rx="6" fill="#ffffffff" />
-                                <polyline points="6,48 24,36 42,40 60,24 78,28 94,18" fill="none" stroke="#3b82f6" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                              </svg>
-                            </div>
-                          ) : tile.card === 'stat' ? (
-                            <div className="w-full h-full bg-black rounded-lg p-2 flex flex-col justify-center">
-                              <div className="text-2xl font-bold text-white">70%</div>
-                              <div className="text-xs text-gray-500">Monthly Growth</div>
-                            </div>
-                          ) : tile.card === 'map' ? (
-                            <div className="w-full h-full bg-white rounded-lg p-2 flex items-center justify-center">
-                              <div className="w-full h-full bg-black rounded-md flex items-center justify-center text-white font-semibold">Top Talents</div>
-                            </div>
-                          ) : (
-                            <div className="w-full h-full bg-white rounded-lg p-2"></div>
-                          )
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+          
 
           {/* Stats Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8">

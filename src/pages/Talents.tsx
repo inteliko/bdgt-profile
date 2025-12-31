@@ -158,13 +158,13 @@ const Talents = () => {
 
   // Sample talent images - using placeholder images that represent diverse professionals
   const talentImages = [
-    "/lovable-uploads/68e3efce-9f90-461b-b9a4-bb323c5dc4f4.png",
+    "/lovable-uploads/be5f29b5-34d7-41b8-8ff4-a7e867bf2770.png",
     "/lovable-uploads/58083057-84a1-473f-adfe-c44f63d68016.png", 
-    "/lovable-uploads/98174431-d1e5-419a-8eed-acd6cbca6716.png",
-    "/lovable-uploads/566bc442-6476-465a-8511-7e28ed062cf6.png",
-    "/lovable-uploads/4e1fc28b-dfb1-4db8-91a0-a2e0d51b1d2b.png",
+    "/lovable-uploads/talent7.jpg",
     "/lovable-uploads/7596d42d-8ba8-4fc6-84e7-e0b36f5fd049.png",
-    "/lovable-uploads/42bc35cf-64cd-49d8-a36c-b34ac31583a3.png",
+    "/lovable-uploads/0bb5d39a-0f1c-405f-8d5b-fbc8f34bc3a0.png",
+    "/lovable-uploads/rahin-editor.jpg",
+    "/lovable-uploads/designer.png",
     "/lovable-uploads/e3679983-32c7-4d6f-bd01-bc7873910659.png"
   ];
 
@@ -266,20 +266,19 @@ const Talents = () => {
                     {/* Define positioned tiles */}
                     {(
                       [
-                        { left: '8%', top: '20%', size: 72, type: 'avatar', imgIndex: 0 },
-                        { left: '22%', top: '6%', size: 96, type: 'avatar', imgIndex: 1, ring: true },
-                        { left: '34%', top: '14%', size: 140, type: 'card', card: 'chart' },
-                        { left: '46%', top: '4%', size: 96, type: 'avatar', imgIndex: 2 },
-                        { left: '60%', top: '18%', size: 220, type: 'card', card: 'stat' },
-                        { left: '72%', top: '10%', size: 80, type: 'avatar', imgIndex: 3 },
-                        { left: '14%', top: '36%', size: 84, type: 'avatar', imgIndex: 4 },
+                        { left: '8%', top: '20%', size: 72, type: 'avatar', imgIndex: 1 },
+                        { left: '22%', top: '6%', size: 96, type: 'avatar', imgIndex: 2, ring: true },
+                        { left: '34%', top: '14%', size: 70, type: 'card', card: 'chart' },
+                        { left: '46%', top: '4%', size: 96, type: 'avatar', imgIndex: 3 },
+                        { left: '60%', top: '18%', size: 100, type: 'card', card: 'stat' },
+                        { left: '72%', top: '10%', size: 80, type: 'avatar', imgIndex: 4 },
+                        { left: '14%', top: '36%', size: 84, type: 'avatar', imgIndex: 5 },
                         { left: '30%', top: '40%', size: 120, type: 'card', card: 'map' },
-                        { left: '50%', top: '36%', size: 100, type: 'avatar', imgIndex: 5 },
-                        { left: '66%', top: '36%', size: 84, type: 'avatar', imgIndex: 6 },
-                        { left: '78%', top: '30%', size: 72, type: 'avatar', imgIndex: 7 },
+                        { left: '50%', top: '36%', size: 100, type: 'avatar', imgIndex: 6 },
+                        { left: '66%', top: '36%', size: 84, type: 'avatar', imgIndex: 7 },
+                        { left: '78%', top: '30%', size: 72, type: 'avatar', imgIndex: 8 },
                         { left: '40%', top: '54%', size: 110, type: 'card', card: 'panel' },
-                        { left: '56%', top: '56%', size: 88, type: 'avatar', imgIndex: 2 },
-                        { left: '68%', top: '52%', size: 76, type: 'avatar', imgIndex: 4 },
+                      
                       ]
                     ).map((tile, i) => (
                       <div
@@ -301,18 +300,18 @@ const Talents = () => {
                           (tile.card === 'chart') ? (
                             <div className="w-full h-full bg-white rounded-lg p-2 flex items-center justify-center">
                               <svg viewBox="0 0 100 60" className="w-full h-full">
-                                <rect width="100" height="60" rx="6" fill="#f8fafc" />
+                                <rect width="100" height="60" rx="6" fill="#ffffffff" />
                                 <polyline points="6,48 24,36 42,40 60,24 78,28 94,18" fill="none" stroke="#3b82f6" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                               </svg>
                             </div>
                           ) : tile.card === 'stat' ? (
-                            <div className="w-full h-full bg-white rounded-lg p-3 flex flex-col justify-center">
-                              <div className="text-2xl font-bold text-black">70%</div>
+                            <div className="w-full h-full bg-black rounded-lg p-2 flex flex-col justify-center">
+                              <div className="text-2xl font-bold text-white">70%</div>
                               <div className="text-xs text-gray-500">Monthly Growth</div>
                             </div>
                           ) : tile.card === 'map' ? (
                             <div className="w-full h-full bg-white rounded-lg p-2 flex items-center justify-center">
-                              <div className="w-full h-full bg-blue-500 rounded-md flex items-center justify-center text-white font-semibold">Map</div>
+                              <div className="w-full h-full bg-black rounded-md flex items-center justify-center text-white font-semibold">Top Talents</div>
                             </div>
                           ) : (
                             <div className="w-full h-full bg-white rounded-lg p-2"></div>

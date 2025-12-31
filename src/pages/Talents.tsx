@@ -457,13 +457,50 @@ const Talents = () => {
             expert gets the job done efficiently, even if you need these specialized skills for just one day.
           </p>
 
-          <Marquee text={[
-            'No-Code Apps', 'Elementor Website', 'Landing Pages', 'Custom CSS', 'Shopify Development', 'Vue.js', 'Presentation Design',
-            'Logo Design', 'Google Analytics', 'Sales Funnels', 'Motion Graphics', 'UI/UX Design', 'Membership Sites', 'Tailwind CSS',
-            'Email Templates', 'HTML', 'Mobile App Design', 'WordPress', 'Figma', 'Automation', 'Branding', 'Online Course Setup',
-            'Sitemap Creation', 'Web App Design', 'Zapier', 'Site Speed Optimization', 'React Development', 'Python Programming',
-            'Database Design', 'API Integration', 'E-commerce Solutions', 'SEO Optimization', 'Content Management', 'Digital Marketing'
-          ].join(' • ')} />
+          {/* Modern Infinite Loop Skills Scroller */}
+          <div className="relative w-full overflow-hidden">
+            {/* Fade edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10"></div>
+            
+            <div className="flex animate-scroll whitespace-nowrap">
+              <div className="flex items-center gap-4 px-4">
+                {[
+                  'No-Code Apps', 'Elementor Website', 'Landing Pages', 'Custom CSS', 'Shopify Development', 'Vue.js', 'Presentation Design',
+                  'Logo Design', 'Google Analytics', 'Sales Funnels', 'Motion Graphics', 'UI/UX Design', 'Membership Sites', 'Tailwind CSS',
+                  'Email Templates', 'HTML', 'Mobile App Design', 'WordPress', 'Figma', 'Automation', 'Branding', 'Online Course Setup',
+                  'Sitemap Creation', 'Web App Design', 'Zapier', 'Site Speed Optimization', 'React Development', 'Python Programming',
+                  'Database Design', 'API Integration', 'E-commerce Solutions', 'SEO Optimization', 'Content Management', 'Digital Marketing'
+                ].map((skill, index) => (
+                  <span key={index} className={`text-lg font-medium px-3 py-2 rounded-full transition-colors ${
+                    ['UI/UX Design', 'React Development', 'Python Programming', 'SEO Optimization'].includes(skill) 
+                      ? 'bg-growmodo-green/10 text-growmodo-green border border-growmodo-green/20' 
+                      : 'bg-gray-100 text-gray-700'
+                  }`}>
+                    {skill}
+                  </span>
+                ))}
+              </div>
+              {/* Duplicate for seamless loop */}
+              <div className="flex items-center gap-4 px-4">
+                {[
+                  'No-Code Apps', 'Elementor Website', 'Landing Pages', 'Custom CSS', 'Shopify Development', 'Vue.js', 'Presentation Design',
+                  'Logo Design', 'Google Analytics', 'Sales Funnels', 'Motion Graphics', 'UI/UX Design', 'Membership Sites', 'Tailwind CSS',
+                  'Email Templates', 'HTML', 'Mobile App Design', 'WordPress', 'Figma', 'Automation', 'Branding', 'Online Course Setup',
+                  'Sitemap Creation', 'Web App Design', 'Zapier', 'Site Speed Optimization', 'React Development', 'Python Programming',
+                  'Database Design', 'API Integration', 'E-commerce Solutions', 'SEO Optimization', 'Content Management', 'Digital Marketing'
+                ].map((skill, index) => (
+                  <span key={`dup-${index}`} className={`text-lg font-medium px-3 py-2 rounded-full transition-colors ${
+                    ['UI/UX Design', 'React Development', 'Python Programming', 'SEO Optimization'].includes(skill) 
+                      ? 'bg-growmodo-green/10 text-growmodo-green border border-growmodo-green/20' 
+                      : 'bg-gray-100 text-gray-700'
+                  }`}>
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
 
         </div>
       </section>

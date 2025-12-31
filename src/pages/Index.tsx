@@ -199,7 +199,7 @@ const Index = () => {
         <div className="max-w-6xl mx-auto text-center relative z-10">
           <h1 className="text-5xl md:text-7xl font-bold text-black mb-8 leading-tight mt-6 md:mt-8 hero-title">
             Hire Your Whole Product<br />
-            Team on a Subscription
+            Team on a <span className="text-blue-500 font-medium">Subscription</span>
           </h1>
 
           {/* Product Hunt Featured Upvote Badge */}

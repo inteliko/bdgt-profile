@@ -233,12 +233,12 @@ const Talents = () => {
       <section className="pt-32 pb-20 px-6 bg-black text-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="text-6xl md:text-7xl font-bold mb-6">
               Great Designers & Developers<br />
               Don't Grow on Trees.<br />
               <span className="text-growmodo-green">They Grow at Startmodo.</span>
             </h1>
-            <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+            <p className="text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
               Startmodo uses a community-first approach to find & manage exceptional talents 
               and continuously invests in their skill development to help them accelerate their 
               careers while working with progressive brands worldwide.
@@ -341,12 +341,12 @@ const Talents = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left - heading + CTA */}
             <div className="lg:pr-12">
-              <h2 className="text-4xl lg:text-5xl font-bold leading-tight mb-6">
+              <h2 className="text-5xl lg:text-6xl font-bold leading-tight mb-6">
                 Our Comprehensive Screening
                 <br />
                 &amp; Talent Development Process
               </h2>
-              <p className="text-gray-300 mb-8 max-w-xl">
+              <p className="text-lg mb-8 max-w-xl">
                 We've designed a thorough 6‑step process to ensure only the most qualified,
                 committed, and culturally aligned professionals join our talent community.
               </p>
@@ -451,8 +451,8 @@ const Talents = () => {
       {/* Skills Section */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-8 text-black">Cherry-Pick Skills On-Demand</h2>
-          <p className="text-xl text-gray-600 mb-12">
+          <h2 className="text-5xl font-bold mb-8 text-black">Cherry-Pick Skills On-Demand</h2>
+          <p className="text-2xl text-gray-600 mb-12">
             Your dedicated Project Manager delegates work on a task-by-task basis and ensures a qualified 
             expert gets the job done efficiently, even if you need these specialized skills for just one day.
           </p>
@@ -559,8 +559,8 @@ const Talents = () => {
 
             {/* Right: headline, paragraph, and check list */}
             <div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-6">We Develop Growth Maps Instead of Believing the Talent Myth</h2>
-              <p className="text-gray-300 mb-8 max-w-prose">In a fast-moving industry like ours, recruiting great talent is not enough anymore. We have to invest in the development of new skills and give our designers & developers a clear path for their careers.</p>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">We Develop Growth Maps Instead of Believing the Talent Myth</h2>
+              <p className="text-lg mb-8 max-w-prose">In a fast-moving industry like ours, recruiting great talent is not enough anymore. We have to invest in the development of new skills and give our designers & developers a clear path for their careers.</p>
 
               <ul className="space-y-5">
                 <li className="flex items-start gap-4 text-gray-200">
@@ -584,13 +584,13 @@ const Talents = () => {
       {/* Benefits Section */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6 text-black">
+          <h2 className="text-5xl font-bold mb-6 text-black">
             <span className="text-black">Outsource</span>{' '}
             <span className="text-growmodo-blue">Sustainably</span>
             <br />
             <span className="text-black">Without the Bad Taste</span>
           </h2>
-          <p className="text-xl text-gray-600 mb-16 max-w-4xl mx-auto">
+          <p className="text-2xl text-gray-600 mb-16 max-w-4xl mx-auto">
             Startmodo aims to connect fast-growing companies with ambitious 
             remote talent while creating sustainable win-win situations and exceptional work 
             experiences for both parties through our comprehensive support system.
@@ -613,11 +613,11 @@ const Talents = () => {
       {/* Traditional Way Section - Now Interactive */}
       <section className="py-20 px-6 bg-black text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">
+          <h2 className="text-5xl font-bold mb-6">
             The Traditional Way of Hiring<br />
             Creative Freelancers is Broken
           </h2>
-          <p className="text-xl text-gray-300 mb-12">
+          <p className="text-2xl text-gray-300 mb-12">
             Company needs are often fundamentally misaligned with what their 
             remote contractors want and expect. This persistent misalignment leads to frustrating 
             experiences for both parties. It's time to completely rethink outsourcing.

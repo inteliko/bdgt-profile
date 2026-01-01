@@ -97,7 +97,7 @@ const Imprint = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-2">
                 <span className="text-sm"><strong>Email:</strong> legal@startmodo.com</span>
-                <span className="text-sm"><strong>Phone:</strong> Tel: 307-369-0696</span>
+                <span className="text-sm"><strong>Phone:</strong> Tel: +12163078940</span>
               </div>
             </div>
           </div>

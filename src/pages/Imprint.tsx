@@ -16,11 +16,11 @@ const Imprint = () => {
             <h2 className="text-2xl font-semibold mt-8 mb-4">Company Information</h2>
             <div className="bg-gray-50 p-6 rounded-lg mb-6">
               <p className="mb-2"><strong>Company Name:</strong> Startmodo LLC</p>
-              <p className="mb-2"><strong>Address:</strong> Rocky Mountain Registered Agent</p>
-              <p className="mb-2"><strong>Address (cont.):</strong> 1621 CENTRAL AVE STE M</p>
-              <p className="mb-2"><strong>City / ZIP:</strong> CHEYENNE, WY 82001</p>
+              
+              <p className="mb-2"><strong>Address (cont.):</strong> 1914 Thomes Ave Ste 2</p>
+              <p className="mb-2"><strong>City / ZIP:</strong> Cheyenne, WY 82001 </p>
               <p className="mb-2"><strong>Country:</strong> United States</p>
-              <p className="mb-2"><strong>Phone:</strong> Tel: 307-369-0696</p>
+              <p className="mb-2"><strong>Phone:</strong> Tel: +12163078940</p>
               <p className="mb-2"><strong>Email:</strong> sales@startmodo.com</p>
               <p className="mb-2"><strong>Business Hours:</strong> Monday - Friday, 10am - 6pm EST</p>
             </div>
@@ -34,7 +34,7 @@ const Imprint = () => {
             <h2 className="text-2xl font-semibold mt-8 mb-4">Business Registration</h2>
             <div className="bg-gray-50 p-6 rounded-lg mb-6">
               <p className="mb-2"><strong>Business Type:</strong> Limited Liability Company (LLC)</p>
-              <p className="mb-2"><strong>State of Incorporation:</strong> New York</p>
+              <p className="mb-2"><strong>State of Incorporation:</strong> WY</p>
               <p className="mb-2"><strong>Industry:</strong> Technology Services / Design & Development</p>
               <p className="mb-2"><strong>NAICS Code:</strong> 541511 (Custom Computer Programming Services)</p>
             </div>

@@ -257,31 +257,7 @@ const Index = () => {
       {/* Trusted Section */}
       <TrustedByBrands />
 
-      {/* Collaborate / Partners Marquee Section (matches provided design) */}
-      <section className="py-16 px-6 bg-white w-full overflow-hidden">
-        <div className="w-full text-center">
-          <h2 className="text-5xl md:text-6xl font-extrabold text-black mb-8 display-title">
-            You can collaborate
-            <br />
-            anywhere with your team.
-          </h2>
-
-          <div className="mt-6 overflow-hidden w-full">
-            <div className="scrolling-wrapper w-full">
-              <div className="scrolling-content no-pause inline-flex items-center gap-12 py-6 flex-nowrap whitespace-nowrap" style={{['--marquee-duration' as any]: '18s'}}>
-                {Array.from({ length: 2 }).flatMap(() => companies).map((company, idx) => (
-                  <div key={`collab-${idx}`} className="inline-flex flex-col items-center justify-center w-36 flex-shrink-0">
-                    <img src={company.logo} alt={company.name} className="w-16 h-16 object-contain mb-2" />
-                    <span className="text-base md:text-lg font-medium text-black">{company.name}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Solution Section - redesigned to match reference with left-aligned cards and vector icons */}
+            {/* Solution Section - redesigned to match reference with left-aligned cards and vector icons */}
       <section className="py-20 px-6 bg-white">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black display-title">
@@ -337,6 +313,32 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+
+      {/* Collaborate / Partners Marquee Section (matches provided design) */}
+      <section className="py-16 px-6 bg-white w-full overflow-hidden">
+        <div className="w-full text-center">
+          <h2 className="text-5xl md:text-6xl font-extrabold text-black mb-8 display-title">
+            You can collaborate
+            <br />
+            anywhere with your team.
+          </h2>
+
+          <div className="mt-6 overflow-hidden w-full">
+            <div className="scrolling-wrapper w-full">
+              <div className="scrolling-content no-pause inline-flex items-center gap-12 py-6 flex-nowrap whitespace-nowrap" style={{['--marquee-duration' as any]: '18s'}}>
+                {Array.from({ length: 2 }).flatMap(() => companies).map((company, idx) => (
+                  <div key={`collab-${idx}`} className="inline-flex flex-col items-center justify-center w-36 flex-shrink-0">
+                    <img src={company.logo} alt={company.name} className="w-16 h-16 object-contain mb-2" />
+                    <span className="text-base md:text-lg font-medium text-black">{company.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* Made Super Simple Section */}
       <section className="py-20 px-6 bg-white">

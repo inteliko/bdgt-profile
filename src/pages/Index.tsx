@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import TalentCarousel from "@/components/TalentCarousel";
 import ToolsGrid from "@/components/ToolsGrid";
 import ReferenceOrTools from "@/components/ReferenceOrTools";
+import TrustedByBrands from "@/components/TrustedByBrands";
 import { useBookingModal } from '@/context/BookingModalContext';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
@@ -253,51 +254,8 @@ const Index = () => {
 
       
 
-      {/* Trusted Section (reference layout) */}
-      <section className="py-16 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-12 gap-8 items-center">
-            <div className="md:col-span-5">
-              <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-black leading-tight display-title">
-                Trusted by fast-moving
-                brands & agencies worldwide
-              </h2>
-
-              <div className="mt-8">
-                <div className="grid grid-cols-2 gap-4 max-w-lg">
-                  <div className="flex flex-col items-start">
-                    <div className="text-growmodo-blue text-3xl sm:text-4xl md:text-5xl font-extrabold">10,000+</div>
-                    <div className="text-sm md:text-base text-gray-600 mt-1">Tasks delivered</div>
-                  </div>
-
-                  <div className="flex flex-col items-start sm:pl-6 sm:border-l sm:border-gray-200/60">
-                    <div className="text-growmodo-blue text-3xl sm:text-4xl md:text-5xl font-extrabold">200+</div>
-                    <div className="text-sm md:text-base text-gray-600 mt-1">Projects nailed</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="md:col-span-7">
-              <div className="grid grid-cols-3 md:grid-cols-4 gap-6">
-                {companies.map((company, index) => (
-                  <div key={index} className="flex items-center justify-center h-16 md:h-20">
-                    {company.logo ? (
-                      <div className="w-24 md:w-28 h-12 md:h-14 bg-white rounded-md flex items-center justify-center overflow-hidden p-2 shadow-sm">
-                        <img src={company.logo} alt={company.name} className="max-w-full max-h-full object-contain filter opacity-60" />
-                      </div>
-                    ) : (
-                      <div className="w-24 md:w-28 h-12 md:h-14 bg-white rounded-md flex items-center justify-center">
-                        <span className="text-sm text-gray-400 uppercase font-semibold tracking-wider">{company.name}</span>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Trusted Section */}
+      <TrustedByBrands />
 
       {/* Collaborate / Partners Marquee Section (matches provided design) */}
       <section className="py-16 px-6 bg-white w-full overflow-hidden">

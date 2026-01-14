@@ -87,12 +87,23 @@ export default {
 					'100%': {
 						transform: 'translateX(-100%)'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'scroll-left': 'scroll-left 20s linear infinite'
+				'scroll-left': 'scroll-left 20s linear infinite',
+				'fade-in': 'fade-in 0.5s ease-out'
 			}
 			,fontFamily: {
 				sans: ["'Space Grotesk Old'", "'Space Grotesk'", 'Arial', 'sans-serif']

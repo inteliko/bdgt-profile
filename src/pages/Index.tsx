@@ -12,6 +12,44 @@ import { useBookingModal } from '@/context/BookingModalContext';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const Index = () => {
+  const [bgColor, setBgColor] = useState('black');
+  const [textColor, setTextColor] = useState('white');
+
+  const roles = ['Designers', 'Developers', 'Marketers'];
+  const [currentRole, setCurrentRole] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRole((prev) => (prev + 1) % roles.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [roles.length]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const bgColorAttr = entry.target.getAttribute('data-color');
+            const textColorAttr = entry.target.getAttribute('data-text-color');
+            if (bgColorAttr) {
+              setBgColor(bgColorAttr);
+            }
+            if (textColorAttr) {
+              setTextColor(textColorAttr);
+            }
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    const sections = document.querySelectorAll('section[data-color]');
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
   // Local Avatar component: tries to load an external AI avatar image and falls
   // back to a lightweight inline SVG if the image fails to load.
   function Avatar({ src, alt, className }: { src: string; alt: string; className?: string }) {

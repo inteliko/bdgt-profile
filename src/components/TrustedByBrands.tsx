@@ -18,7 +18,7 @@ const TrustedByBrands = () => {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
             <h2 className="text-4xl md:text-5xl font-extrabold text-black leading-tight">
-              Trusted by <span className="text-growmodo-blue">fast-moving</span> brands
+              Trusted by <span className="text-growmodo-blue">fast-moving</span> brands & agencies worldwide
             </h2>
             <div className="grid grid-cols-2 gap-8">
               <div className="space-y-2">

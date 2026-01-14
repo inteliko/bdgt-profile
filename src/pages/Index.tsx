@@ -315,6 +315,41 @@ const Index = () => {
       </section>
 
 
+           {/* Testimonial Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-10">
+            <div className="flex-shrink-0">
+              <div className="w-44 h-44 md:w-56 md:h-56 bg-gray-100 rounded-lg overflow-hidden shadow-sm">
+                <Avatar src="https://thispersondoesnotexist.com/image" alt="Testimonial avatar" className="w-full h-full object-cover" />
+              </div>
+            </div>
+
+            <div className="md:pl-6">
+              <blockquote className="text-2xl md:text-4xl font-semibold text-black leading-tight mb-6">
+                “I have been working with Startmodo for nearly two years now. With their keen eye for design, development skills, and expert project management, I have managed to serve a lot more clients than I would without them.”
+              </blockquote>
+
+              <div className="flex items-center gap-4 mb-4">
+                <div className="flex items-center gap-1">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <svg key={i} className="w-6 h-6 text-growmodo-green" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.163c.969 0 1.371 1.24.588 1.81l-3.37 2.45a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.37-2.45a1 1 0 00-1.176 0l-3.37 2.45c-.785.57-1.84-.196-1.54-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.07 9.384c-.783-.57-.38-1.81.588-1.81h4.163a1 1 0 00.95-.69l1.286-3.957z" />
+                    </svg>
+                  ))}
+                </div>
+
+                <div>
+                  <p className="font-semibold text-lg mb-0">Gaute Remen</p>
+                  <p className="text-sm text-gray-500">Tech Lead, Synlight</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* Collaborate / Partners Marquee Section (matches provided design) */}
       <section className="py-16 px-6 bg-white w-full overflow-hidden">
         <div className="w-full text-center">
@@ -502,39 +537,7 @@ const Index = () => {
         </div>
       </section>      
 
-      {/* Testimonial Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-10">
-            <div className="flex-shrink-0">
-              <div className="w-44 h-44 md:w-56 md:h-56 bg-gray-100 rounded-lg overflow-hidden shadow-sm">
-                <Avatar src="https://thispersondoesnotexist.com/image" alt="Testimonial avatar" className="w-full h-full object-cover" />
-              </div>
-            </div>
-
-            <div className="md:pl-6">
-              <blockquote className="text-2xl md:text-4xl font-semibold text-black leading-tight mb-6">
-                “I have been working with Startmodo for nearly two years now. With their keen eye for design, development skills, and expert project management, I have managed to serve a lot more clients than I would without them.”
-              </blockquote>
-
-              <div className="flex items-center gap-4 mb-4">
-                <div className="flex items-center gap-1">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <svg key={i} className="w-6 h-6 text-growmodo-green" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.163c.969 0 1.371 1.24.588 1.81l-3.37 2.45a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.37-2.45a1 1 0 00-1.176 0l-3.37 2.45c-.785.57-1.84-.196-1.54-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.07 9.384c-.783-.57-.38-1.81.588-1.81h4.163a1 1 0 00.95-.69l1.286-3.957z" />
-                    </svg>
-                  ))}
-                </div>
-
-                <div>
-                  <p className="font-semibold text-lg mb-0">Gaute Remen</p>
-                  <p className="text-sm text-gray-500">Tech Lead, Synlight</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+ 
 
       {/* Selected Work Section - full width carousel with left heading */}
       <section className="py-20 bg-white w-full overflow-hidden">

@@ -57,6 +57,7 @@ export default {
 				'growmodo-green': 'hsl(86 100% 65%)',
 				'growmodo-dark': 'hsl(220 13% 18%)',
 				'growmodo-gray': 'hsl(220 9% 46%)',
+				'neon-green': '#A9FF0C',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

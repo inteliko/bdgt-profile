@@ -1,12 +1,12 @@
 import React from 'react';
 
 const companies = [
-  { name: 'Slack', logo: '/tools/slack.svg' },
-  { name: 'Notion', logo: '/tools/notion.svg' },
-  { name: 'Zoho', logo: '/tools/zoho.svg' },
-  { name: 'Trello', logo: '/tools/trello.svg' },
-  { name: 'Dropbox', logo: '/tools/dropbox.svg' },
-  { name: 'Asana', logo: '/tools/asana.svg' },
+  { name: 'Slack', logo: '/tools/1.png' },
+  { name: 'Notion', logo: '/tools/2.png' },
+  { name: 'Zoho', logo: '/tools/3.png' },
+  { name: 'Trello', logo: '/tools/4.png' },
+  { name: 'Dropbox', logo: '/tools/5.png' },
+  { name: 'Asana', logo: '/tools/6.png' },
   { name: 'GitHub', logo: '/tools/github.svg' },
   { name: 'Zoom', logo: '/tools/zoom.svg' }
 ];
@@ -18,7 +18,7 @@ const TrustedByBrands = () => {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
             <h2 className="text-4xl md:text-5xl font-extrabold text-black leading-tight">
-              Trusted by <span className="text-growmodo-blue">fast-moving</span> brands
+              Trusted by <span className="text-growmodo-blue">fast-moving</span> brands & agencies worldwide
             </h2>
             <div className="grid grid-cols-2 gap-8">
               <div className="space-y-2">

@@ -37,7 +37,7 @@ const Pricing = () => {
   const getPlanSubtitle = () => {
     switch (selectedTalents) {
       case 1:
-        return "Perfect for startups, solo founders, and small businesses";
+        return "Best for startups, solo founders, small businesses";
       case 2:
         return "Perfect for growing startups and agencies";
       case 3:
@@ -159,7 +159,7 @@ const Pricing = () => {
             
             <div className="grid md:grid-cols-3 gap-8">
               <div className="md:col-span-2">
-                <h2 className="text-4xl font-bold mb-6">All Inclusive</h2>
+                <h2 className="text-4xl font-bold mb-6">Best for Startups, Founders & Small Teams</h2>
                 <p className="text-lg text-gray-600 mb-8 max-w-md">
                   For fast-moving agencies, marketing teams & scale-ups who need 
                   access to reliable on-demand design & dev talents to move even faster.
@@ -169,46 +169,36 @@ const Pricing = () => {
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
                       <Infinity className="w-5 h-5 text-blue-500" />
-                      <span className="text-base">Unlimited Design Requests</span>
+                      <span className="text-base">Unlimited requests</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <Infinity className="w-5 h-5 text-blue-500" />
-                      <span className="text-base">Unlimited Development Requests</span>
+                      <span className="text-base">1 task at a time</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <Infinity className="w-5 h-5 text-blue-500" />
-                      <span className="text-base">Unlimited Revisions</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Infinity className="w-5 h-5 text-blue-500" />
-                      <span className="text-base">Unlimited Brands</span>
+                      <span className="text-base">Web dev or design or SEO</span>
                     </div>
                   </div>
                   
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
-                        <span className="text-white text-xs">⚡</span>
+                        <span className="text-white text-xs">👤</span>
                       </div>
                       <span className="text-base">Dedicated Project Manager</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
-                        <span className="text-white text-xs">📊</span>
+                        <span className="text-white text-xs">⏱️</span>
                       </div>
-                      <span className="text-base">Daily Updates & Progress Reports</span>
+                      <span className="text-base">24–48 hour turnaround (small tasks)</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
-                        <span className="text-white text-xs">⏸️</span>
+                        <span className="text-white text-xs">🔁</span>
                       </div>
-                      <span className="text-base">Pause or Cancel Anytime</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
-                        <span className="text-white text-xs">🔄</span>
-                      </div>
-                      <span className="text-base">Upgrade or Downgrade Anytime</span>
+                      <span className="text-base">Unlimited revisions</span>
                     </div>
                   </div>
                 </div>

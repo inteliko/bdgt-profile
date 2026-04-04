@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { useEffect } from "react";
 
 const Pricing = () => {
+  const pricingOptions = [1, 2, 3, "more"] as const;
   const [selectedTalents, setSelectedTalents] = useState<number | "more">(1);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
@@ -15,11 +16,36 @@ const Pricing = () => {
 
   const getPricing = () => {
     switch (selectedTalents) {
-      case 1: return "$1990";
-      case 2: return "$3990";
-      case 4: return "$9975";
-      case 5: return "$9975";
+      case 1: return "$1,790";
+      case 2: return "$3,490";
+      case 3: return "$5,190";
+      case "more": return "Starting from $6,900";
       default: return "Custom";
+    }
+  };
+
+  const getPlanName = () => {
+    switch (selectedTalents) {
+      case 1: return "Starter Plan";
+      case 2: return "Growth Plan";
+      case 3: return "Scale Plan";
+      case "more": return "Pro Team";
+      default: return "";
+    }
+  };
+
+  const getPlanSubtitle = () => {
+    switch (selectedTalents) {
+      case 1:
+        return "Perfect for startups, solo founders, and small businesses";
+      case 2:
+        return "Perfect for growing startups and agencies";
+      case 3:
+        return "Perfect for SaaS companies and scaling businesses";
+      case "more":
+        return "4+ active talents for companies replacing or scaling beyond in-house teams";
+      default:
+        return "";
     }
   };
 
@@ -78,25 +104,24 @@ const Pricing = () => {
       <section className="pt-32 pb-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Predictable Pricing.<br />
+            StartModo Pricing Plans.<br />
             No Surprises.
           </h1>
           <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
-            Choose the number of active talents working<br />
-            on your requests at the same time:
+            Choose the plan that fits your team size and delivery needs.
           </p>
           
           {/* Talent Scale Selector */}
           <div className="flex items-center justify-center mb-8">
             <span className="text-blue-500 mr-4 text-lg">Scale up<br />and down</span>
             <div className="flex items-center space-x-8">
-              {[1, 2, 4, 5, "more"].map((num, index) => (
-                <div key={num} className="flex flex-col items-center cursor-pointer" onClick={() => setSelectedTalents(num as number | "more")}>
+              {pricingOptions.map((num, index) => (
+                <div key={String(num)} className="relative flex flex-col items-center cursor-pointer" onClick={() => setSelectedTalents(num as number | "more")}> 
                   <div className={`w-4 h-4 rounded-full mb-2 ${selectedTalents === num ? 'bg-blue-500' : 'bg-gray-300'}`}></div>
                   <span className={`text-base ${selectedTalents === num ? 'text-black' : 'text-gray-400'}`}>
-                    {num === "more" ? "More" : num}
+                    {num === "more" ? "Pro Team" : num}
                   </span>
-                  {index < 4 && (
+                  {index < pricingOptions.length - 1 && (
                     <div 
                       className={`w-16 h-0.5 absolute mt-2 ${
                         typeof selectedTalents === 'number' && typeof num === 'number' && selectedTalents >= num 
@@ -190,6 +215,12 @@ const Pricing = () => {
               </div>
 
               <div className="text-center md:text-right">
+                <div className="text-sm uppercase tracking-[0.24em] text-blue-500 font-semibold mb-2">
+                  {getPlanName()}
+                </div>
+                <p className="text-base text-gray-600 mb-4">
+                  {getPlanSubtitle()}
+                </p>
                 <div className="text-6xl font-bold mb-4">
                   {getPricing()}{selectedTalents !== "more" && <span className="text-2xl">/m</span>}
                 </div>

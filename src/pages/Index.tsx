@@ -359,7 +359,7 @@ const Index = () => {
           <div className="flex flex-col md:flex-row items-start md:items-center gap-10">
             <div className="flex-shrink-0">
               <div className="w-44 h-44 md:w-56 md:h-56 bg-gray-100 rounded-lg overflow-hidden shadow-sm">
-                <Avatar src="https://thispersondoesnotexist.com/image" alt="Testimonial avatar" className="w-full h-full object-cover" />
+                <Avatar src="/lovable-uploads/clients.jpeg" alt="Testimonial avatar" className="w-full h-full object-cover" />
               </div>
             </div>
 

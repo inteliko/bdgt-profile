@@ -37,13 +37,13 @@ const Pricing = () => {
   const getPlanSubtitle = () => {
     switch (selectedTalents) {
       case 1:
-        return "Best for startups, solo founders, small businesses";
+        return "Best for: startups, solo founders, small businesses";
       case 2:
-        return "Perfect for growing startups and agencies";
+        return "Best for: growing startups, agencies";
       case 3:
-        return "Perfect for SaaS companies and scaling businesses";
+        return "Best for: SaaS, scaling companies";
       case "more":
-        return "4+ active talents for companies replacing or scaling beyond in-house teams";
+        return "Best for: companies replacing in-house team";
       default:
         return "";
     }
@@ -51,6 +51,98 @@ const Pricing = () => {
 
   const getButtonText = () => {
     return selectedTalents === "more" ? "Contact Us →" : "Subscribe Now →";
+  };
+
+  const getFeatures = () => {
+    switch (selectedTalents) {
+      case 1:
+        return {
+          left: [
+            { text: "Unlimited requests", icon: "infinity" },
+            { text: "1 task at a time", icon: "infinity" },
+            { text: "Web dev or design or SEO", icon: "infinity" }
+          ],
+          right: [
+            { text: "Dedicated Project Manager", icon: "circle", content: "👤" },
+            { text: "24–48 hour turnaround (small tasks)", icon: "circle", content: "⏱️" },
+            { text: "Unlimited revisions", icon: "circle", content: "🔁" }
+          ]
+        };
+      case 2:
+        return {
+          left: [
+            { text: "Unlimited requests", icon: "infinity" },
+            { text: "2 tasks at a time", icon: "infinity" },
+            { text: "Mix of dev + design + SEO", icon: "infinity" }
+          ],
+          right: [
+            { text: "Faster turnaround", icon: "circle", content: "⚡" },
+            { text: "Dedicated Project Manager", icon: "circle", content: "👤" },
+            { text: "Weekly progress reports", icon: "circle", content: "📊" }
+          ]
+        };
+      case 3:
+        return {
+          left: [
+            { text: "Unlimited requests", icon: "infinity" },
+            { text: "3 tasks at a time", icon: "infinity" },
+            { text: "Full stack support (web + app + SEO + graphics)", icon: "infinity" }
+          ],
+          right: [
+            { text: "Priority delivery", icon: "circle", content: "🚀" },
+            { text: "Dedicated PM + Slack communication", icon: "circle", content: "💬" },
+            { text: "Daily updates", icon: "circle", content: "📈" }
+          ]
+        };
+      case "more":
+        return {
+          left: [
+            { text: "Full dedicated team", icon: "infinity" },
+            { text: "Custom workflows", icon: "infinity" },
+            { text: "App + software development", icon: "infinity" }
+          ],
+          right: [
+            { text: "Strategy + execution", icon: "circle", content: "🎯" },
+            { text: "Fastest turnaround", icon: "circle", content: "⚡" },
+            { text: "Direct communication with team", icon: "circle", content: "👥" }
+          ]
+        };
+      default:
+        return {
+          left: [],
+          right: []
+        };
+    }
+  };
+
+  const getCardTitle = () => {
+    switch (selectedTalents) {
+      case 1:
+        return "Starter Plan";
+      case 2:
+        return "Growth Plan";
+      case 3:
+        return "Scale Plan";
+      case "more":
+        return "Pro Team";
+      default:
+        return "Pricing Plan";
+    }
+  };
+
+  const getCardSubtitle = () => {
+    switch (selectedTalents) {
+      case 1:
+        return "For startups, solo founders, and small businesses who need reliable on-demand design & dev talents.";
+      case 2:
+        return "For growing startups and agencies who need a mix of dev, design, and SEO services.";
+      case 3:
+        return "For SaaS companies and scaling businesses who need full stack support and priority delivery.";
+      case "more":
+        return "For companies replacing in-house teams with a full dedicated team and custom workflows.";
+      default:
+        return "";
+    }
   };
 
   const faqData = [
@@ -159,47 +251,40 @@ const Pricing = () => {
             
             <div className="grid md:grid-cols-3 gap-8">
               <div className="md:col-span-2">
-                <h2 className="text-4xl font-bold mb-6">Best for Startups, Founders & Small Teams</h2>
+                <h2 className="text-4xl font-bold mb-6">{getCardTitle()}</h2>
                 <p className="text-lg text-gray-600 mb-8 max-w-md">
-                  For fast-moving agencies, marketing teams & scale-ups who need 
-                  access to reliable on-demand design & dev talents to move even faster.
+                  {getCardSubtitle()}
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <Infinity className="w-5 h-5 text-blue-500" />
-                      <span className="text-base">Unlimited requests</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Infinity className="w-5 h-5 text-blue-500" />
-                      <span className="text-base">1 task at a time</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Infinity className="w-5 h-5 text-blue-500" />
-                      <span className="text-base">Web dev or design or SEO</span>
-                    </div>
+                    {getFeatures().left.map((feature, index) => (
+                      <div key={index} className="flex items-center gap-3">
+                        {feature.icon === "infinity" ? (
+                          <Infinity className="w-5 h-5 text-blue-500" />
+                        ) : (
+                          <div className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
+                            <span className="text-white text-xs">{feature.content}</span>
+                          </div>
+                        )}
+                        <span className="text-base">{feature.text}</span>
+                      </div>
+                    ))}
                   </div>
                   
                   <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
-                        <span className="text-white text-xs">👤</span>
+                    {getFeatures().right.map((feature, index) => (
+                      <div key={index} className="flex items-center gap-3">
+                        {feature.icon === "infinity" ? (
+                          <Infinity className="w-5 h-5 text-blue-500" />
+                        ) : (
+                          <div className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
+                            <span className="text-white text-xs">{feature.content}</span>
+                          </div>
+                        )}
+                        <span className="text-base">{feature.text}</span>
                       </div>
-                      <span className="text-base">Dedicated Project Manager</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
-                        <span className="text-white text-xs">⏱️</span>
-                      </div>
-                      <span className="text-base">24–48 hour turnaround (small tasks)</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
-                        <span className="text-white text-xs">🔁</span>
-                      </div>
-                      <span className="text-base">Unlimited revisions</span>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>

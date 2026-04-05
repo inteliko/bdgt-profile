@@ -115,6 +115,19 @@ const Pricing = () => {
     }
   };
 
+  const stripeCheckoutUrls: Record<number, string> = {
+    1: "https://buy.stripe.com/14A4gz5hN3V4dXp5wobQY00",
+    2: "https://buy.stripe.com/eVqdR939F2R0g5xaQIbQY01",
+    3: "https://buy.stripe.com/eVqbJ18tZfDMbPhaQIbQY02"
+  };
+
+  const getCheckoutLink = () =>
+    selectedTalents === "more"
+      ? "/book-call"
+      : stripeCheckoutUrls[selectedTalents as number];
+
+  const isCheckoutExternal = selectedTalents !== "more";
+
   const getCardTitle = () => {
     switch (selectedTalents) {
       case 1:
@@ -299,8 +312,14 @@ const Pricing = () => {
                 <div className="text-6xl font-bold mb-4">
                   {getPricing()}{selectedTalents !== "more" && <span className="text-2xl">/m</span>}
                 </div>
-                <Button className="bg-blue-500 text-white px-8 py-3 text-lg rounded-lg hover:bg-blue-600 mb-4">
-                  {getButtonText()}
+                <Button asChild className="bg-blue-500 text-white px-8 py-3 text-lg rounded-lg hover:bg-blue-600 mb-4">
+                  <a
+                    href={getCheckoutLink()}
+                    target={isCheckoutExternal ? "_blank" : undefined}
+                    rel={isCheckoutExternal ? "noreferrer" : undefined}
+                  >
+                    {getButtonText()}
+                  </a>
                 </Button>
                 <p className="text-sm text-gray-500">100% Satisfaction Guarantee</p>
               </div>
@@ -397,8 +416,14 @@ const Pricing = () => {
 
               <div className="text-center md:text-right">
                 <div className="text-6xl font-bold mb-4">$395<span className="text-2xl">/m</span></div>
-                <Button className="bg-blue-500 text-white px-8 py-3 text-lg rounded-lg hover:bg-blue-600 mb-4">
-                  Subscribe Now →
+                <Button asChild className="bg-blue-500 text-white px-8 py-3 text-lg rounded-lg hover:bg-blue-600 mb-4">
+                  <a
+                    href="https://buy.stripe.com/7sY28rdOj1MWf1t3ogbQY03"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Subscribe Now →
+                  </a>
                 </Button>
                 <p className="text-sm text-gray-500">100% Satisfaction Guarantee</p>
               </div>

@@ -63,7 +63,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
-          <p className="text-sm">Copyright © 2025 Startmodo. All Rights Reserved.</p>
+          <p className="text-sm">Copyright © 2025-2026 Startmodo. All Rights Reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <Link to="/terms" className="hover:text-white text-sm">Terms & Conditions</Link>
             <Link to="/privacy" className="hover:text-white text-sm">Privacy Policy</Link>

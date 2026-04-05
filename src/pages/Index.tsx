@@ -378,8 +378,8 @@ const Index = () => {
                 </div>
 
                 <div>
-                  <p className="font-semibold text-lg mb-0">Gaute Remen</p>
-                  <p className="text-sm text-gray-500">Tech Lead, Synlight</p>
+                  <p className="font-semibold text-lg mb-0">Jamie Patridge</p>
+                  <p className="text-sm text-gray-500">UpliftGTM</p>
                 </div>
               </div>
             </div>
